@@ -1,0 +1,1914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Susana Pérez — Product Manager</title>
+    <meta name="description" content="Product Manager & Product Owner specializing in EdTech and Music Tech. 3+ years leading cross-functional teams, shipping products to 1M+ users.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230F0F12'/><text x='50' y='68' font-size='55' font-family='serif' fill='%23B8A0D2' text-anchor='middle'>SP</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ========================================= */
+/* ROOT VARIABLES                            */
+/* ========================================= */
+:root {
+    --bg-deep: #09090B;
+    --bg-primary: #0F0F12;
+    --bg-secondary: #16161A;
+    --bg-card: #1C1C21;
+    --bg-card-hover: #222228;
+
+    --text-primary: #EDEDEC;
+    --text-secondary: #94918A;
+    --text-tertiary: #5C5955;
+
+    --accent-lavender: #B8A0D2;
+    --accent-lavender-dim: rgba(184, 160, 210, 0.12);
+    --accent-sage: #8FA889;
+    --accent-sage-dim: rgba(143, 168, 137, 0.12);
+    --accent-cream: #D4C5A9;
+    --accent-cream-dim: rgba(212, 197, 169, 0.12);
+    --accent-rose: #C9A0A0;
+    --accent-rose-dim: rgba(201, 160, 160, 0.12);
+
+    --border: #2A2A30;
+    --border-light: #1E1E24;
+
+    --font-display: 'Instrument Serif', Georgia, serif;
+    --font-body: 'Manrope', system-ui, sans-serif;
+
+    --max-width: 1100px;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ========================================= */
+/* RESET & BASE                              */
+/* ========================================= */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font-body);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+    font-size: 16px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    height: 100vh;
+}
+
+::selection {
+    background: var(--accent-lavender);
+    color: var(--bg-deep);
+}
+
+a {
+    color: var(--accent-lavender);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover { color: var(--text-primary); }
+
+img { max-width: 100%; display: block; }
+
+:focus-visible {
+    outline: 2px solid var(--accent-lavender);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ========================================= */
+/* GRAIN OVERLAY                             */
+/* ========================================= */
+.grain {
+    position: fixed;
+    inset: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.025;
+    pointer-events: none;
+    z-index: 10000;
+}
+
+/* ========================================= */
+/* TYPOGRAPHY                                */
+/* ========================================= */
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; }
+
+.section-label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-lavender);
+    margin-bottom: 1.25rem;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    line-height: 1.2;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+/* ========================================= */
+/* HERO — FULL VIEWPORT HOME BASE            */
+/* ========================================= */
+.hero {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Musical staff lines */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 72px;
+    transform: translateY(-50%);
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 13px,
+        rgba(184, 160, 210, 0.045) 13px,
+        rgba(184, 160, 210, 0.045) 14px
+    );
+    pointer-events: none;
+}
+
+/* Ambient glow */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(184, 160, 210, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* ========================================= */
+/* HERO LEFT — IDENTITY                      */
+/* ========================================= */
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 3rem 4rem 4.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-name {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.hero-title {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    letter-spacing: 0.06em;
+    margin-bottom: 1.75rem;
+}
+
+.hero-title span {
+    color: var(--accent-lavender);
+    margin: 0 0.5rem;
+}
+
+/* Cycling text */
+.hero-cycle {
+    position: relative;
+    height: 1.75rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.hero-cycle-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--accent-cream);
+    opacity: 0;
+    animation: cycleFade 20s infinite;
+    font-style: italic;
+    font-family: var(--font-display);
+}
+
+.hero-cycle-text:nth-child(1) { animation-delay: 0s; }
+.hero-cycle-text:nth-child(2) { animation-delay: 4s; }
+.hero-cycle-text:nth-child(3) { animation-delay: 8s; }
+.hero-cycle-text:nth-child(4) { animation-delay: 12s; }
+.hero-cycle-text:nth-child(5) { animation-delay: 16s; }
+
+@keyframes cycleFade {
+    0%, 3% { opacity: 0; transform: translateY(8px); }
+    6%, 16% { opacity: 1; transform: translateY(0); }
+    19%, 100% { opacity: 0; transform: translateY(-8px); }
+}
+
+.hero-badges {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.35rem 0.8rem;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+}
+
+.badge-icon {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-sage);
+}
+
+.hero-ctas {
+    display: flex;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.5rem;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: all 0.3s var(--ease-out);
+    border: none;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--accent-lavender);
+    color: var(--bg-deep);
+}
+
+.btn-primary:hover {
+    background: #c8b4de;
+    color: var(--bg-deep);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(184, 160, 210, 0.25);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent-lavender);
+    color: var(--text-primary);
+    transform: translateY(-1px);
+}
+
+/* ========================================= */
+/* HERO RIGHT — NAVIGATION MENU              */
+/* ========================================= */
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 4.5rem 4rem 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-menu {
+    list-style: none;
+}
+
+.nav-menu-item {
+    border-bottom: 1px solid var(--border-light);
+}
+
+.nav-menu-item:first-child {
+    border-top: 1px solid var(--border-light);
+}
+
+.nav-menu-link {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.35rem 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s var(--ease-out);
+    text-decoration: none;
+    color: var(--text-secondary);
+    position: relative;
+}
+
+.nav-menu-link:hover {
+    color: var(--text-primary);
+    padding-left: 1rem;
+}
+
+.nav-menu-link:hover .nav-menu-number {
+    color: var(--accent-lavender);
+}
+
+.nav-menu-link:hover .nav-menu-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.nav-menu-number {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text-tertiary);
+    transition: color 0.3s ease;
+    min-width: 24px;
+}
+
+.nav-menu-label {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    line-height: 1.2;
+    flex: 1;
+}
+
+.nav-menu-desc {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+    font-weight: 400;
+    max-width: 200px;
+    text-align: right;
+    line-height: 1.4;
+}
+
+.nav-menu-arrow {
+    font-size: 1.25rem;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: all 0.3s var(--ease-out);
+    color: var(--accent-lavender);
+}
+
+/* ========================================= */
+/* STATS STRIP — bottom of hero              */
+/* ========================================= */
+.stats-strip {
+    grid-column: 1 / -1;
+    padding: 1.75rem 4.5rem;
+    border-top: 1px solid var(--border-light);
+    background: rgba(22, 22, 26, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: relative;
+    z-index: 2;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.stat-number {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    color: var(--text-primary);
+    line-height: 1.1;
+}
+
+.stat-number .stat-suffix {
+    font-size: 0.6em;
+    color: var(--accent-lavender);
+}
+
+.stat-label {
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* ========================================= */
+/* PANEL OVERLAY SYSTEM                      */
+/* ========================================= */
+.panel-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(9, 9, 11, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 5000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.panel-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    width: min(92vw, 900px);
+    max-height: 88vh;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    z-index: 5001;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out), visibility 0.4s ease;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-color: var(--accent-lavender) transparent;
+    scrollbar-width: thin;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(184, 160, 210, 0.06);
+}
+
+.panel::-webkit-scrollbar { width: 6px; }
+.panel::-webkit-scrollbar-track { background: transparent; }
+.panel::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+.panel::-webkit-scrollbar-thumb:hover { background: var(--accent-lavender); }
+
+.panel.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 2.5rem 1.5rem;
+    position: sticky;
+    top: 0;
+    background: var(--bg-primary);
+    z-index: 10;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.panel-header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.panel-number {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-lavender);
+}
+
+.panel-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.panel-close {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.panel-close:hover {
+    border-color: var(--accent-lavender);
+    color: var(--text-primary);
+    background: var(--accent-lavender-dim);
+}
+
+.panel-body {
+    padding: 2.5rem;
+}
+
+/* ========================================= */
+/* PANEL: ABOUT                              */
+/* ========================================= */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.about-narrative p {
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    font-size: 1.02rem;
+}
+
+.about-narrative p:first-of-type {
+    font-size: 1.12rem;
+    color: var(--text-primary);
+    font-weight: 300;
+}
+
+.about-narrative strong {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.about-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.about-detail-block h4 {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 0.75rem;
+}
+
+.language-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.lang-tag {
+    font-size: 0.82rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 4px;
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-light);
+}
+
+.lang-tag .level {
+    color: var(--text-tertiary);
+    font-size: 0.72rem;
+    margin-left: 0.25rem;
+}
+
+.about-detail-block p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.about-detail-block a {
+    font-size: 0.9rem;
+}
+
+/* ========================================= */
+/* PANEL: EXPERIENCE                         */
+/* ========================================= */
+.exp-intro {
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    font-size: 0.92rem;
+}
+
+.exp-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.exp-tab {
+    padding: 0.85rem 1.5rem;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.exp-tab::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent-lavender);
+    transform: scaleX(0);
+    transition: transform 0.3s var(--ease-out);
+}
+
+.exp-tab:hover { color: var(--text-secondary); }
+
+.exp-tab.active { color: var(--text-primary); }
+.exp-tab.active::after { transform: scaleX(1); }
+
+.exp-panel {
+    display: none;
+    animation: panelIn 0.4s var(--ease-out);
+}
+
+.exp-panel.active { display: block; }
+
+@keyframes panelIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.exp-header { margin-bottom: 2rem; }
+
+.exp-role {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin-bottom: 0.35rem;
+    color: var(--text-primary);
+}
+
+.exp-product {
+    font-size: 0.9rem;
+    color: var(--accent-lavender);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.exp-meta {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.exp-achievements { display: grid; gap: 1rem; }
+
+.achievement {
+    display: grid;
+    grid-template-columns: 3px 1fr;
+    gap: 1rem;
+    align-items: start;
+}
+
+.achievement-bar {
+    width: 3px;
+    height: 100%;
+    min-height: 24px;
+    border-radius: 3px;
+    background: var(--accent-lavender);
+    opacity: 0.4;
+}
+
+.exp-panel:nth-child(2) .achievement-bar { background: var(--accent-sage); }
+.exp-panel:nth-child(3) .achievement-bar { background: var(--accent-cream); }
+
+.achievement-text {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+.achievement-text strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.achievement-text .metric {
+    color: var(--accent-lavender);
+    font-weight: 600;
+}
+
+.exp-panel:nth-child(2) .metric { color: var(--accent-sage); }
+.exp-panel:nth-child(3) .metric { color: var(--accent-cream); }
+
+/* ========================================= */
+/* PANEL: CASE STUDIES                       */
+/* ========================================= */
+.cases-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.case-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s var(--ease-out);
+}
+
+.case-card:hover {
+    border-color: var(--border);
+    background: var(--bg-card-hover);
+}
+
+.case-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    gap: 1rem;
+}
+
+.case-header-left {
+    flex: 1;
+    min-width: 0;
+}
+
+.case-number {
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    color: var(--text-tertiary);
+    margin-bottom: 0.2rem;
+}
+
+.case-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
+}
+
+.case-subtitle {
+    font-size: 0.82rem;
+    color: var(--text-tertiary);
+}
+
+.case-tags {
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.case-tag {
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 0.2rem 0.55rem;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.case-tag--lavender { background: var(--accent-lavender-dim); color: var(--accent-lavender); }
+.case-tag--sage { background: var(--accent-sage-dim); color: var(--accent-sage); }
+.case-tag--cream { background: var(--accent-cream-dim); color: var(--accent-cream); }
+.case-tag--rose { background: var(--accent-rose-dim); color: var(--accent-rose); }
+
+.case-toggle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    color: var(--text-tertiary);
+}
+
+.case-card.open .case-toggle {
+    background: var(--accent-lavender-dim);
+    border-color: var(--accent-lavender);
+    color: var(--accent-lavender);
+    transform: rotate(45deg);
+}
+
+.case-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s var(--ease-out);
+}
+
+.case-card.open .case-body { max-height: 800px; }
+
+.case-content {
+    padding: 0 1.5rem 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    border-top: 1px solid var(--border-light);
+    padding-top: 1.5rem;
+}
+
+.case-section h4 {
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+}
+
+.case-section:nth-child(1) h4 { color: var(--accent-rose); }
+.case-section:nth-child(2) h4 { color: var(--accent-lavender); }
+.case-section:nth-child(3) h4 { color: var(--accent-sage); }
+
+.case-section p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+/* ========================================= */
+/* PANEL: SKILLS                             */
+/* ========================================= */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.skill-group {
+    padding: 1.5rem;
+    background: var(--bg-card);
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    transition: border-color 0.3s ease;
+}
+
+.skill-group:hover { border-color: var(--border); }
+
+.skill-group-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.skill-group-accent {
+    width: 3px;
+    height: 20px;
+    border-radius: 3px;
+}
+
+.skill-group:nth-child(1) .skill-group-accent { background: var(--accent-lavender); }
+.skill-group:nth-child(2) .skill-group-accent { background: var(--accent-sage); }
+.skill-group:nth-child(3) .skill-group-accent { background: var(--accent-cream); }
+.skill-group:nth-child(4) .skill-group-accent { background: var(--accent-rose); }
+
+.skill-group-title {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.skill-tag {
+    font-size: 0.78rem;
+    font-weight: 400;
+    padding: 0.3rem 0.65rem;
+    border-radius: 4px;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-light);
+    transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+    border-color: var(--border);
+    color: var(--text-primary);
+}
+
+/* ========================================= */
+/* PANEL: CONTACT                            */
+/* ========================================= */
+.contact-inner { text-align: center; }
+
+.contact-heading {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.contact-heading em {
+    font-style: italic;
+    color: var(--accent-lavender);
+}
+
+.contact-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    max-width: 480px;
+    margin: 0 auto 2rem;
+    font-weight: 300;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    transition: all 0.3s var(--ease-out);
+    background: var(--bg-card);
+}
+
+.contact-link:hover {
+    border-color: var(--accent-lavender);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.contact-availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--text-tertiary);
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-sage);
+    position: relative;
+}
+
+.pulse-dot::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 1px solid var(--accent-sage);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.4); }
+}
+
+/* Footer inside contact panel */
+.panel-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+}
+
+.panel-footer p {
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+}
+
+.panel-footer a {
+    color: var(--text-tertiary);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.panel-footer a:hover {
+    color: var(--accent-lavender);
+    border-color: var(--accent-lavender);
+}
+
+/* ========================================= */
+/* HERO ENTRANCE ANIMATIONS                  */
+/* ========================================= */
+.hero-left > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: heroIn 0.8s var(--ease-out) forwards;
+}
+
+.hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+.hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+.hero-left > *:nth-child(3) { animation-delay: 0.35s; }
+.hero-left > *:nth-child(4) { animation-delay: 0.5s; }
+.hero-left > *:nth-child(5) { animation-delay: 0.6s; }
+
+.hero-right .nav-menu-item {
+    opacity: 0;
+    transform: translateX(20px);
+    animation: menuIn 0.6s var(--ease-out) forwards;
+}
+
+.hero-right .nav-menu-item:nth-child(1) { animation-delay: 0.3s; }
+.hero-right .nav-menu-item:nth-child(2) { animation-delay: 0.4s; }
+.hero-right .nav-menu-item:nth-child(3) { animation-delay: 0.5s; }
+.hero-right .nav-menu-item:nth-child(4) { animation-delay: 0.6s; }
+.hero-right .nav-menu-item:nth-child(5) { animation-delay: 0.7s; }
+
+.stats-strip .stat-item {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: heroIn 0.6s var(--ease-out) forwards;
+}
+
+.stats-strip .stat-item:nth-child(1) { animation-delay: 0.5s; }
+.stats-strip .stat-item:nth-child(2) { animation-delay: 0.6s; }
+.stats-strip .stat-item:nth-child(3) { animation-delay: 0.7s; }
+.stats-strip .stat-item:nth-child(4) { animation-delay: 0.8s; }
+.stats-strip .stat-item:nth-child(5) { animation-delay: 0.9s; }
+
+@keyframes heroIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes menuIn {
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* ========================================= */
+/* RESPONSIVE                                */
+/* ========================================= */
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .hero-left {
+        padding: 3rem 2rem 1.5rem;
+    }
+
+    .hero-right {
+        padding: 0 2rem 1.5rem;
+    }
+
+    .hero-name { font-size: clamp(2.5rem, 10vw, 3.5rem); }
+
+    .nav-menu-label { font-size: 1.35rem; }
+    .nav-menu-desc { display: none; }
+
+    .stats-strip { padding: 1.25rem 1.5rem; }
+    .stats-grid { flex-wrap: wrap; gap: 1rem; justify-content: center; }
+    .stat-number { font-size: 1.4rem; }
+
+    .panel {
+        width: 96vw;
+        max-height: 92vh;
+        border-radius: 12px;
+    }
+
+    .panel-header { padding: 1.5rem 1.5rem 1.25rem; }
+    .panel-body { padding: 1.5rem; }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .case-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-left { padding: 2.5rem 1.25rem 1rem; }
+    .hero-right { padding: 0 1.25rem 1rem; }
+
+    .nav-menu-link { padding: 1rem 0.25rem; gap: 1rem; }
+    .nav-menu-label { font-size: 1.15rem; }
+
+    .stats-strip { padding: 1rem 1.25rem; }
+    .stat-number { font-size: 1.2rem; }
+    .stat-label { font-size: 0.6rem; }
+
+    .panel { width: 100vw; max-height: 100vh; border-radius: 0; }
+    .panel-header { padding: 1.25rem; }
+    .panel-body { padding: 1.25rem; }
+    .panel-title { font-size: 1.5rem; }
+
+    .case-header { padding: 1rem; }
+    .case-content { padding: 0 1rem 1rem; }
+    .case-title { font-size: 1.05rem; }
+
+    .skill-group { padding: 1.25rem; }
+
+    .contact-heading { font-size: 1.75rem; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Grain overlay -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ===== HERO — HOME BASE ===== -->
+<section class="hero" id="hero">
+
+    <!-- Left: Identity -->
+    <div class="hero-left">
+        <h1 class="hero-name">Susana Pérez</h1>
+
+        <p class="hero-title">Product Manager <span>&middot;</span> Product Owner</p>
+
+        <div class="hero-cycle" aria-live="polite">
+            <span class="hero-cycle-text">Shipping products that teach music to 1M+ users</span>
+            <span class="hero-cycle-text">Negotiating multi-year licensing deals worth €380K+</span>
+            <span class="hero-cycle-text">Localizing learning apps across 6+ languages</span>
+            <span class="hero-cycle-text">Bridging business, creative &amp; technical domains</span>
+            <span class="hero-cycle-text">From music therapy to product &mdash; user-centered by nature</span>
+        </div>
+
+        <div class="hero-badges">
+            <span class="badge"><span class="badge-icon"></span> Berlin, Germany</span>
+            <span class="badge">EdTech &amp; Music Tech</span>
+            <span class="badge">Open to Senior PM roles</span>
+        </div>
+
+        <div class="hero-ctas">
+            <a href="#" class="btn btn-primary" data-panel="contact">Get in touch</a>
+            <a href="#" class="btn btn-secondary" data-panel="work">View my work</a>
+        </div>
+    </div>
+
+    <!-- Right: Navigation Menu -->
+    <nav class="hero-right" aria-label="Main navigation">
+        <ul class="nav-menu">
+            <li class="nav-menu-item">
+                <a class="nav-menu-link" data-panel="about" href="#" role="button">
+                    <span class="nav-menu-number">01</span>
+                    <span class="nav-menu-label">About</span>
+                    <span class="nav-menu-desc">Background &amp; story</span>
+                    <span class="nav-menu-arrow">&rarr;</span>
+                </a>
+            </li>
+            <li class="nav-menu-item">
+                <a class="nav-menu-link" data-panel="experience" href="#" role="button">
+                    <span class="nav-menu-number">02</span>
+                    <span class="nav-menu-label">Experience</span>
+                    <span class="nav-menu-desc">Three roles at Learnfield</span>
+                    <span class="nav-menu-arrow">&rarr;</span>
+                </a>
+            </li>
+            <li class="nav-menu-item">
+                <a class="nav-menu-link" data-panel="work" href="#" role="button">
+                    <span class="nav-menu-number">03</span>
+                    <span class="nav-menu-label">Work</span>
+                    <span class="nav-menu-desc">Case studies &amp; projects</span>
+                    <span class="nav-menu-arrow">&rarr;</span>
+                </a>
+            </li>
+            <li class="nav-menu-item">
+                <a class="nav-menu-link" data-panel="skills" href="#" role="button">
+                    <span class="nav-menu-number">04</span>
+                    <span class="nav-menu-label">Skills</span>
+                    <span class="nav-menu-desc">Tools &amp; capabilities</span>
+                    <span class="nav-menu-arrow">&rarr;</span>
+                </a>
+            </li>
+            <li class="nav-menu-item">
+                <a class="nav-menu-link" data-panel="contact" href="#" role="button">
+                    <span class="nav-menu-number">05</span>
+                    <span class="nav-menu-label">Contact</span>
+                    <span class="nav-menu-desc">Let&rsquo;s connect</span>
+                    <span class="nav-menu-arrow">&rarr;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Stats strip -->
+    <div class="stats-strip" aria-label="Key metrics">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number"><span class="counter" data-target="3">0</span><span class="stat-suffix">+ yrs</span></div>
+                <div class="stat-label">PM Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number"><span class="counter" data-target="1">0</span><span class="stat-suffix">M+ users</span></div>
+                <div class="stat-label">Skoove App</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">€<span class="counter" data-target="380">0</span><span class="stat-suffix">K+</span></div>
+                <div class="stat-label">Deals Negotiated</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number"><span class="counter" data-target="8">0</span><span class="stat-suffix">+</span></div>
+                <div class="stat-label">Publisher Partners</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number"><span class="counter" data-target="6">0</span><span class="stat-suffix">+</span></div>
+                <div class="stat-label">Languages Managed</div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- ===== BACKDROP ===== -->
+<div class="panel-backdrop" id="panelBackdrop"></div>
+
+<!-- ===== PANEL: ABOUT ===== -->
+<div class="panel" id="panel-about" role="dialog" aria-label="About" aria-modal="true">
+    <div class="panel-header">
+        <div class="panel-header-left">
+            <span class="panel-number">01 &mdash; About</span>
+            <h2 class="panel-title">From music therapy<br>to product management.</h2>
+        </div>
+        <button class="panel-close" aria-label="Close panel">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+    <div class="panel-body">
+        <div class="about-grid">
+            <div class="about-narrative">
+                <p>I started in children's psychiatry and special education, using music as a therapeutic tool. That work taught me how people actually learn &mdash; not from frameworks, but from watching a child find their way through rhythm when words failed them.</p>
+
+                <p>Today I bring that understanding to product development at <strong>Learnfield GmbH</strong>, where I manage product, content, and licensing across two music learning apps &mdash; <strong>Skoove</strong> (piano, 1M+ users) and <strong>Trala</strong> (violin). I hold three distinct roles simultaneously: Product Owner, Education Content Manager, and License Manager.</p>
+
+                <p>My work sits at the intersection of business, creative, and technical domains. In any given week, I might negotiate a multi-year licensing deal with a major publisher, ship an iOS feature that removes onboarding friction, and coordinate a Japanese localization across three parallel workstreams. I like that range. It&rsquo;s where I do my best thinking.</p>
+            </div>
+
+            <div class="about-sidebar">
+                <div class="about-detail-block">
+                    <h4>Languages</h4>
+                    <div class="language-tags">
+                        <span class="lang-tag">Spanish <span class="level">Native</span></span>
+                        <span class="lang-tag">English <span class="level">Professional</span></span>
+                        <span class="lang-tag">Italian <span class="level">Fluent</span></span>
+                        <span class="lang-tag">German <span class="level">Working</span></span>
+                    </div>
+                </div>
+
+                <div class="about-detail-block">
+                    <h4>Location</h4>
+                    <p>Berlin, Germany<br><span style="color: var(--text-tertiary)">Originally from Medellín, Colombia</span></p>
+                </div>
+
+                <div class="about-detail-block">
+                    <h4>Education</h4>
+                    <p>Master&rsquo;s in Music Therapy</p>
+                </div>
+
+                <div class="about-detail-block">
+                    <h4>Open to</h4>
+                    <p>Senior PM &middot; Product Owner<br>Berlin &middot; Valencia &middot; Remote</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== PANEL: EXPERIENCE ===== -->
+<div class="panel" id="panel-experience" role="dialog" aria-label="Experience" aria-modal="true">
+    <div class="panel-header">
+        <div class="panel-header-left">
+            <span class="panel-number">02 &mdash; Experience</span>
+            <h2 class="panel-title">Learnfield GmbH <span style="color: var(--text-tertiary); font-size: 0.6em;">&mdash; Berlin</span></h2>
+        </div>
+        <button class="panel-close" aria-label="Close panel">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+    <div class="panel-body">
+        <p class="exp-intro">Three roles, two products, one mission: make music accessible to everyone.</p>
+
+        <div class="exp-tabs" role="tablist">
+            <button class="exp-tab active" role="tab" aria-selected="true" data-tab="trala">Product Owner &mdash; Trala</button>
+            <button class="exp-tab" role="tab" aria-selected="false" data-tab="skoove">Content Manager &mdash; Skoove</button>
+            <button class="exp-tab" role="tab" aria-selected="false" data-tab="license">License Manager</button>
+        </div>
+
+        <!-- Trala Panel -->
+        <div class="exp-panel active" id="tab-trala" role="tabpanel">
+            <div class="exp-header">
+                <h3 class="exp-role">Product Owner</h3>
+                <p class="exp-product">Trala &mdash; Violin Learning App (iOS)</p>
+                <div class="exp-meta">
+                    <span>Team: 2 devs, 1 freelance iOS, 1 PM/content, 1 designer</span>
+                    <span>Reports to CPO</span>
+                </div>
+            </div>
+            <div class="exp-achievements">
+                <div class="achievement">
+                    <div class="achievement-bar"></div>
+                    <p class="achievement-text"><strong>No Sign-Up Initiative</strong> &mdash; Removed mandatory account creation to reduce onboarding friction. Shipped as <span class="metric">iOS 7.5.1</span>, directly addressing App Store sentiment issues.</p>
+                </div>
+                <div class="achievement">
+                    <div class="achievement-bar"></div>
+                    <p class="achievement-text"><strong>2026 Product &amp; Content Strategy</strong> &mdash; Owns the full roadmap, competitive positioning, and content pipeline for Trala going forward.</p>
+                </div>
+                <div class="achievement">
+                    <div class="achievement-bar"></div>
+                    <p class="achievement-text"><strong>Japanese Localization</strong> &mdash; Managing a <span class="metric">4-person team</span> across 3 parallel workstreams: iOS static strings, educational text, and video dubbing. Full market entry from scratch.</p>
+                </div>
+                <div class="achievement">
+                    <div class="achievement-bar"></div>
+                    <p class="achievement-text"><strong>Sprint &amp; Delivery</strong> &mdash; Leads sprint planning, daily standups, and bi-weekly CPO sessions. Owns the TRAL Jira board end-to-end.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skoove Panel -->
+        <div class="exp-panel" id="tab-skoove" role="tabpanel">
+            <div class="exp-header">
+                <h3 class="exp-role">Education Content Manager</h3>
+                <p class="exp-product" style="color: var(--accent-sage);">Skoove &mdash; Piano Learning App (1M+ users)</p>
+                <div class="exp-meta">
+                    <span>Team: Content lead, content creator, dev, collections</span>
+                    <span>Cross-team coordination</span>
+                </div>
+            </div>
+            <div class="exp-achievements">
+                <div class="achievement">
+                    <div class="achievement-bar"></div>
+                    <p class="achievement-text"><strong>Song Segmentation &amp; Curation</strong> &mdash; Slices songs into lesson-ready parts from catalogues including <span class="metric">Universal, Warner Chappell, Hal Leonard</span>. Content strategy drives engagement across the learning journey.</p>
+                </div>
+                <div class="achievement">
+                    <div class="achievement-bar"></div>
+                    <p class="achievement-text"><strong>Sprint Overview 2023&ndash;2026</strong> &mdash; Created and maintains the company-wide sprint planning spreadsheet. The single source of truth for cross-team coordination.</p>
+                </div>
+                <div class="achievement">
+                    <div class="achievement-bar"></div>
+                    <p class="achievement-text"><strong>Collections Strategy</strong> &mdash; Owns seasonal themed content (Cherry Blossom, Holi, etc.) requiring cross-team coordination of assets, QA, release timing, and <span class="metric">5+ language proofreaders</span>.</p>
+                </div>
+                <div class="achievement">
+                    <div class="achievement-bar"></div>
+                    <p class="achievement-text"><strong>Usage Monitoring Pipeline</strong> &mdash; Designed the monthly Mixpanel &rarr; CSV &rarr; analysis pipeline for copyrighted content usage reporting to leadership.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- License Panel -->
+        <div class="exp-panel" id="tab-license" role="tabpanel">
+            <div class="exp-header">
+                <h3 class="exp-role">License Manager</h3>
+                <p class="exp-product" style="color: var(--accent-cream);">Skoove &amp; Trala &mdash; Music Licensing</p>
+                <div class="exp-meta">
+                    <span>8+ publishers &amp; collecting societies</span>
+                    <span>Multi-market coverage</span>
+                </div>
+            </div>
+            <div class="exp-achievements">
+                <div class="achievement">
+                    <div class="achievement-bar"></div>
+                    <p class="achievement-text"><strong>UMPI/SACEM Deal</strong> &mdash; Negotiated <span class="metric">€380K advance</span> across a multi-year agreement. Structured installment payments, managed free trials amendment, and recoupment tracking via BMAT.</p>
+                </div>
+                <div class="achievement">
+                    <div class="achievement-bar"></div>
+                    <p class="achievement-text"><strong>GMR &amp; Performance Rights</strong> &mdash; Closed performance rights license covering the US market. Secured separate Roland coverage for white-label partnerships.</p>
+                </div>
+                <div class="achievement">
+                    <div class="achievement-bar"></div>
+                    <p class="achievement-text"><strong>Financial Modeling</strong> &mdash; Co-owns the licensing financial planning spreadsheet &mdash; costs, cash advances, market share variables, usage targets. Built QA framework: <span class="metric">cost-to-revenue ratio checks</span> (normal 11&ndash;12%, alarm at 20%).</p>
+                </div>
+                <div class="achievement">
+                    <div class="achievement-bar"></div>
+                    <p class="achievement-text"><strong>Reporting Automation</strong> &mdash; Collaborated with engineering to scope a 3-sprint plan for automating UMPI/SACEM + ICE/JASRAC/SOCAN reporting via Mixpanel API &rarr; AWS pipeline.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== PANEL: WORK ===== -->
+<div class="panel" id="panel-work" role="dialog" aria-label="Work" aria-modal="true">
+    <div class="panel-header">
+        <div class="panel-header-left">
+            <span class="panel-number">03 &mdash; Selected Work</span>
+            <h2 class="panel-title">How I think,<br>how I ship.</h2>
+        </div>
+        <button class="panel-close" aria-label="Close panel">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+    <div class="panel-body">
+        <div class="cases-grid">
+
+            <!-- Case 1 -->
+            <div class="case-card">
+                <div class="case-header" role="button" aria-expanded="false" tabindex="0">
+                    <div class="case-header-left">
+                        <div class="case-number">01</div>
+                        <h3 class="case-title">UMPI Licensing Negotiation</h3>
+                        <p class="case-subtitle">Bridging music and product through a €380K deal</p>
+                        <div class="case-tags">
+                            <span class="case-tag case-tag--lavender">Negotiation</span>
+                            <span class="case-tag case-tag--cream">Financial Modeling</span>
+                            <span class="case-tag case-tag--sage">Stakeholder Mgmt</span>
+                        </div>
+                    </div>
+                    <div class="case-toggle" aria-hidden="true">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
+                </div>
+                <div class="case-body">
+                    <div class="case-content">
+                        <div class="case-section">
+                            <h4>Problem</h4>
+                            <p>Complex multi-publisher licensing for a music learning app with 1M+ users. Needed to structure a sustainable deal covering free trials, recoupment, and multi-market reporting obligations.</p>
+                        </div>
+                        <div class="case-section">
+                            <h4>Process</h4>
+                            <p>Market share analysis, financial modeling of advance structures, stakeholder alignment across legal, finance, and executive teams. Designed 4-installment payment schedule and recoupment tracking via BMAT.</p>
+                        </div>
+                        <div class="case-section">
+                            <h4>Outcome</h4>
+                            <p>€380K multi-year deal closed. Automated reporting pipeline scoped (3-sprint plan). Cost ratio monitoring built &mdash; Jan 2026: licensing costs improved from 18% to 14.7% of revenue.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case 2 -->
+            <div class="case-card">
+                <div class="case-header" role="button" aria-expanded="false" tabindex="0">
+                    <div class="case-header-left">
+                        <div class="case-number">02</div>
+                        <h3 class="case-title">Trala Japanese Localization</h3>
+                        <p class="case-subtitle">From zero to market across three parallel workstreams</p>
+                        <div class="case-tags">
+                            <span class="case-tag case-tag--lavender">International PM</span>
+                            <span class="case-tag case-tag--rose">Localization</span>
+                            <span class="case-tag case-tag--cream">Vendor Mgmt</span>
+                        </div>
+                    </div>
+                    <div class="case-toggle" aria-hidden="true">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
+                </div>
+                <div class="case-body">
+                    <div class="case-content">
+                        <div class="case-section">
+                            <h4>Problem</h4>
+                            <p>Launch a violin learning app in the Japanese market from scratch &mdash; no existing translations, no dubbing infrastructure, no localization pipeline for the product.</p>
+                        </div>
+                        <div class="case-section">
+                            <h4>Process</h4>
+                            <p>Hired and managed a 4-person localization team (2 translators, 1 dubbing specialist, 1 PM). Designed three parallel workstreams: iOS static strings, educational text, and video dubbing. Built QA framework and cost tracking.</p>
+                        </div>
+                        <div class="case-section">
+                            <h4>Outcome</h4>
+                            <p>Three workstreams running simultaneously, on track for delivery targets. Full iOS Localizable.strings cleanup including scripts for unused key detection. Coordinated across Berlin, Japan, and UK stakeholders.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case 3 -->
+            <div class="case-card">
+                <div class="case-header" role="button" aria-expanded="false" tabindex="0">
+                    <div class="case-header-left">
+                        <div class="case-number">03</div>
+                        <h3 class="case-title">Reducing Onboarding Friction</h3>
+                        <p class="case-subtitle">The No Sign-Up feature that improved App Store sentiment</p>
+                        <div class="case-tags">
+                            <span class="case-tag case-tag--sage">User Research</span>
+                            <span class="case-tag case-tag--lavender">Agile Delivery</span>
+                            <span class="case-tag case-tag--rose">Cross-functional</span>
+                        </div>
+                    </div>
+                    <div class="case-toggle" aria-hidden="true">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
+                </div>
+                <div class="case-body">
+                    <div class="case-content">
+                        <div class="case-section">
+                            <h4>Problem</h4>
+                            <p>Mandatory sign-up was creating friction for new users and hurting App Store ratings. User feedback consistently pointed to onboarding as the first barrier to engagement.</p>
+                        </div>
+                        <div class="case-section">
+                            <h4>Process</h4>
+                            <p>Analyzed user feedback and App Store reviews. Scoped the feature removal alongside a paywall fix. Coordinated 2 developers, QA, design, and CPO alignment within sprint cycles.</p>
+                        </div>
+                        <div class="case-section">
+                            <h4>Outcome</h4>
+                            <p>Shipped iOS 7.5.1 with mandatory sign-up removed and paywall optimized. Reduced the first barrier for new users, directly targeting the onboarding friction &amp; App Store sentiment epic.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case 4 -->
+            <div class="case-card">
+                <div class="case-header" role="button" aria-expanded="false" tabindex="0">
+                    <div class="case-header-left">
+                        <div class="case-number">04</div>
+                        <h3 class="case-title">License Planning Financial Model</h3>
+                        <p class="case-subtitle">Bringing product domain knowledge to financial planning</p>
+                        <div class="case-tags">
+                            <span class="case-tag case-tag--cream">Financial Acumen</span>
+                            <span class="case-tag case-tag--sage">Process Design</span>
+                            <span class="case-tag case-tag--lavender">Cross-domain</span>
+                        </div>
+                    </div>
+                    <div class="case-toggle" aria-hidden="true">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
+                </div>
+                <div class="case-body">
+                    <div class="case-content">
+                        <div class="case-section">
+                            <h4>Problem</h4>
+                            <p>Finance team couldn't maintain the licensing financial model alone &mdash; it required product and content domain knowledge they didn't have. Cost projections were becoming unreliable.</p>
+                        </div>
+                        <div class="case-section">
+                            <h4>Process</h4>
+                            <p>Took over through a structured handover series with Finance (Nov 2025). Built a QA framework with cost-to-revenue ratio checks, customer number validation, and formula audits across 6+ spreadsheet tabs.</p>
+                        </div>
+                        <div class="case-section">
+                            <h4>Outcome</h4>
+                            <p>Self-sustaining financial model with automated checks. Monthly reporting to leadership. Revenue grew from €236K to €315K (Dec &rsquo;25 &rarr; Jan &rsquo;26). Licensing cost share improved: 18% &rarr; 14.7%.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case 5 -->
+            <div class="case-card">
+                <div class="case-header" role="button" aria-expanded="false" tabindex="0">
+                    <div class="case-header-left">
+                        <div class="case-number">05</div>
+                        <h3 class="case-title">Content Strategy at Scale</h3>
+                        <p class="case-subtitle">Seasonal campaigns and data-driven curation with copyright constraints</p>
+                        <div class="case-tags">
+                            <span class="case-tag case-tag--rose">Content Strategy</span>
+                            <span class="case-tag case-tag--sage">Data-driven</span>
+                            <span class="case-tag case-tag--cream">Multi-stakeholder</span>
+                        </div>
+                    </div>
+                    <div class="case-toggle" aria-hidden="true">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
+                </div>
+                <div class="case-body">
+                    <div class="case-content">
+                        <div class="case-section">
+                            <h4>Problem</h4>
+                            <p>Keeping content fresh and engaging across a music learning app with complex copyright constraints. Every content decision has licensing implications that affect cost-to-revenue ratios.</p>
+                        </div>
+                        <div class="case-section">
+                            <h4>Process</h4>
+                            <p>Built usage data analysis pipeline (Mixpanel &rarr; CSV). Curated from major publisher catalogues. Designed seasonal planning calendar and multi-language QA process with 5+ proofreaders per release.</p>
+                        </div>
+                        <div class="case-section">
+                            <h4>Outcome</h4>
+                            <p>Regular content drops (Cherry Blossom, Women&rsquo;s Day, Holi collections). Measurable engagement impact. Copyrighted usage tracked monthly against KPI thresholds. Multiple content batches shipped per quarter.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- ===== PANEL: SKILLS ===== -->
+<div class="panel" id="panel-skills" role="dialog" aria-label="Skills" aria-modal="true">
+    <div class="panel-header">
+        <div class="panel-header-left">
+            <span class="panel-number">04 &mdash; Skills &amp; Tools</span>
+            <h2 class="panel-title">What I work with.</h2>
+        </div>
+        <button class="panel-close" aria-label="Close panel">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+    <div class="panel-body">
+        <div class="skills-grid">
+            <div class="skill-group">
+                <div class="skill-group-header">
+                    <div class="skill-group-accent"></div>
+                    <h3 class="skill-group-title">Product Management</h3>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Jira</span>
+                    <span class="skill-tag">Mixpanel</span>
+                    <span class="skill-tag">Sprint Planning</span>
+                    <span class="skill-tag">Backlog Management</span>
+                    <span class="skill-tag">Roadmapping</span>
+                    <span class="skill-tag">Miro</span>
+                    <span class="skill-tag">User Research</span>
+                    <span class="skill-tag">App Store Connect</span>
+                    <span class="skill-tag">RevenueCat</span>
+                    <span class="skill-tag">Intercom</span>
+                    <span class="skill-tag">Agile / Scrum</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-group-header">
+                    <div class="skill-group-accent"></div>
+                    <h3 class="skill-group-title">Licensing &amp; Legal</h3>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Contract Negotiation</span>
+                    <span class="skill-tag">DDEX Reporting</span>
+                    <span class="skill-tag">Financial Modeling</span>
+                    <span class="skill-tag">Copyright Compliance</span>
+                    <span class="skill-tag">Publisher Relations</span>
+                    <span class="skill-tag">UMPI / SACEM</span>
+                    <span class="skill-tag">BMI / GMR / ASCAP</span>
+                    <span class="skill-tag">ICE / JASRAC / SOCAN</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-group-header">
+                    <div class="skill-group-accent"></div>
+                    <h3 class="skill-group-title">Data &amp; Analysis</h3>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Mixpanel Analytics</span>
+                    <span class="skill-tag">Funnel Analysis</span>
+                    <span class="skill-tag">Cohort Analysis</span>
+                    <span class="skill-tag">Google Sheets (Advanced)</span>
+                    <span class="skill-tag">Financial Reporting</span>
+                    <span class="skill-tag">Usage Monitoring</span>
+                    <span class="skill-tag">KPI Tracking</span>
+                    <span class="skill-tag">Cost-Revenue Modeling</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-group-header">
+                    <div class="skill-group-accent"></div>
+                    <h3 class="skill-group-title">Languages &amp; Localization</h3>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag">iOS Localization</span>
+                    <span class="skill-tag">Translation Workflows</span>
+                    <span class="skill-tag">Multilingual QA</span>
+                    <span class="skill-tag">Video Dubbing Mgmt</span>
+                    <span class="skill-tag">Spanish (Native)</span>
+                    <span class="skill-tag">English (Professional)</span>
+                    <span class="skill-tag">Italian (Fluent)</span>
+                    <span class="skill-tag">German (Working)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== PANEL: CONTACT ===== -->
+<div class="panel" id="panel-contact" role="dialog" aria-label="Contact" aria-modal="true">
+    <div class="panel-header">
+        <div class="panel-header-left">
+            <span class="panel-number">05 &mdash; Contact</span>
+            <h2 class="panel-title">Let&rsquo;s connect.</h2>
+        </div>
+        <button class="panel-close" aria-label="Close panel">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+    <div class="panel-body">
+        <div class="contact-inner">
+            <h3 class="contact-heading">Let&rsquo;s build something<br><em>worth learning.</em></h3>
+            <p class="contact-subtitle">I&rsquo;m looking for my next challenge in EdTech, Music Tech, or Creative Tech. If you&rsquo;re building products that help people learn, I&rsquo;d love to talk.</p>
+
+            <div class="contact-links">
+                <a href="mailto:susipp93@gmail.com" class="contact-link">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4l6 4 6-4M2 12h12V4H2v8z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    susipp93@gmail.com
+                </a>
+                <a href="#" class="contact-link" title="Add your LinkedIn URL">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4.5 7v4.5M4.5 4.5v.01M7 11.5V8.5a1.5 1.5 0 013 0v3M11.5 11.5V8.5a1.5 1.5 0 00-3 0" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="1.5" y="1.5" width="13" height="13" rx="2" stroke="currentColor" stroke-width="1.2"/></svg>
+                    LinkedIn
+                </a>
+                <span class="contact-link" style="cursor: default;">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="6.5" r="2.5" stroke="currentColor" stroke-width="1.2"/><path d="M2.5 13.5c0-3 2.5-4.5 5.5-4.5s5.5 1.5 5.5 4.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                    Berlin, Germany
+                </span>
+            </div>
+
+            <div class="contact-availability">
+                <span class="pulse-dot"></span>
+                Open to Senior PM roles &middot; Berlin, Valencia, or Remote
+            </div>
+
+            <div class="panel-footer">
+                <p>Vibe coded by Susana with <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> &middot; 2026</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+(function() {
+    'use strict';
+
+    /* ---- Panel system ---- */
+    const backdrop = document.getElementById('panelBackdrop');
+    const allPanels = document.querySelectorAll('.panel');
+    let activePanel = null;
+
+    function openPanel(panelId) {
+        const panel = document.getElementById('panel-' + panelId);
+        if (!panel) return;
+
+        // Close any open panel first
+        if (activePanel) {
+            activePanel.classList.remove('active');
+        }
+
+        backdrop.classList.add('active');
+        panel.classList.add('active');
+        panel.scrollTop = 0;
+        activePanel = panel;
+
+        // Focus the close button for accessibility
+        const closeBtn = panel.querySelector('.panel-close');
+        if (closeBtn) setTimeout(() => closeBtn.focus(), 100);
+    }
+
+    function closePanel() {
+        if (activePanel) {
+            activePanel.classList.remove('active');
+            backdrop.classList.remove('active');
+            activePanel = null;
+        }
+    }
+
+    // Nav menu links
+    document.querySelectorAll('[data-panel]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            openPanel(link.dataset.panel);
+        });
+    });
+
+    // Close buttons
+    document.querySelectorAll('.panel-close').forEach(btn => {
+        btn.addEventListener('click', closePanel);
+    });
+
+    // Backdrop click to close
+    backdrop.addEventListener('click', closePanel);
+
+    // Escape key to close
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && activePanel) {
+            closePanel();
+        }
+    });
+
+    /* ---- Experience tabs ---- */
+    const tabs = document.querySelectorAll('.exp-tab');
+    const expPanels = document.querySelectorAll('.exp-panel');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = tab.dataset.tab;
+
+            tabs.forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+
+            expPanels.forEach(p => p.classList.remove('active'));
+            document.getElementById('tab-' + target).classList.add('active');
+        });
+    });
+
+    /* ---- Case study expand/collapse ---- */
+    const caseCards = document.querySelectorAll('.case-card');
+
+    caseCards.forEach(card => {
+        const header = card.querySelector('.case-header');
+
+        function toggleCard() {
+            const isOpen = card.classList.toggle('open');
+            header.setAttribute('aria-expanded', isOpen);
+        }
+
+        header.addEventListener('click', toggleCard);
+        header.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleCard();
+            }
+        });
+    });
+
+    /* ---- Stats counter animation ---- */
+    const counters = document.querySelectorAll('.counter');
+
+    function animateCounters() {
+        counters.forEach(counter => {
+            const target = parseInt(counter.dataset.target);
+            const duration = 1400;
+            const start = performance.now();
+
+            function update(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                counter.textContent = Math.round(target * eased);
+
+                if (progress < 1) requestAnimationFrame(update);
+            }
+
+            requestAnimationFrame(update);
+        });
+    }
+
+    // Trigger counter animation after entrance animations settle
+    setTimeout(animateCounters, 800);
+
+})();
+</script>
+
+</body>
+</html>
