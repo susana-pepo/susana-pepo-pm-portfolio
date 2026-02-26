@@ -2131,8 +2131,8 @@ a[download].btn-secondary::after {
 
         photo.addEventListener('mouseenter', fireSplash);
 
-        // Auto-fire on page load after photo reveal animation (1.05s)
-        setTimeout(fireSplash, 1100);
+        // Auto-fire on page load as photo reveal becomes visible (~0.6s in)
+        setTimeout(fireSplash, 650);
 
         function fireSplash() {
             if (isCooling) return;
