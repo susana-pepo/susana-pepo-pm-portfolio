@@ -2131,8 +2131,8 @@ a[download].btn-secondary::after {
 
         photo.addEventListener('mouseenter', fireSplash);
 
-        // Auto-fire on page load as photo reveal completes (~0.6s)
-        setTimeout(fireSplash, 500);
+        // Auto-fire overlapping with photo reveal for one fluid motion
+        setTimeout(fireSplash, 320);
 
         function fireSplash() {
             if (isCooling) return;
