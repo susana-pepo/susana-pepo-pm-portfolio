@@ -1373,6 +1373,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     .hero-intro { font-size: 0.84rem; margin-bottom: 0.6rem; }
     .hero-meta { font-size: 0.78rem; }
 
+    /* Disable hover expand on touch devices */
+    .btn-icon-label { display: none; }
+    .btn-icon:hover .btn-icon-label { display: none; }
+
     .stats-strip { padding: 1.25rem 1.5rem; }
     .stats-grid { flex-wrap: wrap; gap: 1rem; justify-content: center; }
     .stat-number { font-size: 1.4rem; }
