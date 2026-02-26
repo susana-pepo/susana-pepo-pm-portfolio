@@ -15,7 +15,6 @@
 /* ROOT VARIABLES                            */
 /* ========================================= */
 :root {
-    --bg-deep: #E8EAED;
     --bg-primary: #F7F8FA;
     --bg-secondary: #EFF1F4;
     --bg-card: #FFFFFF;
@@ -243,19 +242,19 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     border-color: #FFFFFF;
 }
 
-.footer-cta-link {
-    color: #FDD835 !important;
+.site-footer .footer-cta-link {
+    color: #FDD835;
     font-weight: 700;
     font-size: 1.05rem;
-    border-bottom: none !important;
+    border-bottom: none;
     text-decoration: none;
     letter-spacing: 0.01em;
     transition: all 0.2s ease;
 }
 
-.footer-cta-link:hover {
-    color: #FFFFFF !important;
-    border-bottom: 1px solid #FFFFFF !important;
+.site-footer .footer-cta-link:hover {
+    color: #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
 }
 
 /* ========================================= */
@@ -397,13 +396,13 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 }
 
 /* Circular icon buttons (email, LinkedIn) */
-.btn-icon {
+.btn.btn-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0;
     height: 44px;
-    padding: 0 !important;
+    padding: 0;
     border-radius: 999px;
     background: transparent;
     border: 1.5px solid var(--border);
@@ -412,8 +411,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     white-space: nowrap;
 }
 
-.btn-icon::after {
-    display: none !important;
+.btn.btn-icon::after {
+    display: none;
 }
 
 .btn-icon-symbol {
@@ -523,11 +522,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     color: var(--accent-lavender);
 }
 
-.nav-menu-link:hover .nav-menu-arrow {
-    opacity: 1;
-    transform: translateX(0);
-}
-
 .nav-menu-number {
     font-family: var(--font-body);
     font-size: 0.8rem;
@@ -554,11 +548,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     text-align: right;
     line-height: 1.4;
 }
-
-.nav-menu-arrow {
-    display: none;
-}
-
 
 
 /* ========================================= */
@@ -796,10 +785,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     font-size: 0.9rem;
 }
 
-.things-i-love {
-    font-size: 0.82rem !important;
-    color: var(--text-tertiary) !important;
-    line-height: 1.75 !important;
+.about-detail-block .things-i-love {
+    font-size: 0.82rem;
+    color: var(--text-tertiary);
+    line-height: 1.75;
     font-style: italic;
 }
 
@@ -1129,116 +1118,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 }
 
 /* ========================================= */
-/* PANEL: CONTACT                            */
-/* ========================================= */
-.contact-inner { text-align: center; }
-
-.contact-heading {
-    font-family: var(--font-display);
-    font-size: clamp(1.75rem, 3vw, 2.25rem);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
-
-.contact-heading em {
-    font-style: italic;
-    color: var(--accent-lavender);
-}
-
-.contact-subtitle {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    max-width: 480px;
-    margin: 0 auto 2rem;
-    font-weight: 300;
-}
-
-.contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 2.5rem;
-}
-
-.contact-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.88rem;
-    color: var(--text-secondary);
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    border: 1px solid var(--border);
-    transition: all 0.3s var(--ease-out);
-    background: var(--bg-card);
-}
-
-.contact-link:hover {
-    border-color: var(--accent-lavender);
-    color: var(--text-primary);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-}
-
-.contact-availability {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.82rem;
-    color: var(--text-tertiary);
-}
-
-.pulse-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent-sage);
-    position: relative;
-}
-
-.pulse-dot::after {
-    content: '';
-    position: absolute;
-    inset: -3px;
-    border-radius: 50%;
-    border: 1px solid var(--accent-sage);
-    animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 0; transform: scale(1); }
-    50% { opacity: 0.6; transform: scale(1.4); }
-}
-
-/* Footer inside contact panel */
-.panel-footer {
-    margin-top: 3rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border-light);
-    text-align: center;
-}
-
-.panel-footer p {
-    font-size: 0.75rem;
-    color: var(--text-tertiary);
-}
-
-.panel-footer a {
-    color: var(--text-tertiary);
-    border-bottom: 1px solid var(--border);
-    transition: all 0.3s ease;
-}
-
-.panel-footer a:hover {
-    color: var(--accent-lavender);
-    border-color: var(--accent-lavender);
-}
-
-/* ========================================= */
 /* HERO ENTRANCE ANIMATIONS                  */
 /* ========================================= */
 
@@ -1382,7 +1261,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 
     /* Disable hover expand on touch devices */
     .btn-icon-label { display: none; }
-    .btn-icon:hover .btn-icon-label { display: none; }
 
     .stats-strip { padding: 1.25rem 1.5rem; }
     .stats-grid { flex-wrap: wrap; gap: 1rem; justify-content: center; }
@@ -1440,8 +1318,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     .case-title { font-size: 1.05rem; }
 
     .skill-group { padding: 1.25rem; }
-
-    .contact-heading { font-size: 1.75rem; }
 }
 </style>
 </head>
@@ -1493,28 +1369,28 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
                 <a class="nav-menu-link" data-panel="about" href="#" role="button">
                     <span class="nav-menu-number">01</span>
                     <span class="nav-menu-label">About</span>
-                    <span class="nav-menu-arrow">&rarr;</span>
+
                 </a>
             </li>
             <li class="nav-menu-item">
                 <a class="nav-menu-link" data-panel="experience" href="#" role="button">
                     <span class="nav-menu-number">02</span>
                     <span class="nav-menu-label">Experience</span>
-                    <span class="nav-menu-arrow">&rarr;</span>
+
                 </a>
             </li>
             <li class="nav-menu-item">
                 <a class="nav-menu-link" data-panel="work" href="#" role="button">
                     <span class="nav-menu-number">03</span>
                     <span class="nav-menu-label">Case Projects</span>
-                    <span class="nav-menu-arrow">&rarr;</span>
+
                 </a>
             </li>
             <li class="nav-menu-item">
                 <a class="nav-menu-link" data-panel="skills" href="#" role="button">
                     <span class="nav-menu-number">04</span>
                     <span class="nav-menu-label">Skills</span>
-                    <span class="nav-menu-arrow">&rarr;</span>
+
                 </a>
             </li>
         </ul>
@@ -2020,8 +1896,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     </div>
 </div>
 
-<!-- ===== PANEL: CONTACT ===== -->
-
 <!-- ===== FOOTER ===== -->
 <footer class="site-footer">
     <p class="footer-cta"><a href="#" class="footer-cta-link">Free Interactive Guidebook for PM Frameworks</a></p>
@@ -2138,32 +2012,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
             }
         });
     });
-
-    /* ---- Stats counter animation ---- */
-    const counters = document.querySelectorAll('.counter');
-
-    function animateCounters() {
-        counters.forEach(counter => {
-            const target = parseInt(counter.dataset.target);
-            const duration = 1400;
-            const start = performance.now();
-
-            function update(now) {
-                const elapsed = now - start;
-                const progress = Math.min(elapsed / duration, 1);
-                const eased = 1 - Math.pow(1 - progress, 3);
-                counter.textContent = Math.round(target * eased);
-
-                if (progress < 1) requestAnimationFrame(update);
-            }
-
-            requestAnimationFrame(update);
-        });
-    }
-
-    // Trigger counter animation after entrance animations settle
-    setTimeout(animateCounters, 800);
-
 
 
     /* =========================================
