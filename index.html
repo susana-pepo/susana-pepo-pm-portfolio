@@ -2049,6 +2049,122 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     // Trigger counter animation after entrance animations settle
     setTimeout(animateCounters, 800);
 
+
+    /* =========================================
+       EMOJI SPLASH — photo hover particle burst
+       ========================================= */
+    (function initEmojiSplash() {
+        const photo = document.querySelector('.hero-photo');
+        if (!photo) return;
+
+        // Respect reduced-motion
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (prefersReduced.matches) return;
+
+        const EMOJIS = ['✨','✨','✨','✨','✨','✨','✨','🌐','🌐','🚀','🚀'];
+        const PARTICLE_COUNT = 14;
+        const DURATION = 1400;       // ms — total particle lifetime
+        const SPREAD = 120;          // px — how far outward particles travel
+        const COOLDOWN = 1600;       // ms — prevent re-trigger during burst
+
+        let isCooling = false;
+
+        photo.addEventListener('mouseenter', fireSplash);
+
+        function fireSplash() {
+            if (isCooling) return;
+            isCooling = true;
+            setTimeout(() => { isCooling = false; }, COOLDOWN);
+
+            // Get photo center in viewport coords (accounts for scroll + transform)
+            const rect = photo.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+            const radius = rect.width / 2;
+
+            for (let i = 0; i < PARTICLE_COUNT; i++) {
+                spawnParticle(cx, cy, radius, i);
+            }
+        }
+
+        function spawnParticle(cx, cy, radius, index) {
+            const el = document.createElement('span');
+            const emoji = EMOJIS[Math.floor(Math.random() * EMOJIS.length)];
+            el.textContent = emoji;
+
+            // Evenly spaced angles with random jitter
+            const baseAngle = (index / PARTICLE_COUNT) * Math.PI * 2;
+            const jitter = (Math.random() - 0.5) * 0.45;   // ±~13°
+            const angle = baseAngle + jitter;
+
+            // Randomise distance & timing
+            const dist = SPREAD * (0.7 + Math.random() * 0.55);
+            const delay = Math.random() * 120;               // stagger start 0-120ms
+            const size = 14 + Math.random() * 10;            // 14-24px
+
+            // Start position: on the circle edge
+            const startX = cx + Math.cos(angle) * radius;
+            const startY = cy + Math.sin(angle) * radius;
+
+            // End position: outward from edge
+            const endX = startX + Math.cos(angle) * dist;
+            const endY = startY + Math.sin(angle) * dist;
+
+            // Style
+            Object.assign(el.style, {
+                position: 'fixed',
+                left: '0',
+                top: '0',
+                transform: `translate(${startX}px, ${startY}px) scale(1)`,
+                fontSize: size + 'px',
+                lineHeight: '1',
+                pointerEvents: 'none',
+                zIndex: '9999',
+                willChange: 'transform, opacity',
+                userSelect: 'none',
+                opacity: '1',
+            });
+
+            document.body.appendChild(el);
+
+            // Animate with requestAnimationFrame
+            const start = performance.now() + delay;
+
+            function tick(now) {
+                const elapsed = now - start;
+                if (elapsed < 0) { requestAnimationFrame(tick); return; }
+
+                const t = Math.min(elapsed / DURATION, 1);
+
+                // Ease-out cubic
+                const ease = 1 - Math.pow(1 - t, 3);
+
+                // Position: lerp from start to end
+                const x = startX + (endX - startX) * ease;
+                const y = startY + (endY - startY) * ease - (20 * ease);  // slight upward float
+
+                // Scale: start 1, peak ~1.15 at t=0.2, shrink to 0.3
+                const scale = t < 0.2
+                    ? 1 + 0.15 * (t / 0.2)
+                    : 1.15 - 0.85 * ((t - 0.2) / 0.8);
+
+                // Opacity: full until t=0.35, then fade out
+                const opacity = t < 0.35 ? 1 : 1 - ((t - 0.35) / 0.65);
+
+                el.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
+                el.style.opacity = opacity;
+
+                if (t < 1) {
+                    requestAnimationFrame(tick);
+                } else {
+                    el.remove();
+                }
+            }
+
+            requestAnimationFrame(tick);
+        }
+    })();
+
 })();
 </script>
 
