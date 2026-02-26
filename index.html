@@ -215,7 +215,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
     padding: 0.4rem 2rem;
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-family: var(--font-body);
     letter-spacing: 0.02em;
     z-index: 100;
@@ -345,12 +345,15 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 .btn::after {
     display: inline-block;
     opacity: 0;
+    max-width: 0;
+    overflow: hidden;
     transform: translateX(-6px);
-    transition: opacity 0.3s ease, transform 0.35s var(--ease-out);
+    transition: opacity 0.3s ease, transform 0.35s var(--ease-out), max-width 0.35s var(--ease-out);
 }
 
 .btn:hover::after {
     opacity: 1;
+    max-width: 1.5em;
     transform: translateX(0);
 }
 
@@ -368,6 +371,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     background: var(--accent-sage);
     color: #FFFFFF;
     transform: translateX(4px);
+    box-shadow: 0 4px 16px rgba(14, 116, 144, 0.25);
 }
 
 .btn-secondary {
@@ -392,6 +396,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     border-color: var(--accent-lavender);
     color: var(--accent-lavender);
     transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 /* ========================================= */
@@ -1151,7 +1156,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 /* HERO ENTRANCE ANIMATIONS                  */
 /* ========================================= */
 
-/* Photo — scale up from slightly smaller */
 /* Photo — circular clip-path reveal */
 .hero-left > .hero-photo {
     opacity: 0;
@@ -1914,10 +1918,14 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     const backdrop = document.getElementById('panelBackdrop');
     const allPanels = document.querySelectorAll('.panel');
     let activePanel = null;
+    let panelTrigger = null;
 
-    function openPanel(panelId) {
+    function openPanel(panelId, trigger) {
         const panel = document.getElementById('panel-' + panelId);
         if (!panel) return;
+
+        // Store the trigger for focus return
+        panelTrigger = trigger || document.activeElement;
 
         // Close any open panel first
         if (activePanel) {
@@ -1941,6 +1949,12 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
             backdrop.classList.remove('active');
             document.body.classList.remove('panel-open');
             activePanel = null;
+
+            // Return focus to the element that opened the panel
+            if (panelTrigger) {
+                panelTrigger.focus();
+                panelTrigger = null;
+            }
         }
     }
 
@@ -1948,7 +1962,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     document.querySelectorAll('[data-panel]').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            openPanel(link.dataset.panel);
+            openPanel(link.dataset.panel, link);
         });
     });
 
