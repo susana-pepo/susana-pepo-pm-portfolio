@@ -40,7 +40,7 @@
     --font-display: 'Space Grotesk', system-ui, sans-serif;
     --font-body: 'Inter', system-ui, sans-serif;
 
-    --max-width: 1100px;
+    --max-width: 1240px;
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -53,7 +53,7 @@ html { scroll-behavior: smooth; }
 
 body {
     font-family: var(--font-body);
-    background: var(--bg-primary);
+    background: #67B8D6;
     color: var(--text-primary);
     line-height: 1.7;
     font-size: 16px;
@@ -134,13 +134,25 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 /* HERO — FULL VIEWPORT HOME BASE            */
 /* ========================================= */
 .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    height: calc(100vh - 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     overflow: hidden;
     background: var(--bg-primary);
+}
+
+.hero-inner {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 3rem 3.5rem;
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -148,20 +160,22 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 /* HERO PHOTO                                */
 /* ========================================= */
 .hero-photo {
-    width: 288px;
-    height: 288px;
+    width: 280px;
+    height: 280px;
     margin-bottom: 1.5rem;
     flex-shrink: 0;
     border-radius: 50%;
-    border: 2px solid var(--text-primary);
+    border: 1px solid var(--border);
     overflow: hidden;
-    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.4s var(--ease-out), border-color 0.4s ease, box-shadow 0.4s ease;
     box-shadow: 0 8px 30px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+    cursor: pointer;
 }
 
 .hero-photo:hover {
+    transform: scale(1.04);
     border-color: var(--accent-lavender);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
+    box-shadow: 0 16px 48px rgba(14, 116, 144, 0.15), 0 4px 12px rgba(0,0,0,0.06);
 }
 
 .hero-photo img {
@@ -169,28 +183,65 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     height: 100%;
     display: block;
     filter: grayscale(0.15) contrast(1.02);
-    transition: filter 0.4s ease;
+    transition: filter 0.5s ease;
 }
+
+.hero-photo:hover img {
+    filter: grayscale(0) contrast(1.05);
+}
+
 
 /* ========================================= */
 /* HERO WAVES DECORATION                     */
 /* ========================================= */
 .hero-waves {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
     height: auto;
     z-index: 1;
     opacity: 0.88;
     pointer-events: none;
-    mask-image: linear-gradient(to bottom, transparent 10%, black 45%);
-    -webkit-mask-image: linear-gradient(to bottom, transparent 10%, black 45%);
+    transform: scaleX(-1) rotate(180deg);
 }
 
 /* ========================================= */
-/* ROCKET LAUNCH — one-time on load          */
+/* FOOTER BAR                                */
 /* ========================================= */
+.site-footer {
+    position: relative;
+    background: #67B8D6;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 0.4rem 2rem;
+    font-size: 0.72rem;
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    z-index: 100;
+}
+
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: -18px;
+    left: 0;
+    right: 0;
+    height: 18px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 18' preserveAspectRatio='none'%3E%3Cpath d='M0 18V10C180 4 300 1 480 3s320 8 500 8 280-6 460-3v10H0z' fill='%2367B8D6'/%3E%3C/svg%3E") no-repeat bottom;
+    background-size: 100% 100%;
+}
+
+.site-footer a {
+    color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.site-footer a:hover {
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
 
 /* ========================================= */
 /* HERO LEFT — IDENTITY                      */
@@ -199,56 +250,17 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 4rem 3rem 4rem 4.5rem;
-    position: relative;
-    z-index: 2;
 }
 
-/* Staggered entrance */
-.hero-left > * {
-    opacity: 0;
-    transform: translateY(16px);
-    animation: fadeUp 0.6s var(--ease-out) forwards;
-}
-.hero-left > .hero-photo {
-    transform: translateY(16px) scale(0.95);
-    animation: fadeUpScale 0.7s var(--ease-out) forwards;
-}
-.hero-left > :nth-child(1) { animation-delay: 0.1s; }
-.hero-left > :nth-child(2) { animation-delay: 0.2s; }
-.hero-left > :nth-child(3) { animation-delay: 0.3s; }
-.hero-left > :nth-child(4) { animation-delay: 0.4s; }
-.hero-left > :nth-child(5) { animation-delay: 0.5s; }
-.hero-left > :nth-child(6) { animation-delay: 0.6s; }
-
-.hero-right .nav-menu-item {
-    opacity: 0;
-    transform: translateX(12px);
-    animation: fadeLeft 0.5s var(--ease-out) forwards;
-}
-.hero-right .nav-menu-item:nth-child(1) { animation-delay: 0.3s; }
-.hero-right .nav-menu-item:nth-child(2) { animation-delay: 0.4s; }
-.hero-right .nav-menu-item:nth-child(3) { animation-delay: 0.5s; }
-.hero-right .nav-menu-item:nth-child(4) { animation-delay: 0.6s; }
-.hero-right .nav-menu-item:nth-child(5) { animation-delay: 0.7s; }
-
-@keyframes fadeUp {
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeUpScale {
-    to { opacity: 1; transform: translateY(0) scale(1); }
-}
-@keyframes fadeLeft {
-    to { opacity: 1; transform: translateX(0); }
-}
+/* Entrance animations defined in HERO ENTRANCE section below */
 
 .hero-name {
     font-family: var(--font-display);
-    font-size: clamp(3rem, 6vw, 5rem);
+    font-size: clamp(3.5rem, 7vw, 5.5rem);
     line-height: 1;
     letter-spacing: -0.03em;
     color: var(--text-primary);
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
 }
 
 .hero-name::after {
@@ -269,11 +281,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 }
 
 .hero-title {
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     font-weight: 400;
     color: var(--text-secondary);
     letter-spacing: 0.06em;
-    margin-bottom: 1.75rem;
+    margin-bottom: 2rem;
 }
 
 .hero-title span {
@@ -283,20 +295,20 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 
 /* Hero intro paragraph */
 .hero-intro {
-    font-size: 0.92rem;
+    font-size: 1.05rem;
     font-weight: 350;
     color: var(--text-secondary);
-    line-height: 1.7;
-    max-width: 440px;
-    margin-bottom: 2rem;
+    line-height: 1.75;
+    max-width: 500px;
+    margin-bottom: 2.25rem;
 }
 
 .hero-meta {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-weight: 400;
     color: var(--text-secondary);
     letter-spacing: 0.02em;
-    margin-bottom: 2rem;
+    margin-bottom: 2.25rem;
 }
 
 .meta-sep {
@@ -316,10 +328,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.65rem 1.5rem;
+    padding: 0.75rem 1.75rem;
     border-radius: 6px;
     font-family: var(--font-body);
-    font-size: 0.82rem;
+    font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 0.02em;
     cursor: pointer;
@@ -359,9 +371,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 4rem 4.5rem 4rem 3rem;
-    position: relative;
-    z-index: 2;
 }
 
 .nav-menu {
@@ -384,10 +393,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 .nav-menu-link {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    padding: 1.35rem 0.5rem;
+    gap: 1.75rem;
+    padding: 1.6rem 0.5rem;
     cursor: pointer;
-    transition: all 0.3s var(--ease-out);
+    transition: color 0.3s ease, transform 0.35s var(--ease-out);
     text-decoration: none;
     color: var(--text-secondary);
     position: relative;
@@ -395,7 +404,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 
 .nav-menu-link:hover {
     color: var(--text-primary);
-    padding-left: 1rem;
+    transform: translateX(6px);
 }
 
 .nav-menu-link:hover .nav-menu-number {
@@ -409,7 +418,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 
 .nav-menu-number {
     font-family: var(--font-body);
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     color: var(--text-tertiary);
@@ -419,7 +428,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 
 .nav-menu-label {
     font-family: var(--font-display);
-    font-size: 1.75rem;
+    font-size: 2.1rem;
     line-height: 1.2;
     flex: 1;
 }
@@ -435,7 +444,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 }
 
 .nav-menu-arrow {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     opacity: 0;
     transform: translateX(-8px);
     transition: all 0.3s var(--ease-out);
@@ -1111,70 +1120,83 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 /* ========================================= */
 /* HERO ENTRANCE ANIMATIONS                  */
 /* ========================================= */
-.hero-left > * {
+
+/* Photo — scale up from slightly smaller */
+.hero-left > .hero-photo {
+    opacity: 0;
+    transform: translateY(20px) scale(0.92);
+    animation: heroPhotoIn 0.9s var(--ease-out) forwards;
+    animation-delay: 0.05s;
+}
+
+/* All other hero-left children — slide up */
+.hero-left > *:not(.hero-photo) {
     opacity: 0;
     transform: translateY(20px);
     animation: heroIn 0.8s var(--ease-out) forwards;
 }
 
-.hero-left > *:nth-child(1) { animation-delay: 0.05s; }
-.hero-left > *:nth-child(2) { animation-delay: 0.15s; }
-.hero-left > *:nth-child(3) { animation-delay: 0.25s; }
-.hero-left > *:nth-child(4) { animation-delay: 0.4s; }
-.hero-left > *:nth-child(5) { animation-delay: 0.5s; }
-.hero-left > *:nth-child(6) { animation-delay: 0.6s; }
+.hero-left > :nth-child(2) { animation-delay: 0.18s; }
+.hero-left > :nth-child(3) { animation-delay: 0.28s; }
+.hero-left > :nth-child(4) { animation-delay: 0.38s; }
+.hero-left > :nth-child(5) { animation-delay: 0.48s; }
+.hero-left > :nth-child(6) { animation-delay: 0.58s; }
 
+/* Nav items — slide in from right */
 .hero-right .nav-menu-item {
     opacity: 0;
     transform: translateX(20px);
     animation: menuIn 0.6s var(--ease-out) forwards;
 }
 
-.hero-right .nav-menu-item:nth-child(1) { animation-delay: 0.3s; }
-.hero-right .nav-menu-item:nth-child(2) { animation-delay: 0.4s; }
-.hero-right .nav-menu-item:nth-child(3) { animation-delay: 0.5s; }
-.hero-right .nav-menu-item:nth-child(4) { animation-delay: 0.6s; }
-.hero-right .nav-menu-item:nth-child(5) { animation-delay: 0.7s; }
+.hero-right .nav-menu-item:nth-child(1) { animation-delay: 0.25s; }
+.hero-right .nav-menu-item:nth-child(2) { animation-delay: 0.35s; }
+.hero-right .nav-menu-item:nth-child(3) { animation-delay: 0.45s; }
+.hero-right .nav-menu-item:nth-child(4) { animation-delay: 0.55s; }
+.hero-right .nav-menu-item:nth-child(5) { animation-delay: 0.65s; }
 
-.stats-strip .stat-item {
-    opacity: 0;
-    transform: translateY(10px);
-    animation: heroIn 0.6s var(--ease-out) forwards;
+/* Waves — fade in */
+.hero-waves {
+    animation: wavesFadeIn 1.2s ease forwards;
 }
 
-.stats-strip .stat-item:nth-child(1) { animation-delay: 0.5s; }
-.stats-strip .stat-item:nth-child(2) { animation-delay: 0.6s; }
-.stats-strip .stat-item:nth-child(3) { animation-delay: 0.7s; }
-.stats-strip .stat-item:nth-child(4) { animation-delay: 0.8s; }
-.stats-strip .stat-item:nth-child(5) { animation-delay: 0.9s; }
+/* Footer — subtle fade */
+.site-footer {
+    opacity: 0;
+    animation: heroIn 0.6s ease forwards;
+    animation-delay: 0.8s;
+}
 
 @keyframes heroIn {
     to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroPhotoIn {
+    to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @keyframes menuIn {
     to { opacity: 1; transform: translateX(0); }
 }
 
+@keyframes wavesFadeIn {
+    from { opacity: 0; }
+    to { opacity: 0.88; }
+}
+
 /* ========================================= */
 /* RESPONSIVE                                */
 /* ========================================= */
 @media (max-width: 900px) {
-    .hero {
+    .hero { height: auto; min-height: 100vh; }
+    .hero-inner {
         grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr;
+        gap: 1rem;
+        padding: 3rem 2rem;
     }
 
-    .hero-left {
-        padding: 3rem 2rem 1.5rem;
-    }
-
-    .hero-right {
-        padding: 0 2rem 1.5rem;
-    }
-
-    .hero-waves { opacity: 0.6; }
-    .hero-photo { width: 200px; height: 200px; margin-bottom: 1.25rem; border-width: 2px; }
+    .hero-waves { opacity: 0.88; }
+    .hero-photo { width: 180px; height: 180px; margin-bottom: 1.25rem; }
     .hero-name { font-size: clamp(2.5rem, 10vw, 3.5rem); }
 
     .nav-menu-label { font-size: 1.35rem; }
@@ -1209,8 +1231,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 }
 
 @media (max-width: 600px) {
-    .hero-left { padding: 2.5rem 1.25rem 1rem; }
-    .hero-right { padding: 0 1.25rem 1rem; }
+    .hero-inner { padding: 2.5rem 1.25rem; }
 
     .nav-menu-link { padding: 1rem 0.25rem; gap: 1rem; }
     .nav-menu-label { font-size: 1.15rem; }
@@ -1244,15 +1265,16 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 <section class="hero" id="hero">
 
     <!-- Decorative waves — full width, bold, confident band -->
-    <svg class="hero-waves" viewBox="0 0 1440 200" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M0 200v-18C100 175 260 162 440 148c220-18 460-42 620-62s280-34 380-38v150H0z" fill="#BAE6F1"/>
-        <path d="M0 200v-10C140 185 320 172 520 155c240-20 460-48 580-66 90-14 230-26 340-28v139H0z" fill="#67B8D6"/>
-        <path d="M0 200v-4C200 193 400 182 620 164c260-22 440-48 560-66 80-12 180-22 260-24v126H0z" fill="#2D98B5"/>
-        <path d="M0 200C240 199 460 190 700 172c280-22 440-46 540-60 60-8 130-16 200-18v106H0z" fill="#0E7490"/>
-        <path d="M0 200C300 200 520 194 760 182c260-14 400-30 480-42 50-7 120-14 200-16v76H0z" fill="#164E63"/>
+    <svg class="hero-waves" viewBox="0 0 1440 260" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M0 260v-24C100 228 260 212 440 194c220-22 460-54 620-80s280-44 380-50v196H0z" fill="#BAE6F1"/>
+        <path d="M0 260v-13C140 241 320 224 520 202c240-26 460-62 580-86 90-18 230-34 340-36v180H0z" fill="#67B8D6"/>
+        <path d="M0 260v-5C200 251 400 236 620 213c260-28 440-62 560-86 80-16 180-28 260-31v164H0z" fill="#2D98B5"/>
+        <path d="M0 260C240 258 460 247 700 224c280-28 440-60 540-78 60-10 130-21 200-24v138H0z" fill="#0E7490"/>
+        <path d="M0 260C300 260 520 252 760 237c260-18 400-39 480-54 50-9 120-18 200-21v98H0z" fill="#164E63"/>
     </svg>
 
 
+    <div class="hero-inner">
     <!-- Left: Identity -->
     <div class="hero-left">
         <div class="hero-photo">
@@ -1312,7 +1334,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
             </li>
         </ul>
     </nav>
-
+    </div>
 
 </section>
 
@@ -1804,6 +1826,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
         </div>
     </div>
 </div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+    <p>&copy; 2026 Susana P&eacute;rez &middot; Built with <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a></p>
+</footer>
 
 <!-- ===== SCRIPTS ===== -->
 <script>
