@@ -1169,7 +1169,7 @@ a[download].btn-secondary::after {
 .hero-left > .hero-photo {
     opacity: 0;
     clip-path: circle(0% at 50% 50%);
-    animation: heroPhotoIn 1s var(--ease-out) forwards;
+    animation: heroPhotoIn 0.55s var(--ease-out) forwards;
     animation-delay: 0.05s;
 }
 
@@ -2131,8 +2131,8 @@ a[download].btn-secondary::after {
 
         photo.addEventListener('mouseenter', fireSplash);
 
-        // Auto-fire on page load as photo reveal becomes visible (~0.6s in)
-        setTimeout(fireSplash, 650);
+        // Auto-fire on page load as photo reveal completes (~0.6s)
+        setTimeout(fireSplash, 500);
 
         function fireSplash() {
             if (isCooling) return;
