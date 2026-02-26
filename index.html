@@ -134,7 +134,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 /* HERO — FULL VIEWPORT HOME BASE            */
 /* ========================================= */
 .hero {
-    height: calc(100vh - 50px);
+    min-height: calc(100vh - 50px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1187,8 +1187,39 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 /* ========================================= */
 /* RESPONSIVE                                */
 /* ========================================= */
+
+/* Mid-size screens: tighten layout before switching to single-column */
+@media (max-width: 1100px) {
+    .hero-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        padding: 2.5rem 2.5rem;
+    }
+    .hero-photo { width: 220px; height: 220px; margin-bottom: 1rem; }
+    .hero-name { font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 0.75rem; }
+    .hero-title { margin-bottom: 1.25rem; font-size: 1.05rem; }
+    .hero-intro { margin-bottom: 1.25rem; font-size: 0.9rem; }
+    .hero-meta { margin-bottom: 1.25rem; font-size: 0.85rem; }
+    .nav-menu-label { font-size: 1.5rem; }
+    .nav-menu-desc { display: none; }
+    .nav-menu-link { padding: 1.1rem 0.5rem; gap: 1.25rem; }
+    .hero-left, .hero-right { min-width: 0; }
+}
+
+/* Short viewports: compress vertical spacing */
+@media (max-height: 750px) and (min-width: 901px) {
+    .hero-inner { padding: 1.5rem 2.5rem; }
+    .hero-photo { width: 200px; height: 200px; margin-bottom: 0.75rem; }
+    .hero-name { margin-bottom: 0.6rem; }
+    .hero-title { margin-bottom: 1rem; font-size: 1rem; }
+    .hero-intro { margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.6; }
+    .hero-meta { margin-bottom: 1rem; font-size: 0.8rem; }
+    .nav-menu-link { padding: 0.9rem 0.5rem; }
+    .nav-menu-label { font-size: 1.5rem; }
+}
+
 @media (max-width: 900px) {
-    .hero { height: auto; min-height: 100vh; }
+    .hero { min-height: 100vh; }
     .hero-inner {
         grid-template-columns: 1fr;
         gap: 1rem;
