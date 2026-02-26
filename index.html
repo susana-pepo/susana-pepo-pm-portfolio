@@ -1270,7 +1270,9 @@ a[download].btn-secondary::after {
 }
 
 @media (max-width: 900px) {
-    .hero { min-height: auto; }
+    body { display: flex; flex-direction: column; min-height: 100vh; min-height: 100dvh; }
+    .hero { min-height: 0; flex: 1; }
+    .site-footer { flex-shrink: 0; }
     .hero-inner {
         grid-template-columns: 1fr;
         gap: 0.75rem;
