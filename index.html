@@ -877,134 +877,210 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 /* ========================================= */
 /* PANEL: EXPERIENCE                         */
 /* ========================================= */
-.exp-intro {
-    color: var(--text-secondary);
-    margin-bottom: 2.5rem;
-    font-size: 0.92rem;
-}
-
-.exp-tabs {
-    display: flex;
-    gap: 0;
-    margin-bottom: 2.5rem;
-    border-bottom: 1px solid var(--border);
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-.exp-tab {
-    padding: 0.85rem 1.5rem;
-    font-family: var(--font-body);
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: var(--text-tertiary);
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    white-space: nowrap;
-    transition: color 0.3s ease;
-}
-
-.exp-tab::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--accent-lavender);
-    transform: scaleX(0);
-    transition: transform 0.3s var(--ease-out);
-}
-
-.exp-tab:hover { color: var(--text-secondary); }
-
-.exp-tab.active { color: var(--text-primary); }
-.exp-tab.active::after { transform: scaleX(1); }
-
-.exp-panel {
-    display: none;
-    animation: panelIn 0.4s var(--ease-out);
-}
-
-.exp-panel.active { display: block; }
-
-@keyframes panelIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.exp-header { margin-bottom: 2rem; }
-
-.exp-role {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    margin-bottom: 0.35rem;
-    color: var(--text-primary);
-}
-
-.exp-product {
-    font-size: 0.9rem;
-    color: var(--accent-lavender);
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-}
-
-#tab-skoove .exp-product { color: var(--accent-sage); }
-#tab-license .exp-product { color: var(--accent-cream); }
 
 /* Utility: muted text for inline annotations */
 .text-muted { color: var(--text-tertiary); }
 .panel-title-sub { color: var(--text-tertiary); font-size: 0.6em; }
 
-.exp-meta {
-    font-size: 0.8rem;
-    color: var(--text-tertiary);
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.exp-achievements { display: grid; gap: 1rem; }
-
-.achievement {
+/* Two-column layout: timeline + sidebar */
+.exp-layout {
     display: grid;
-    grid-template-columns: 3px 1fr;
-    gap: 1rem;
+    grid-template-columns: 1fr 260px;
+    gap: 2.5rem;
     align-items: start;
 }
 
-.achievement-bar {
-    width: 3px;
-    height: 100%;
-    min-height: 24px;
-    border-radius: 3px;
+/* ---- Timeline ---- */
+.exp-timeline {
+    position: relative;
+    padding-left: 1.75rem;
+}
+
+.exp-timeline::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 6px;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+    border-radius: 2px;
+}
+
+.timeline-company {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1.75rem;
+    padding-left: 0.25rem;
+}
+
+.timeline-role {
+    position: relative;
+    margin-bottom: 2.25rem;
+}
+
+.timeline-role:last-child { margin-bottom: 0; }
+
+.timeline-role::before {
+    content: '';
+    position: absolute;
+    left: -1.75rem;
+    top: 7px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
     background: var(--accent-lavender);
-    opacity: 0.4;
+    box-shadow: 0 0 0 3px var(--bg-primary);
 }
 
-.exp-panel:nth-child(2) .achievement-bar { background: var(--accent-sage); }
-.exp-panel:nth-child(3) .achievement-bar { background: var(--accent-cream); }
+.timeline-role:nth-child(3)::before { background: var(--accent-sage); }
 
-.achievement-text {
-    font-size: 0.88rem;
+.role-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.15rem;
+    line-height: 1.3;
+}
+
+.role-product {
+    font-size: 0.82rem;
+    color: var(--accent-lavender);
+    font-weight: 500;
+    margin-bottom: 0.1rem;
+}
+
+.timeline-role:nth-child(3) .role-product { color: var(--accent-sage); }
+
+.role-date {
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+    margin-bottom: 0.85rem;
+}
+
+.role-bullets {
+    list-style: none;
+    display: grid;
+    gap: 0.45rem;
+}
+
+.role-bullets li {
+    font-size: 0.82rem;
     color: var(--text-secondary);
-    line-height: 1.65;
+    line-height: 1.6;
+    padding-left: 0.9rem;
+    position: relative;
 }
 
-.achievement-text strong {
+.role-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent-lavender);
+    opacity: 0.5;
+}
+
+.timeline-role:nth-child(3) .role-bullets li::before { background: var(--accent-sage); }
+
+.role-bullets strong {
     color: var(--text-primary);
     font-weight: 600;
 }
 
-.achievement-text .metric {
+.role-bullets .metric {
     color: var(--accent-lavender);
     font-weight: 600;
 }
 
-.exp-panel:nth-child(2) .metric { color: var(--accent-sage); }
-.exp-panel:nth-child(3) .metric { color: var(--accent-cream); }
+.timeline-role:nth-child(3) .role-bullets .metric { color: var(--accent-sage); }
+
+/* ---- Sidebar ---- */
+.exp-sidebar {
+    display: grid;
+    gap: 1.5rem;
+    position: sticky;
+    top: 1rem;
+}
+
+.sidebar-section h4 {
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-tertiary);
+    margin-bottom: 0.6rem;
+}
+
+.sidebar-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.sidebar-tag {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 100px;
+    background: var(--accent-lavender-dim);
+    color: var(--accent-lavender);
+    font-weight: 500;
+}
+
+.sidebar-tag--tool {
+    background: var(--accent-sage-dim);
+    color: var(--accent-sage);
+}
+
+.sidebar-list {
+    list-style: none;
+    display: grid;
+    gap: 0.35rem;
+}
+
+.sidebar-list li {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.sidebar-list .level {
+    font-size: 0.7rem;
+    color: var(--text-tertiary);
+}
+
+.sidebar-edu {
+    list-style: none;
+    display: grid;
+    gap: 0.6rem;
+}
+
+.sidebar-edu li {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.45;
+}
+
+.sidebar-edu .edu-degree {
+    font-weight: 600;
+    color: var(--text-primary);
+    display: block;
+}
+
+.sidebar-edu .edu-school {
+    font-size: 0.72rem;
+    color: var(--text-tertiary);
+}
 
 /* ========================================= */
 /* PANEL: CASE STUDIES                       */
@@ -1358,6 +1434,17 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
         gap: 2rem;
     }
 
+    .exp-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .exp-sidebar {
+        position: static;
+        border-top: 1px solid var(--border-light);
+        padding-top: 1.5rem;
+    }
+
     .case-content {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -1554,113 +1641,101 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     <div class="panel-header">
         <div class="panel-header-left">
             <span class="panel-number">02 &mdash; Experience</span>
-            <h2 class="panel-title">🎵 Learnfield GmbH <span class="panel-title-sub">&mdash; Berlin</span></h2>
+            <h2 class="panel-title">🎵 Career Journey</h2>
         </div>
         <button class="panel-close" aria-label="Close panel">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </button>
     </div>
     <div class="panel-body">
-        <p class="exp-intro">Three roles. Two products. One direction: make music accessible to everyone.</p>
+        <div class="exp-layout">
 
-        <div class="exp-tabs" role="tablist">
-            <button class="exp-tab active" role="tab" aria-selected="true" data-tab="trala">Product Owner &mdash; Trala</button>
-            <button class="exp-tab" role="tab" aria-selected="false" data-tab="skoove">Content Manager &mdash; Skoove</button>
-            <button class="exp-tab" role="tab" aria-selected="false" data-tab="license">License Manager</button>
-        </div>
+            <!-- Left: Timeline -->
+            <div class="exp-timeline">
+                <p class="timeline-company">Learnfield GmbH &middot; Berlin, Germany</p>
 
-        <!-- Trala Panel -->
-        <div class="exp-panel active" id="tab-trala" role="tabpanel">
-            <div class="exp-header">
-                <h3 class="exp-role">Product Owner</h3>
-                <p class="exp-product">Trala &mdash; Violin Learning App (iOS)</p>
-                <div class="exp-meta">
-                    <span>Team: 2 devs &middot; 1 freelance iOS dev &middot; 1 PM/content &middot; 1 designer</span>
-                    <span>Reports to: CPO</span>
+                <!-- Role 1: Product Owner — Trala -->
+                <div class="timeline-role">
+                    <h3 class="role-title">Product Owner</h3>
+                    <p class="role-product">Trala &mdash; Violin Learning App (iOS)</p>
+                    <p class="role-date">2025 &ndash; Present</p>
+                    <ul class="role-bullets">
+                        <li>Lead product roadmap strategy and execution with editorial, technical, and growth teams</li>
+                        <li>Shipped <span class="metric">iOS 7.5.1</span> removing mandatory sign-up &mdash; the top barrier to new user engagement identified through App Store analysis and user research</li>
+                        <li>Building Trala&rsquo;s first Japanese-language experience across a <span class="metric">4-person team</span> spanning iOS strings, educational text, and video dubbing</li>
+                        <li>Own full product roadmap, competitive positioning, and annual strategy &mdash; led OKR workshops with CPO</li>
+                        <li>Implement AI-based processes reducing production times by up to <span class="metric">80%</span></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="exp-achievements">
-                <div class="achievement">
-                    <div class="achievement-bar"></div>
-                    <p class="achievement-text"><strong>Onboarding Friction</strong> &mdash; Identified mandatory account creation as the leading barrier to new user engagement, backed by App Store review analysis and user research. Led scoping, cross-team coordination, and delivery of <span class="metric">iOS 7.5.1</span> &mdash; which removed the compulsory sign-up step and restructured the paywall.</p>
-                </div>
-                <div class="achievement">
-                    <div class="achievement-bar"></div>
-                    <p class="achievement-text"><strong>Japanese Market Entry</strong> &mdash; Building Trala&rsquo;s first Japanese-language experience from scratch, in parallel with a potential Yamaha partnership. Managing a <span class="metric">4-person team</span> across three workstreams: iOS static strings, educational text, and video dubbing. Ran an engineering spike to assess AI dubbing feasibility.</p>
-                </div>
-                <div class="achievement">
-                    <div class="achievement-bar"></div>
-                    <p class="achievement-text"><strong>2026 Roadmap &amp; Strategy</strong> &mdash; Owns Trala&rsquo;s full product roadmap, competitive positioning, content pipeline, and annual strategy. Led strategic workshops with CPO to align on OKRs and product bets for the year.</p>
-                </div>
-                <div class="achievement">
-                    <div class="achievement-bar"></div>
-                    <p class="achievement-text"><strong>Sprint &amp; Delivery</strong> &mdash; Runs sprint planning, daily standups, and bi-weekly CPO reviews. End-to-end ownership of the TRAL Jira board and cross-functional delivery coordination.</p>
-                </div>
-            </div>
-        </div>
 
-        <!-- Skoove Panel -->
-        <div class="exp-panel" id="tab-skoove" role="tabpanel">
-            <div class="exp-header">
-                <h3 class="exp-role">Education Content Manager</h3>
-                <p class="exp-product">Skoove &mdash; Piano Learning App (1M+ users)</p>
-                <div class="exp-meta">
-                    <span>Team: Content lead, content creator, dev, collections</span>
-                    <span>Cross-team coordination</span>
+                <!-- Role 2: PM & Licensing Lead — Skoove -->
+                <div class="timeline-role">
+                    <h3 class="role-title">Product Manager &amp; Licensing Lead</h3>
+                    <p class="role-product">Skoove &mdash; Piano Learning App (1M+ users)</p>
+                    <p class="role-date">2022 &ndash; Present</p>
+                    <ul class="role-bullets">
+                        <li>Scaled content catalogue from 300 to <span class="metric">800+ titles</span> in one year, increasing engagement by <span class="metric">25%</span></li>
+                        <li>Designed seasonal collections aligned with marketing campaigns &mdash; contributed to App Store features</li>
+                        <li>Led Song Search MVP and Favorites feature &mdash; Search became <span class="metric">#1 discovery method</span>; Favorites hit 30% premium adoption</li>
+                        <li>Negotiated <span class="metric">&euro;380K</span> multi-year UMPI/SACEM licensing advance &mdash; improved cost ratio from 18% to <span class="metric">14.7%</span></li>
+                        <li>Coordinate agreements with 8+ publishers and collecting societies (Universal, Warner Chappell, Hal Leonard, ICE, JASRAC)</li>
+                        <li>Built Mixpanel reporting pipeline for content usage monitoring and licensing cost-to-revenue tracking</li>
+                    </ul>
                 </div>
             </div>
-            <div class="exp-achievements">
-                <div class="achievement">
-                    <div class="achievement-bar"></div>
-                    <p class="achievement-text"><strong>Seasonal Content Campaigns</strong> &mdash; Owns the full lifecycle of seasonal song collections (Cherry Blossom, Holi, Women&rsquo;s Day, Anniversary, Valentine&rsquo;s) &mdash; from planning and licence clearance to asset coordination, multi-language QA with <span class="metric">5+ proofreaders</span> per release, and App Store timing aligned with marketing campaigns.</p>
-                </div>
-                <div class="achievement">
-                    <div class="achievement-bar"></div>
-                    <p class="achievement-text"><strong>Song Discovery Improvements</strong> &mdash; Contributed to the Song Search MVP and Favorites feature across research, scoping, QA coordination, and post-launch analysis. Search became the <span class="metric">#1 content discovery method</span> in the Songs Tab. Favorites hit its primary KPI: 30% of premium users saved at least one song.</p>
-                </div>
-                <div class="achievement">
-                    <div class="achievement-bar"></div>
-                    <p class="achievement-text"><strong>Catalogue Strategy &amp; Curation</strong> &mdash; Plans and curates the song catalogue against licensing constraints, business goals, and user engagement data. Manages the pipeline from publisher catalogues (<span class="metric">Universal, Warner Chappell, Hal Leonard</span>) through to in-app content organization and collection strategy.</p>
-                </div>
-                <div class="achievement">
-                    <div class="achievement-bar"></div>
-                    <p class="achievement-text"><strong>Content Operations</strong> &mdash; Built and maintains the Mixpanel &rarr; CSV &rarr; leadership reporting pipeline for copyrighted content usage monitoring. Led internal content management centralization, including Freddie CMS workflow improvements and the company-wide sprint planning spreadsheet.</p>
-                </div>
-            </div>
-        </div>
 
-        <!-- License Panel -->
-        <div class="exp-panel" id="tab-license" role="tabpanel">
-            <div class="exp-header">
-                <h3 class="exp-role">License Manager</h3>
-                <p class="exp-product">Skoove &amp; Trala &mdash; Music Licensing</p>
-                <div class="exp-meta">
-                    <span>8+ publishers &amp; collecting societies</span>
-                    <span>Multi-market coverage</span>
+            <!-- Right: Skills Sidebar -->
+            <div class="exp-sidebar">
+                <div class="sidebar-section">
+                    <h4>Core Skills</h4>
+                    <div class="sidebar-tags">
+                        <span class="sidebar-tag">Product Strategy</span>
+                        <span class="sidebar-tag">Roadmapping</span>
+                        <span class="sidebar-tag">Content Positioning</span>
+                        <span class="sidebar-tag">Market Analysis</span>
+                        <span class="sidebar-tag">Funnel Optimization</span>
+                        <span class="sidebar-tag">User Research</span>
+                        <span class="sidebar-tag">Campaign Design</span>
+                        <span class="sidebar-tag">Budget &amp; Prioritization</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h4>Tools</h4>
+                    <div class="sidebar-tags">
+                        <span class="sidebar-tag sidebar-tag--tool">Jira</span>
+                        <span class="sidebar-tag sidebar-tag--tool">Confluence</span>
+                        <span class="sidebar-tag sidebar-tag--tool">Miro</span>
+                        <span class="sidebar-tag sidebar-tag--tool">Mixpanel</span>
+                        <span class="sidebar-tag sidebar-tag--tool">Google Analytics</span>
+                        <span class="sidebar-tag sidebar-tag--tool">App Store Connect</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h4>Languages</h4>
+                    <ul class="sidebar-list">
+                        <li>Spanish <span class="level">Native</span></li>
+                        <li>English <span class="level">Fluent</span></li>
+                        <li>German <span class="level">Professional</span></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h4>Education</h4>
+                    <ul class="sidebar-edu">
+                        <li>
+                            <span class="edu-degree">MSc Therapy &amp; Education</span>
+                            <span class="edu-school">SRH Heidelberg University &middot; 2020</span>
+                        </li>
+                        <li>
+                            <span class="edu-degree">BA Music</span>
+                            <span class="edu-school">Universidad EAFIT, Colombia &middot; 2014</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="exp-achievements">
-                <div class="achievement">
-                    <div class="achievement-bar"></div>
-                    <p class="achievement-text"><strong>UMPI/SACEM Negotiation</strong> &mdash; Led the end-to-end negotiation of a <span class="metric">&euro;380K</span> multi-year licensing advance. Structured 4-installment payment schedule, amended free trial terms, and built recoupment tracking via BMAT. Licensing cost ratio improved from 18% to <span class="metric">14.7%</span> of revenue (Jan 2026).</p>
-                </div>
-                <div class="achievement">
-                    <div class="achievement-bar"></div>
-                    <p class="achievement-text"><strong>GMR &amp; Performance Rights</strong> &mdash; Closed US performance rights license (GMR). Secured separate Roland coverage for white-label partnerships.</p>
-                </div>
-                <div class="achievement">
-                    <div class="achievement-bar"></div>
-                    <p class="achievement-text"><strong>Licensing Strategy 2026</strong> &mdash; Co-authored the 2026 licensing strategy, including an ICE catalogue expansion plan that allows Skoove to scale its song offering without proportional royalty cost growth.</p>
-                </div>
-                <div class="achievement">
-                    <div class="achievement-bar"></div>
-                    <p class="achievement-text"><strong>Financial Modeling</strong> &mdash; Co-owns the licensing financial model (costs, advances, market variables, usage targets). Built QA framework with <span class="metric">cost-to-revenue ratio monitoring</span> &mdash; normal 11&ndash;12%, alarm at 20%. Took full model ownership via structured handover from Finance (Nov 2025).</p>
-                </div>
-                <div class="achievement">
-                    <div class="achievement-bar"></div>
-                    <p class="achievement-text"><strong>Reporting Automation</strong> &mdash; Scoped a 3-sprint engineering plan to automate UMPI/SACEM + ICE/JASRAC/SOCAN usage reporting via Mixpanel API &rarr; AWS pipeline, replacing a manual monthly process.</p>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
@@ -2118,26 +2193,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
         if (e.key === 'Escape' && activePanel) {
             closePanel();
         }
-    });
-
-    /* ---- Experience tabs ---- */
-    const tabs = document.querySelectorAll('.exp-tab');
-    const expPanels = document.querySelectorAll('.exp-panel');
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const target = tab.dataset.tab;
-
-            tabs.forEach(t => {
-                t.classList.remove('active');
-                t.setAttribute('aria-selected', 'false');
-            });
-            tab.classList.add('active');
-            tab.setAttribute('aria-selected', 'true');
-
-            expPanels.forEach(p => p.classList.remove('active'));
-            document.getElementById('tab-' + target).classList.add('active');
-        });
     });
 
     /* ---- Case study expand/collapse ---- */
