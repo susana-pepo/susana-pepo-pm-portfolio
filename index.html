@@ -10,6 +10,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
+<script>
+(function() {
+    var s = localStorage.getItem('theme');
+    if (s) document.documentElement.setAttribute('data-theme', s);
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.setAttribute('data-theme', 'dark');
+    else document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+
 <style>
 /* ========================================= */
 /* ROOT VARIABLES                            */
@@ -19,13 +28,22 @@
     --bg-secondary: #EFF1F4;
     --bg-card: #FFFFFF;
     --bg-card-hover: #F9FAFB;
+    --bg-body: #67B8D6;
+    --bg-footer: #67B8D6;
 
     --text-primary: #111827;
     --text-secondary: #4B5563;
     --text-tertiary: #9CA3AF;
+    --text-on-teal: rgba(255, 255, 255, 0.7);
+    --text-on-teal-strong: rgba(255, 255, 255, 0.9);
+    --text-on-teal-full: #FFFFFF;
+    --text-on-accent: #FFFFFF;
 
     --accent-lavender: #0E7490;
     --accent-lavender-dim: rgba(14, 116, 144, 0.08);
+    --accent-lavender-glow: rgba(14, 116, 144, 0.25);
+    --accent-lavender-tint: rgba(14, 116, 144, 0.04);
+    --accent-lavender-border: rgba(14, 116, 144, 0.3);
     --accent-sage: #164E63;
     --accent-sage-dim: rgba(22, 78, 99, 0.08);
     --accent-cream: #475569;
@@ -35,6 +53,23 @@
 
     --border: #D1D5DB;
     --border-light: #E5E7EB;
+    --border-on-teal: rgba(255, 255, 255, 0.3);
+
+    --footer-cta: #FDD835;
+    --footer-cta-hover: #FFFFFF;
+
+    --linkedin-brand: #0A66C2;
+    --linkedin-brand-dim: rgba(10, 102, 194, 0.04);
+
+    --backdrop-overlay: rgba(42, 37, 35, 0.35);
+    --shadow-sm: rgba(0, 0, 0, 0.08);
+    --shadow-md: rgba(0, 0, 0, 0.12);
+
+    --wave-1: #BAE6F1;
+    --wave-2: #67B8D6;
+    --wave-3: #2D98B5;
+    --wave-4: #0E7490;
+    --wave-5: #164E63;
 
     --font-display: 'Space Grotesk', system-ui, sans-serif;
     --font-body: 'Inter', system-ui, sans-serif;
@@ -42,6 +77,125 @@
     --max-width: 1240px;
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* ========================================= */
+/* DARK THEME                                */
+/* ========================================= */
+[data-theme="dark"] {
+    --bg-primary: #0F172A;
+    --bg-secondary: #1E293B;
+    --bg-card: #1E293B;
+    --bg-card-hover: #334155;
+    --bg-body: #0B1120;
+    --bg-footer: #0B1120;
+
+    --text-primary: #F1F5F9;
+    --text-secondary: #94A3B8;
+    --text-tertiary: #64748B;
+    --text-on-teal: rgba(241, 245, 249, 0.7);
+    --text-on-teal-strong: rgba(241, 245, 249, 0.9);
+    --text-on-teal-full: #F1F5F9;
+    --text-on-accent: #0F172A;
+
+    --accent-lavender: #22D3EE;
+    --accent-lavender-dim: rgba(34, 211, 238, 0.12);
+    --accent-lavender-glow: rgba(34, 211, 238, 0.2);
+    --accent-lavender-tint: rgba(34, 211, 238, 0.06);
+    --accent-lavender-border: rgba(34, 211, 238, 0.3);
+    --accent-sage: #06B6D4;
+    --accent-sage-dim: rgba(6, 182, 212, 0.10);
+    --accent-cream: #94A3B8;
+    --accent-cream-dim: rgba(148, 163, 184, 0.10);
+    --accent-rose: #38BDF8;
+    --accent-rose-dim: rgba(56, 189, 248, 0.10);
+
+    --border: #334155;
+    --border-light: #1E293B;
+    --border-on-teal: rgba(241, 245, 249, 0.2);
+
+    --footer-cta: #FACC15;
+    --footer-cta-hover: #F1F5F9;
+
+    --linkedin-brand: #5B9BD5;
+    --linkedin-brand-dim: rgba(91, 155, 213, 0.08);
+
+    --backdrop-overlay: rgba(0, 0, 0, 0.55);
+    --shadow-sm: rgba(0, 0, 0, 0.25);
+    --shadow-md: rgba(0, 0, 0, 0.35);
+
+    --wave-1: #1E293B;
+    --wave-2: #162032;
+    --wave-3: #0E4D5E;
+    --wave-4: #0E7490;
+    --wave-5: #164E63;
+}
+
+[data-theme="dark"] .site-footer::before {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 22' preserveAspectRatio='none'%3E%3Cpath d='M0 22V9C200 3 380 1 580 4s360 7 520 6 260-5 340-4V22H0z' fill='%231E293B'/%3E%3Cpath d='M0 22V15C180 10 340 8 520 11s320 5 480 4 260-3 440-2V22H0z' fill='%230B1120'/%3E%3C/svg%3E") no-repeat bottom;
+    background-size: 100% 100%;
+}
+
+/* ========================================= */
+/* THEME TRANSITIONS                         */
+/* ========================================= */
+html[data-theme] body,
+html[data-theme] .hero,
+html[data-theme] .panel,
+html[data-theme] .panel-header,
+html[data-theme] .panel-close,
+html[data-theme] .site-footer,
+html[data-theme] .case-card,
+html[data-theme] .skill-group,
+html[data-theme] .skill-tag,
+html[data-theme] .lang-tag,
+html[data-theme] .nav-menu-item,
+html[data-theme] .btn,
+html[data-theme] .btn-icon {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+.hero-waves path {
+    transition: fill 0.4s ease;
+}
+
+/* ========================================= */
+/* THEME TOGGLE BUTTON                       */
+/* ========================================= */
+.theme-toggle {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    z-index: 3;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease, transform 0.35s var(--ease-out);
+    padding: 0;
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent-lavender);
+    color: var(--text-primary);
+    background: var(--accent-lavender-dim);
+    transform: scale(1.1);
+}
+
+.theme-toggle svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.theme-icon--dark { display: none; }
+[data-theme="dark"] .theme-icon--light { display: none; }
+[data-theme="dark"] .theme-icon--dark { display: block; }
 
 /* ========================================= */
 /* RESET & BASE                              */
@@ -52,7 +206,7 @@ html { scroll-behavior: smooth; }
 
 body {
     font-family: var(--font-body);
-    background: #67B8D6;
+    background: var(--bg-body);
     color: var(--text-primary);
     line-height: 1.7;
     font-size: 16px;
@@ -69,7 +223,7 @@ body.panel-open {
 
 ::selection {
     background: var(--accent-lavender);
-    color: #FFFFFF;
+    color: var(--text-on-accent);
 }
 
 a {
@@ -149,14 +303,14 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     border: 1px solid var(--border);
     overflow: hidden;
     transition: transform 0.45s var(--ease-out), border-color 0.4s ease, box-shadow 0.45s var(--ease-out);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+    box-shadow: 0 8px 30px var(--shadow-sm), 0 2px 8px rgba(0,0,0,0.04);
     position: relative;
 }
 
 .hero-photo:hover {
     transform: scale(1.05);
     border-color: var(--accent-lavender);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
+    box-shadow: 0 16px 40px var(--shadow-md), 0 4px 12px rgba(0,0,0,0.06);
 }
 
 .hero-photo img {
@@ -186,13 +340,19 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     transform: scaleX(-1) rotate(180deg);
 }
 
+.hero-waves .wave-1 { fill: var(--wave-1); }
+.hero-waves .wave-2 { fill: var(--wave-2); }
+.hero-waves .wave-3 { fill: var(--wave-3); }
+.hero-waves .wave-4 { fill: var(--wave-4); }
+.hero-waves .wave-5 { fill: var(--wave-5); }
+
 /* ========================================= */
 /* FOOTER BAR                                */
 /* ========================================= */
 .site-footer {
     position: relative;
-    background: #67B8D6;
-    color: rgba(255, 255, 255, 0.7);
+    background: var(--bg-footer);
+    color: var(--text-on-teal);
     text-align: center;
     padding: 0.4rem 2rem;
     font-size: 0.75rem;
@@ -212,18 +372,18 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 }
 
 .site-footer a {
-    color: rgba(255, 255, 255, 0.9);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--text-on-teal-strong);
+    border-bottom: 1px solid var(--border-on-teal);
     transition: all 0.3s ease;
 }
 
 .site-footer a:hover {
-    color: #FFFFFF;
-    border-color: #FFFFFF;
+    color: var(--text-on-teal-full);
+    border-color: var(--text-on-teal-full);
 }
 
 .site-footer .footer-cta-link {
-    color: #FDD835;
+    color: var(--footer-cta);
     font-weight: 700;
     font-size: 1.05rem;
     border-bottom: none;
@@ -233,8 +393,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 }
 
 .site-footer .footer-cta-link:hover {
-    color: #FFFFFF;
-    border-bottom: 1px solid #FFFFFF;
+    color: var(--footer-cta-hover);
+    border-bottom: 1px solid var(--footer-cta-hover);
 }
 
 /* ========================================= */
@@ -353,7 +513,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 
 .btn-primary {
     background: var(--accent-lavender);
-    color: #FFFFFF;
+    color: var(--text-on-accent);
     padding: 0.35rem 1.15rem;
 }
 
@@ -371,9 +531,9 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 
 .btn-primary:hover {
     background: var(--accent-sage);
-    color: #FFFFFF;
+    color: var(--text-on-accent);
     transform: translateX(4px);
-    box-shadow: 0 4px 16px rgba(14, 116, 144, 0.25);
+    box-shadow: 0 4px 16px var(--accent-lavender-glow);
 }
 
 /* Circular icon buttons (email, LinkedIn) */
@@ -431,7 +591,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 
 .btn-email:hover {
     border-color: var(--accent-lavender);
-    background: rgba(14, 116, 144, 0.04);
+    background: var(--accent-lavender-tint);
 }
 
 .btn-email .btn-icon-label {
@@ -439,7 +599,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 }
 
 .btn-linkedin {
-    color: #0A66C2;
+    color: var(--linkedin-brand);
 }
 
 .btn-linkedin svg {
@@ -448,12 +608,12 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 }
 
 .btn-linkedin:hover {
-    border-color: #0A66C2;
-    background: rgba(10, 102, 194, 0.04);
+    border-color: var(--linkedin-brand);
+    background: var(--linkedin-brand-dim);
 }
 
 .btn-linkedin .btn-icon-label {
-    color: #0A66C2;
+    color: var(--linkedin-brand);
 }
 
 /* ========================================= */
@@ -475,7 +635,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 }
 
 .nav-menu-item:has(.nav-menu-link:hover) {
-    border-color: rgba(14, 116, 144, 0.3);
+    border-color: var(--accent-lavender-border);
 }
 
 .nav-menu-item:first-child {
@@ -525,7 +685,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 .panel-backdrop {
     position: fixed;
     inset: 0;
-    background: rgba(42, 37, 35, 0.35);
+    background: var(--backdrop-overlay);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     z-index: 5000;
@@ -557,7 +717,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     overflow-x: hidden;
     scrollbar-color: var(--accent-lavender) transparent;
     scrollbar-width: thin;
-    box-shadow: 0 25px 80px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.05);
+    box-shadow: 0 25px 80px var(--shadow-md), 0 0 0 1px rgba(0,0,0,0.05);
 }
 
 .panel::-webkit-scrollbar { width: 6px; }
@@ -1209,6 +1369,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 @media (max-width: 600px) {
     .hero-inner { padding: 0.5rem 1.25rem 0.75rem; gap: 0; }
     .hero-waves { height: 160px; }
+    .theme-toggle { top: 0.5rem; right: 0.75rem; width: 32px; height: 32px; }
+    .theme-toggle svg { width: 16px; height: 16px; }
 
     .nav-menu-link { padding: 0.6rem 0.25rem; gap: 0.85rem; }
     .nav-menu-label { font-size: 1.05rem; }
@@ -1254,13 +1416,27 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 <!-- ===== HERO — HOME BASE ===== -->
 <section class="hero" id="hero">
 
+    <!-- Theme toggle -->
+    <button class="theme-toggle" aria-label="Toggle dark mode" type="button">
+        <svg class="theme-icon theme-icon--light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="theme-icon theme-icon--dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+    </button>
+
     <!-- Decorative waves — full width, bold, confident band -->
     <svg class="hero-waves" viewBox="0 0 1440 260" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M0 260v-24C100 228 260 212 440 194c220-22 460-54 620-80s280-44 380-50v196H0z" fill="#BAE6F1"/>
-        <path d="M0 260v-13C140 241 320 224 520 202c240-26 460-62 580-86 90-18 230-34 340-36v180H0z" fill="#67B8D6"/>
-        <path d="M0 260v-5C200 251 400 236 620 213c260-28 440-62 560-86 80-16 180-28 260-31v164H0z" fill="#2D98B5"/>
-        <path d="M0 260C240 258 460 247 700 224c280-28 440-60 540-78 60-10 130-21 200-24v138H0z" fill="#0E7490"/>
-        <path d="M0 260C300 260 520 252 760 237c260-18 400-39 480-54 50-9 120-18 200-21v98H0z" fill="#164E63"/>
+        <path class="wave-1" d="M0 260v-24C100 228 260 212 440 194c220-22 460-54 620-80s280-44 380-50v196H0z"/>
+        <path class="wave-2" d="M0 260v-13C140 241 320 224 520 202c240-26 460-62 580-86 90-18 230-34 340-36v180H0z"/>
+        <path class="wave-3" d="M0 260v-5C200 251 400 236 620 213c260-28 440-62 560-86 80-16 180-28 260-31v164H0z"/>
+        <path class="wave-4" d="M0 260C240 258 460 247 700 224c280-28 440-60 540-78 60-10 130-21 200-24v138H0z"/>
+        <path class="wave-5" d="M0 260C300 260 520 252 760 237c260-18 400-39 480-54 50-9 120-18 200-21v98H0z"/>
     </svg>
 
     <div class="hero-inner">
@@ -1828,6 +2004,49 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 <script>
 (function() {
     'use strict';
+
+    /* ---- Theme toggle ---- */
+    const themeToggle = document.querySelector('.theme-toggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function getEffectiveTheme() {
+        var stored = localStorage.getItem('theme');
+        if (stored) return stored;
+        return prefersDark.matches ? 'dark' : 'light';
+    }
+
+    function updateFavicon(isDark) {
+        var link = document.querySelector('link[rel="icon"]');
+        if (!link) return;
+        var bg = isDark ? '%230F172A' : '%23F7F8FA';
+        var text = isDark ? '%2322D3EE' : '%230E7490';
+        link.href = "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='" + bg + "'/><text x='50' y='68' font-size='50' font-family='system-ui,sans-serif' font-weight='600' fill='" + text + "' text-anchor='middle'>SP</text></svg>";
+    }
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        updateFavicon(theme === 'dark');
+    }
+
+    // Sync favicon on load
+    applyTheme(getEffectiveTheme());
+
+    // Toggle button click
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            var current = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = current === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            localStorage.setItem('theme', next);
+        });
+    }
+
+    // System preference changes (only if user hasn't manually set a theme)
+    prefersDark.addEventListener('change', function(e) {
+        if (!localStorage.getItem('theme')) {
+            applyTheme(e.matches ? 'dark' : 'light');
+        }
+    });
 
     /* ---- Panel system ---- */
     const backdrop = document.getElementById('panelBackdrop');
