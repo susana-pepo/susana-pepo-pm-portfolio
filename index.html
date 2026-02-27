@@ -112,23 +112,6 @@ img { max-width: 100%; display: block; }
 /* ========================================= */
 h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 
-.section-label {
-    font-family: var(--font-body);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent-lavender);
-    margin-bottom: 1.25rem;
-}
-
-.section-title {
-    font-size: clamp(2rem, 4vw, 2.75rem);
-    line-height: 1.2;
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-}
-
 /* ========================================= */
 /* HERO — FULL VIEWPORT HOME BASE            */
 /* ========================================= */
@@ -153,7 +136,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     position: relative;
     z-index: 2;
 }
-
 
 /* ========================================= */
 /* HERO PHOTO                                */
@@ -189,7 +171,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     filter: grayscale(0) contrast(1.05);
 }
 
-
 /* ========================================= */
 /* HERO WAVES DECORATION                     */
 /* ========================================= */
@@ -215,7 +196,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     text-align: center;
     padding: 0.4rem 2rem;
     font-size: 0.75rem;
-    font-family: var(--font-body);
     letter-spacing: 0.02em;
     z-index: 100;
 }
@@ -269,7 +249,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 /* Entrance animations defined in HERO ENTRANCE section below */
 
 .hero-name {
-    font-family: var(--font-display);
     font-size: clamp(3.5rem, 7vw, 5.5rem);
     line-height: 1;
     letter-spacing: -0.03em;
@@ -347,7 +326,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     border-radius: 999px;
     font-family: var(--font-body);
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.02em;
     cursor: pointer;
     transition: transform 0.35s var(--ease-out), background 0.35s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.35s ease;
@@ -376,7 +355,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     background: var(--accent-lavender);
     color: #FFFFFF;
     padding: 0.35rem 1.15rem;
-    font-weight: 500;
 }
 
 .btn-primary::after {
@@ -526,7 +504,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 }
 
 .nav-menu-number {
-    font-family: var(--font-body);
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.1em;
@@ -540,65 +517,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     font-size: 2.1rem;
     line-height: 1.2;
     flex: 1;
-}
-
-.nav-menu-desc {
-    font-family: var(--font-body);
-    font-size: 0.75rem;
-    color: var(--text-tertiary);
-    font-weight: 400;
-    max-width: 200px;
-    text-align: right;
-    line-height: 1.4;
-}
-
-
-/* ========================================= */
-/* STATS STRIP — bottom of hero              */
-/* ========================================= */
-.stats-strip {
-    grid-column: 1 / -1;
-    padding: 1.75rem 4.5rem;
-    border-top: 1px solid var(--border-light);
-    background: rgba(210, 201, 191, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    position: relative;
-    z-index: 2;
-}
-
-.stats-grid {
-    display: flex;
-    justify-content: space-between;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.stat-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.2rem;
-}
-
-.stat-number {
-    font-family: var(--font-display);
-    font-size: 1.75rem;
-    color: var(--text-primary);
-    line-height: 1.1;
-}
-
-.stat-number .stat-suffix {
-    font-size: 0.6em;
-    color: var(--accent-lavender);
-}
-
-.stat-label {
-    font-size: 0.68rem;
-    font-weight: 500;
-    color: var(--text-tertiary);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
 }
 
 /* ========================================= */
@@ -672,7 +590,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 }
 
 .panel-number {
-    font-family: var(--font-body);
     font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.15em;
@@ -871,6 +788,13 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     margin-bottom: 0.5rem;
     font-weight: 500;
 }
+
+#tab-skoove .exp-product { color: var(--accent-sage); }
+#tab-license .exp-product { color: var(--accent-cream); }
+
+/* Utility: muted text for inline annotations */
+.text-muted { color: var(--text-tertiary); }
+.panel-title-sub { color: var(--text-tertiary); font-size: 0.6em; }
 
 .exp-meta {
     font-size: 0.8rem;
@@ -1163,12 +1087,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 .hero-right .nav-menu-item:nth-child(2) { animation-delay: 0.35s; }
 .hero-right .nav-menu-item:nth-child(3) { animation-delay: 0.45s; }
 .hero-right .nav-menu-item:nth-child(4) { animation-delay: 0.55s; }
-.hero-right .nav-menu-item:nth-child(5) { animation-delay: 0.65s; }
-
-/* Waves — always visible, no animation */
-.hero-waves {
-    opacity: 0.88;
-}
 
 /* Footer — only text fades in, background stays visible */
 .site-footer p {
@@ -1197,11 +1115,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     to { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes wavesFadeIn {
-    from { opacity: 0; }
-    to { opacity: 0.88; }
-}
-
 /* ========================================= */
 /* RESPONSIVE                                */
 /* ========================================= */
@@ -1219,7 +1132,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     .hero-intro { margin-bottom: 1.25rem; font-size: 0.9rem; }
     .hero-meta { margin-bottom: 1.25rem; font-size: 0.85rem; }
     .nav-menu-label { font-size: 1.5rem; }
-    .nav-menu-desc { display: none; }
     .nav-menu-link { padding: 1.1rem 0.5rem; gap: 1.25rem; }
     .hero-left, .hero-right { min-width: 0; }
     .hero-waves { height: 220px; }
@@ -1249,17 +1161,16 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 
     .hero-left { justify-content: flex-start; }
 
-    .hero-waves { opacity: 0.88; height: 150px; }
+    .hero-waves { height: 150px; }
     .hero-photo { width: 160px; height: 160px; margin-bottom: 1rem; }
     .hero-name { font-size: clamp(2.5rem, 10vw, 3.5rem); }
 
-    .btn { padding: 0.3rem 1rem; font-size: 0.8rem; font-weight: 500; }
+    .btn { padding: 0.3rem 1rem; font-size: 0.8rem; }
     .btn.btn-icon { height: 36px; }
     .hero-ctas { gap: 0.55rem; margin-bottom: 1.75rem; }
 
     .nav-menu-link { padding: 1rem 0.5rem; }
     .nav-menu-label { font-size: 1.35rem; }
-    .nav-menu-desc { display: none; }
     .hero-title { font-size: 0.95rem; font-weight: 500; margin-bottom: 0.6rem; }
     .hero-intro { font-size: 0.84rem; margin-bottom: 0.6rem; }
     .hero-meta { font-size: 0.78rem; }
@@ -1269,10 +1180,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 
     .site-footer { padding: 0.3rem 1.5rem; }
     .site-footer .footer-cta-link { font-size: 0.72rem; font-weight: 500; }
-
-    .stats-strip { padding: 1.25rem 1.5rem; }
-    .stats-grid { flex-wrap: wrap; gap: 1rem; justify-content: center; }
-    .stat-number { font-size: 1.4rem; }
 
     .panel {
         width: 96vw;
@@ -1310,16 +1217,12 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     .hero-title { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; margin-bottom: 0.5rem; }
     .hero-intro { font-size: 0.74rem; line-height: 1.5; margin-bottom: 0.5rem; }
     .hero-meta { font-size: 0.66rem; margin-bottom: 0.5rem; color: var(--text-tertiary); }
-    .btn { padding: 0.3rem 0.85rem; font-size: 0.7rem; font-weight: 500; gap: 0.3rem; }
+    .btn { padding: 0.3rem 0.85rem; font-size: 0.7rem; gap: 0.3rem; }
     .btn-primary::after { width: 11px; height: 11px; }
     .btn.btn-icon { height: 34px; }
-    .hero-ctas { gap: 0.45rem; margin-bottom: 1.75rem; align-items: center; }
+    .hero-ctas { gap: 0.45rem; margin-bottom: 1.75rem; }
     .site-footer { padding: 0.25rem 1rem; }
     .site-footer .footer-cta-link { font-size: 0.55rem; font-weight: 500; }
-
-    .stats-strip { padding: 1rem 1.25rem; }
-    .stat-number { font-size: 1.2rem; }
-    .stat-label { font-size: 0.6rem; }
 
     .panel {
         top: 0; left: 0;
@@ -1359,7 +1262,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
         <path d="M0 260C240 258 460 247 700 224c280-28 440-60 540-78 60-10 130-21 200-24v138H0z" fill="#0E7490"/>
         <path d="M0 260C300 260 520 252 760 237c260-18 400-39 480-54 50-9 120-18 200-21v98H0z" fill="#164E63"/>
     </svg>
-
 
     <div class="hero-inner">
     <!-- Left: Identity -->
@@ -1456,7 +1358,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 
                 <div class="about-detail-block">
                     <h4>Location</h4>
-                    <p>Berlin, Germany<br><span style="color: var(--text-tertiary)">Colombian, German &amp; Portuguese</span></p>
+                    <p>Berlin, Germany<br><span class="text-muted">Colombian, German &amp; Portuguese</span></p>
                 </div>
 
                 <div class="about-detail-block">
@@ -1474,7 +1376,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     <div class="panel-header">
         <div class="panel-header-left">
             <span class="panel-number">02 &mdash; Experience</span>
-            <h2 class="panel-title">🎵 Learnfield GmbH <span style="color: var(--text-tertiary); font-size: 0.6em;">&mdash; Berlin</span></h2>
+            <h2 class="panel-title">🎵 Learnfield GmbH <span class="panel-title-sub">&mdash; Berlin</span></h2>
         </div>
         <button class="panel-close" aria-label="Close panel">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -1523,7 +1425,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
         <div class="exp-panel" id="tab-skoove" role="tabpanel">
             <div class="exp-header">
                 <h3 class="exp-role">Education Content Manager</h3>
-                <p class="exp-product" style="color: var(--accent-sage);">Skoove &mdash; Piano Learning App (1M+ users)</p>
+                <p class="exp-product">Skoove &mdash; Piano Learning App (1M+ users)</p>
                 <div class="exp-meta">
                     <span>Team: Content lead, content creator, dev, collections</span>
                     <span>Cross-team coordination</span>
@@ -1553,7 +1455,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
         <div class="exp-panel" id="tab-license" role="tabpanel">
             <div class="exp-header">
                 <h3 class="exp-role">License Manager</h3>
-                <p class="exp-product" style="color: var(--accent-cream);">Skoove &amp; Trala &mdash; Music Licensing</p>
+                <p class="exp-product">Skoove &amp; Trala &mdash; Music Licensing</p>
                 <div class="exp-meta">
                     <span>8+ publishers &amp; collecting societies</span>
                     <span>Multi-market coverage</span>
@@ -1929,7 +1831,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 
     /* ---- Panel system ---- */
     const backdrop = document.getElementById('panelBackdrop');
-    const allPanels = document.querySelectorAll('.panel');
     let activePanel = null;
     let panelTrigger = null;
 
@@ -2033,7 +1934,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
             }
         });
     });
-
 
     /* =========================================
        EMOJI SPLASH — photo hover particle burst
