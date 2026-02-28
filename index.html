@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Susana Pérez — Product Manager</title>
-    <meta name="description" content="Product Manager & Product Owner specializing in EdTech and Music Tech. 3+ years leading cross-functional teams, shipping products to 1M+ users.">
+    <meta name="description" content="Product Manager & Product Owner with 3+ years shipping B2C mobile products to 1M+ users. Cross-functional delivery, data-driven roadmaps, and business-aligned strategy in EdTech.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23F7F8FA'/><text x='50' y='68' font-size='50' font-family='system-ui,sans-serif' font-weight='600' fill='%230E7490' text-anchor='middle'>SP</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -384,10 +384,16 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     border-color: var(--text-on-teal-full);
 }
 
+.footer-cta-text {
+    color: var(--text-on-teal);
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+}
+
 .site-footer .footer-cta-link {
     color: var(--footer-cta);
     font-weight: 700;
-    font-size: 1.05rem;
+    font-size: inherit;
     border-bottom: none;
     text-decoration: none;
     letter-spacing: 0.01em;
@@ -890,13 +896,46 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     align-items: start;
 }
 
+/* ---- At a Glance (inline stats) ---- */
+.timeline-glance {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.glance-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.glance-value {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-lavender);
+    line-height: 1;
+}
+
+.glance-label {
+    font-size: 0.68rem;
+    color: var(--text-tertiary);
+    line-height: 1.3;
+}
+
 /* ---- Timeline ---- */
 .exp-timeline {
+    position: relative;
+}
+
+.timeline-section {
     position: relative;
     padding-left: 1.75rem;
 }
 
-.exp-timeline::before {
+.timeline-section::before {
     content: '';
     position: absolute;
     left: 4px;
@@ -913,8 +952,16 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     color: var(--text-tertiary);
     letter-spacing: 0.06em;
     text-transform: uppercase;
+    margin-bottom: 0.35rem;
+    padding-left: 0.25rem;
+}
+
+.timeline-intro {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
     margin-bottom: 1.75rem;
     padding-left: 0.25rem;
+    font-style: italic;
 }
 
 .timeline-role {
@@ -924,19 +971,16 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 
 .timeline-role:last-child { margin-bottom: 0; }
 
-.timeline-role::before {
-    content: '';
+.timeline-section--work .timeline-role::before {
+    content: '▸';
     position: absolute;
-    left: -1.75rem;
-    top: 7px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--accent-lavender);
-    box-shadow: 0 0 0 3px var(--bg-primary);
+    left: -1.55rem;
+    top: 2px;
+    font-size: 0.9rem;
+    line-height: 1;
+    color: var(--accent-lavender);
 }
 
-.timeline-role:nth-child(3)::before { background: var(--accent-sage); }
 
 .role-title {
     font-family: var(--font-display);
@@ -954,53 +998,37 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     margin-bottom: 0.1rem;
 }
 
-.timeline-role:nth-child(3) .role-product { color: var(--accent-sage); }
-
 .role-date {
     font-size: 0.75rem;
     color: var(--text-tertiary);
     margin-bottom: 0.85rem;
 }
 
-.role-bullets {
-    list-style: none;
-    display: grid;
-    gap: 0.45rem;
-}
-
-.role-bullets li {
-    font-size: 0.82rem;
+.role-narrative {
+    font-size: 0.86rem;
+    line-height: 1.72;
     color: var(--text-secondary);
-    line-height: 1.6;
-    padding-left: 0.9rem;
-    position: relative;
+    margin: 0.4rem 0 0.75rem 0;
 }
 
-.role-bullets li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.55em;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: var(--accent-lavender);
-    opacity: 0.5;
+.role-focus {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.25rem;
 }
 
-.timeline-role:nth-child(3) .role-bullets li::before { background: var(--accent-sage); }
-
-.role-bullets strong {
-    color: var(--text-primary);
-    font-weight: 600;
+.role-focus-tag {
+    font-size: 0.68rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text-tertiary);
+    letter-spacing: 0.02em;
+    font-family: var(--font-display);
+    text-transform: uppercase;
 }
-
-.role-bullets .metric {
-    color: var(--accent-lavender);
-    font-weight: 600;
-}
-
-.timeline-role:nth-child(3) .role-bullets .metric { color: var(--accent-sage); }
 
 /* ---- Sidebar ---- */
 .exp-sidebar {
@@ -1020,43 +1048,68 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     margin-bottom: 0.6rem;
 }
 
-.sidebar-tags {
+.sidebar-stats {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.sidebar-stat {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
+    align-items: baseline;
+    gap: 0.5rem;
 }
 
-.sidebar-tag {
-    font-size: 0.7rem;
-    padding: 0.25rem 0.6rem;
-    border-radius: 100px;
-    background: var(--accent-lavender-dim);
+.stat-value {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
     color: var(--accent-lavender);
-    font-weight: 500;
+    min-width: 2.5rem;
 }
 
-.sidebar-tag--tool {
-    background: var(--accent-sage-dim);
-    color: var(--accent-sage);
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    line-height: 1.35;
 }
 
-.sidebar-list {
+
+.sidebar-skill-list {
     list-style: none;
     display: grid;
-    gap: 0.35rem;
+    gap: 0.3rem;
 }
 
-.sidebar-list li {
-    font-size: 0.78rem;
+.sidebar-skill-list li {
+    font-size: 0.75rem;
     color: var(--text-secondary);
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    line-height: 1.4;
+    padding-left: 0.85rem;
+    position: relative;
 }
 
-.sidebar-list .level {
-    font-size: 0.7rem;
+.sidebar-skill-list li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--accent-lavender);
+    font-weight: 600;
+}
+
+.sidebar-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+.sidebar-tool {
+    font-size: 0.68rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    background: var(--bg-secondary);
     color: var(--text-tertiary);
+    border: 1px solid var(--border-light);
+    font-family: var(--font-body);
 }
 
 .sidebar-edu {
@@ -1214,72 +1267,94 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     line-height: 1.65;
 }
 
+
 /* ========================================= */
-/* PANEL: SKILLS                             */
+/* AI HUB PANEL                              */
 /* ========================================= */
-.skills-grid {
+.ai-hub-intro {
+    font-size: 0.88rem;
+    color: var(--text-tertiary);
+    line-height: 1.55;
+    margin-bottom: 1.75rem;
+}
+
+.ai-hub-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 1.25rem;
 }
 
-.skill-group {
-    padding: 1.5rem;
+.hub-card {
     background: var(--bg-card);
-    border-radius: 8px;
     border: 1px solid var(--border-light);
-    transition: border-color 0.3s ease;
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
 }
 
-.skill-group:hover { border-color: var(--border); }
+.hub-card:hover {
+    border-color: var(--accent-lavender);
+    transform: translateY(-3px);
+}
 
-.skill-group-header {
+.hub-card--featured {
+    border-top: 3px solid var(--accent-lavender);
+}
+
+.hub-card-emoji {
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.hub-card-title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.hub-card-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    flex: 1;
+}
+
+.hub-card-meta {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
 }
 
-.skill-group-accent {
-    width: 3px;
-    height: 20px;
-    border-radius: 3px;
-}
-
-.skill-group:nth-child(1) .skill-group-accent { background: var(--accent-lavender); }
-.skill-group:nth-child(2) .skill-group-accent { background: var(--accent-sage); }
-.skill-group:nth-child(3) .skill-group-accent { background: var(--accent-cream); }
-.skill-group:nth-child(4) .skill-group-accent { background: var(--accent-rose); }
-
-.skill-group-title {
-    font-family: var(--font-body);
-    font-size: 0.75rem;
+.hub-card-badge {
+    font-size: 0.65rem;
     font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-primary);
-}
-
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-}
-
-.skill-tag {
-    font-size: 0.78rem;
-    font-weight: 400;
-    padding: 0.3rem 0.65rem;
+    padding: 0.2rem 0.5rem;
     border-radius: 4px;
-    background: var(--bg-secondary);
-    color: var(--text-secondary);
-    border: 1px solid var(--border-light);
-    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-.skill-tag:hover {
-    border-color: var(--border);
-    color: var(--text-primary);
+.hub-card-badge--live {
+    background: var(--accent-sage-dim);
+    color: var(--accent-sage);
+}
+
+.hub-card-badge--soon {
+    background: var(--accent-cream-dim);
+    color: var(--accent-cream);
+}
+
+.hub-card-badge--idea {
+    background: var(--bg-secondary);
+    color: var(--text-tertiary);
+    border: 1px solid var(--border-light);
 }
 
 /* ========================================= */
@@ -1416,6 +1491,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     /* Disable hover expand on touch devices */
     .btn-icon-label { display: none; }
 
+    .ai-hub-grid { grid-template-columns: 1fr 1fr; }
+
     .site-footer { padding: 0.3rem 1.5rem; }
     .site-footer .footer-cta-link { font-size: 0.72rem; font-weight: 500; }
 
@@ -1450,9 +1527,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
         gap: 1rem;
     }
 
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
 }
 
 @media (max-width: 600px) {
@@ -1472,6 +1546,9 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     .btn-primary::after { width: 11px; height: 11px; }
     .btn.btn-icon { height: 34px; }
     .hero-ctas { gap: 0.45rem; margin-bottom: 1.75rem; }
+    .ai-hub-grid { grid-template-columns: 1fr; }
+    .hub-card { padding: 1.25rem; }
+
     .site-footer { padding: 0.25rem 1rem; }
     .site-footer .footer-cta-link { font-size: 0.55rem; font-weight: 500; }
 
@@ -1491,8 +1568,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     .case-header { padding: 1rem; }
     .case-content { padding: 0 1rem 1rem; }
     .case-title { font-size: 1.05rem; }
-
-    .skill-group { padding: 1.25rem; }
 }
 </style>
 </head>
@@ -1536,11 +1611,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
         </div>
         <h1 class="hero-name">Susana Pérez</h1>
 
-        <p class="hero-title">Features shipped. Hits licensed. Scale unlocked.</p>
+        <p class="hero-title">I'm a cross-platform Product Manager who runs the sprint, closes the deal, and pulls the data to see if it actually worked.</p>
 
-        <p class="hero-intro">I build products where music meets technology. Currently at Learnfield GmbH &mdash; Product Owner for Trala, License Manager, and Education Content lead &mdash; shipping features, negotiating deals, and keeping content strategy moving for two music learning apps and 1M+ users.</p>
+        <p class="hero-intro">I ship products people actually use. 3+ years in B2C SaaS &mdash; owning roadmaps, leading cross-functional teams, and making the calls that move things forward. Currently Product Owner for Trala and PM for Skoove at Learnfield GmbH, managing two cross-platform mobile products and 1M+ users.</p>
 
-        <p class="hero-meta">Berlin, Germany <span class="meta-sep">&vert;</span> Product Owner &amp; Product Manager</p>
+        <p class="hero-meta">Berlin, Germany <span class="meta-sep">&middot;</span> Product Owner &amp; Product Manager <span class="meta-sep">&middot;</span> B2C SaaS <span class="meta-sep">&middot;</span> EdTech <span class="meta-sep">&middot;</span> iOS &amp; Android</p>
 
         <div class="hero-ctas">
             <a href="Susana_Perez_CV.pdf" download class="btn btn-primary">Download CV</a>
@@ -1575,9 +1650,9 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
                 </a>
             </li>
             <li class="nav-menu-item">
-                <a class="nav-menu-link" data-panel="skills" href="#" role="button">
+                <a class="nav-menu-link" data-panel="ai-hub" href="#" role="button">
                     <span class="nav-menu-number">04</span>
-                    <span class="nav-menu-label">Skills</span>
+                    <span class="nav-menu-label">AI Projects Hub</span>
 
                 </a>
             </li>
@@ -1595,7 +1670,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     <div class="panel-header">
         <div class="panel-header-left">
             <span class="panel-number">01 &mdash; About</span>
-            <h2 class="panel-title">🌱 I learned how people learn<br>before I learned how to ship.</h2>
+            <h2 class="panel-title">🌱 I build for the person who almost gave up.</h2>
         </div>
         <button class="panel-close" aria-label="Close panel">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -1604,11 +1679,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     <div class="panel-body">
         <div class="about-grid">
             <div class="about-narrative">
-                <p>I started in education and special needs &mdash; not the typical PM origin story. But working with people who genuinely struggled to learn something taught me what no framework ever could: where friction really lives, why people abandon things, and what makes something feel worth returning to. That lens shapes everything I build.</p>
+                <p>I care about the user who almost quit &mdash; the one who tried the product, hit a wall, and left. Not because they stopped wanting something, but because the experience didn&rsquo;t meet them where they were. Finding that wall and removing it is what I do.</p>
 
-                <p>Today I work at <strong>Learnfield GmbH</strong>, managing product, content, and licensing across two music learning apps &mdash; <strong>Skoove</strong> (piano, 1M+ users) and <strong>Trala</strong> (violin, iOS). Three distinct roles. One direction: help people actually learn to play music.</p>
+                <p>Today I&rsquo;m at <strong>Learnfield GmbH</strong>, where I hold three distinct roles &mdash; Product Owner for <strong>Trala</strong>, PM for <strong>Skoove</strong> (1M+ users), and License Manager. Three years in B2C SaaS EdTech, owning product decisions, managing cross-functional delivery, and connecting business outcomes to user behavior.</p>
 
-                <p>My work lives at the intersection of business, creative, and technical domains. In any given week, I might be negotiating a multi-year licensing advance with a major publisher, scoping sprint stories to ship a no-sign-up flow on iOS, QA-ing a Japanese localization across three parallel workstreams, or pulling Mixpanel data to catch a licensing cost ratio creeping toward an alarm threshold. I like working in that range. It&rsquo;s where I do my best thinking.</p>
+                <p>My work spans business, creative, and technical domains &mdash; and I like it that way. In any given week I might be scoping sprint stories to ship a mobile feature, coordinating a 4-team localization across parallel workstreams, pulling Mixpanel data to monitor a cost threshold, or closing a multi-year commercial deal. I move fast, decide with data, and thrive in complexity.</p>
             </div>
 
             <div class="about-sidebar">
@@ -1641,7 +1716,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     <div class="panel-header">
         <div class="panel-header-left">
             <span class="panel-number">02 &mdash; Experience</span>
-            <h2 class="panel-title">🎵 Career Journey</h2>
+            <h2 class="panel-title">🚀 Four years building cross-platform products &mdash; and counting.</h2>
         </div>
         <button class="panel-close" aria-label="Close panel">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -1652,88 +1727,104 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 
             <!-- Left: Timeline -->
             <div class="exp-timeline">
-                <p class="timeline-company">Learnfield GmbH &middot; Berlin, Germany</p>
-
-                <!-- Role 1: Product Owner — Trala -->
-                <div class="timeline-role">
-                    <h3 class="role-title">Product Owner</h3>
-                    <p class="role-product">Trala &mdash; Violin Learning App (iOS)</p>
-                    <p class="role-date">2025 &ndash; Present</p>
-                    <ul class="role-bullets">
-                        <li>Lead product roadmap strategy and execution with editorial, technical, and growth teams</li>
-                        <li>Shipped <span class="metric">iOS 7.5.1</span> removing mandatory sign-up &mdash; the top barrier to new user engagement identified through App Store analysis and user research</li>
-                        <li>Building Trala&rsquo;s first Japanese-language experience across a <span class="metric">4-person team</span> spanning iOS strings, educational text, and video dubbing</li>
-                        <li>Own full product roadmap, competitive positioning, and annual strategy &mdash; led OKR workshops with CPO</li>
-                        <li>Implement AI-based processes reducing production times by up to <span class="metric">80%</span></li>
-                    </ul>
+                <div class="timeline-glance">
+                    <div class="glance-item">
+                        <span class="glance-value">3+</span>
+                        <span class="glance-label">years in B2C SaaS EdTech</span>
+                    </div>
+                    <div class="glance-item">
+                        <span class="glance-value">1M+</span>
+                        <span class="glance-label">users across mobile products</span>
+                    </div>
+                    <div class="glance-item">
+                        <span class="glance-value">8+</span>
+                        <span class="glance-label">commercial deals closed</span>
+                    </div>
                 </div>
 
-                <!-- Role 2: PM & Licensing Lead — Skoove -->
-                <div class="timeline-role">
-                    <h3 class="role-title">Product Manager &amp; Licensing Lead</h3>
-                    <p class="role-product">Skoove &mdash; Piano Learning App (1M+ users)</p>
-                    <p class="role-date">2022 &ndash; Present</p>
-                    <ul class="role-bullets">
-                        <li>Scaled content catalogue from 300 to <span class="metric">800+ titles</span> in one year, increasing engagement by <span class="metric">25%</span></li>
-                        <li>Designed seasonal collections aligned with marketing campaigns &mdash; contributed to App Store features</li>
-                        <li>Led Song Search MVP and Favorites feature &mdash; Search became <span class="metric">#1 discovery method</span>; Favorites hit 30% premium adoption</li>
-                        <li>Negotiated <span class="metric">&euro;380K</span> multi-year UMPI/SACEM licensing advance &mdash; improved cost ratio from 18% to <span class="metric">14.7%</span></li>
-                        <li>Coordinate agreements with 8+ publishers and collecting societies (Universal, Warner Chappell, Hal Leonard, ICE, JASRAC)</li>
-                        <li>Built Mixpanel reporting pipeline for content usage monitoring and licensing cost-to-revenue tracking</li>
-                    </ul>
+                <div class="timeline-section timeline-section--work">
+                    <p class="timeline-company">Learnfield GmbH &middot; Berlin, Germany</p>
+
+                    <!-- Role 1: Product Owner — Trala -->
+                    <div class="timeline-role">
+                        <h3 class="role-title">Product Owner &mdash; Trala (iOS &amp; Android)</h3>
+                        <p class="role-date">2025 &ndash; Present</p>
+                        <p class="role-narrative">Taking a violin app global &mdash; starting with Japan. I own the full product lifecycle across a 5-person team: roadmap, sprints, and competitive positioning. The current challenge is running three parallel expansion workstreams at once &mdash; localizing the product, adapting the educational content, and using AI-assisted workflows to dub video at a fraction of the usual production time.</p>
+                        <div class="role-focus">
+                            <span class="role-focus-tag">International Expansion</span>
+                            <span class="role-focus-tag">AI Workflows</span>
+                            <span class="role-focus-tag">Cross-platform</span>
+                            <span class="role-focus-tag">Team Leadership</span>
+                        </div>
+                    </div>
+
+                    <!-- Role 2: PM & Licensing Lead — Skoove -->
+                    <div class="timeline-role">
+                        <h3 class="role-title">PM &amp; Licensing Lead &mdash; Skoove (1M+ users)</h3>
+                        <p class="role-date">2022 &ndash; Present</p>
+                        <p class="role-narrative">A hybrid role at the intersection of product, data, and business. I run the content strategy and product backlog while also leading licensing negotiations with major music publishers. The kind of position where a Monday morning means reviewing Mixpanel funnels, and a Tuesday afternoon means negotiating deal terms with a rights organization in Paris.</p>
+                        <div class="role-focus">
+                            <span class="role-focus-tag">Content Strategy</span>
+                            <span class="role-focus-tag">Licensing &amp; Deals</span>
+                            <span class="role-focus-tag">Data Analytics</span>
+                            <span class="role-focus-tag">Product Discovery</span>
+                        </div>
+                    </div>
                 </div>
+
             </div>
 
-            <!-- Right: Skills Sidebar -->
+            <!-- Right: Compact Profile Sidebar -->
             <div class="exp-sidebar">
                 <div class="sidebar-section">
                     <h4>Core Skills</h4>
-                    <div class="sidebar-tags">
-                        <span class="sidebar-tag">Product Strategy</span>
-                        <span class="sidebar-tag">Roadmapping</span>
-                        <span class="sidebar-tag">Content Positioning</span>
-                        <span class="sidebar-tag">Market Analysis</span>
-                        <span class="sidebar-tag">Funnel Optimization</span>
-                        <span class="sidebar-tag">User Research</span>
-                        <span class="sidebar-tag">Campaign Design</span>
-                        <span class="sidebar-tag">Budget &amp; Prioritization</span>
-                    </div>
+                    <ul class="sidebar-skill-list">
+                        <li>Product Strategy &amp; Roadmapping</li>
+                        <li>User Research &amp; A/B Testing</li>
+                        <li>Cross-functional Delivery</li>
+                        <li>Stakeholder Management</li>
+                        <li>Data Analytics (Mixpanel, GA)</li>
+                        <li>Licensing &amp; Commercial Negotiation</li>
+                        <li>Content Ops &amp; Localization</li>
+                        <li>Financial Modeling</li>
+                    </ul>
                 </div>
 
                 <div class="sidebar-section">
                     <h4>Tools</h4>
-                    <div class="sidebar-tags">
-                        <span class="sidebar-tag sidebar-tag--tool">Jira</span>
-                        <span class="sidebar-tag sidebar-tag--tool">Confluence</span>
-                        <span class="sidebar-tag sidebar-tag--tool">Miro</span>
-                        <span class="sidebar-tag sidebar-tag--tool">Mixpanel</span>
-                        <span class="sidebar-tag sidebar-tag--tool">Google Analytics</span>
-                        <span class="sidebar-tag sidebar-tag--tool">App Store Connect</span>
+                    <div class="sidebar-tools">
+                        <span class="sidebar-tool">Jira</span>
+                        <span class="sidebar-tool">Confluence</span>
+                        <span class="sidebar-tool">Miro</span>
+                        <span class="sidebar-tool">Mixpanel</span>
+                        <span class="sidebar-tool">Google Analytics</span>
+                        <span class="sidebar-tool">App Store Connect</span>
+                        <span class="sidebar-tool">Google Play Console</span>
+                        <span class="sidebar-tool">RevenueCat</span>
+                        <span class="sidebar-tool">Maze</span>
+                        <span class="sidebar-tool">Excel</span>
                     </div>
                 </div>
 
                 <div class="sidebar-section">
-                    <h4>Languages</h4>
-                    <ul class="sidebar-list">
-                        <li>Spanish <span class="level">Native</span></li>
-                        <li>English <span class="level">Fluent</span></li>
-                        <li>German <span class="level">Professional</span></li>
-                    </ul>
+                    <h4>AI Tools</h4>
+                    <div class="sidebar-tools">
+                        <span class="sidebar-tool">Claude</span>
+                        <span class="sidebar-tool">ChatGPT</span>
+                        <span class="sidebar-tool">HeyGen</span>
+                        <span class="sidebar-tool">Midjourney</span>
+                        <span class="sidebar-tool">Prompt Engineering</span>
+                    </div>
                 </div>
 
                 <div class="sidebar-section">
-                    <h4>Education</h4>
-                    <ul class="sidebar-edu">
-                        <li>
-                            <span class="edu-degree">MSc Therapy &amp; Education</span>
-                            <span class="edu-school">SRH Heidelberg University &middot; 2020</span>
-                        </li>
-                        <li>
-                            <span class="edu-degree">BA Music</span>
-                            <span class="edu-school">Universidad EAFIT, Colombia &middot; 2014</span>
-                        </li>
-                    </ul>
+                    <h4>Certifications</h4>
+                    <div class="sidebar-tools">
+                        <span class="sidebar-tool">PSPO I</span>
+                        <span class="sidebar-tool">IBM PM Certificate</span>
+                    </div>
                 </div>
+
             </div>
 
         </div>
@@ -1745,7 +1836,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     <div class="panel-header">
         <div class="panel-header-left">
             <span class="panel-number">03 &mdash; Selected Work</span>
-            <h2 class="panel-title">💡 How I think,<br>how I ship.</h2>
+            <h2 class="panel-title">💡 Projects that shaped how I think.</h2>
         </div>
         <button class="panel-close" aria-label="Close panel">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -1760,11 +1851,12 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
                     <div class="case-header-left">
                         <div class="case-number">01</div>
                         <h3 class="case-title">Song Discovery</h3>
-                        <p class="case-subtitle">Making the right songs findable &mdash; Search, Favorites, and what the data said</p>
+                        <p class="case-subtitle">From buried catalogue to #1 discovery method &mdash; Search, Favorites, and what the data said</p>
                         <div class="case-tags">
-                            <span class="case-tag case-tag--sage">User Research</span>
+                            <span class="case-tag case-tag--sage">Product Discovery</span>
                             <span class="case-tag case-tag--lavender">A/B Testing</span>
-                            <span class="case-tag case-tag--cream">Data Analysis</span>
+                            <span class="case-tag case-tag--cream">User Research</span>
+                            <span class="case-tag case-tag--rose">Funnel Optimization</span>
                         </div>
                     </div>
                     <div class="case-toggle" aria-hidden="true">
@@ -1795,11 +1887,12 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
                     <div class="case-header-left">
                         <div class="case-number">02</div>
                         <h3 class="case-title">Scaling the Catalogue</h3>
-                        <p class="case-subtitle">Extending a music library means solving licensing, production, and quality at the same time</p>
+                        <p class="case-subtitle">Growing a content library 160% while keeping licensing coverage and quality intact</p>
                         <div class="case-tags">
                             <span class="case-tag case-tag--rose">Content Strategy</span>
                             <span class="case-tag case-tag--cream">Licensing</span>
                             <span class="case-tag case-tag--sage">Content Ops</span>
+                            <span class="case-tag case-tag--lavender">Product-Business Alignment</span>
                         </div>
                     </div>
                     <div class="case-toggle" aria-hidden="true">
@@ -1830,11 +1923,12 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
                     <div class="case-header-left">
                         <div class="case-number">03</div>
                         <h3 class="case-title">Bringing the Hits to the App</h3>
-                        <p class="case-subtitle">The licensing work behind getting Billie Eilish, Bad Bunny, and today&rsquo;s biggest artists into a music learning app</p>
+                        <p class="case-subtitle">The commercial strategy behind a &euro;380K deal and a catalogue users actually want</p>
                         <div class="case-tags">
-                            <span class="case-tag case-tag--lavender">Negotiation</span>
-                            <span class="case-tag case-tag--cream">Publisher Relations</span>
-                            <span class="case-tag case-tag--sage">Stakeholder Mgmt</span>
+                            <span class="case-tag case-tag--lavender">Commercial Negotiation</span>
+                            <span class="case-tag case-tag--cream">Stakeholder Management</span>
+                            <span class="case-tag case-tag--sage">Financial Modeling</span>
+                            <span class="case-tag case-tag--rose">Business Strategy</span>
                         </div>
                     </div>
                     <div class="case-toggle" aria-hidden="true">
@@ -1859,52 +1953,19 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
                 </div>
             </div>
 
+
             <!-- Case 4 -->
             <div class="case-card">
                 <div class="case-header" role="button" aria-expanded="false" tabindex="0">
                     <div class="case-header-left">
                         <div class="case-number">04</div>
-                        <h3 class="case-title">Violin Learning, Now in Japanese</h3>
-                        <p class="case-subtitle">Taking Trala to Japan &mdash; from zero infrastructure to a full market entry</p>
-                        <div class="case-tags">
-                            <span class="case-tag case-tag--lavender">International PM</span>
-                            <span class="case-tag case-tag--rose">Localization</span>
-                            <span class="case-tag case-tag--cream">Vendor Mgmt</span>
-                        </div>
-                    </div>
-                    <div class="case-toggle" aria-hidden="true">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    </div>
-                </div>
-                <div class="case-body">
-                    <div class="case-content">
-                        <div class="case-section">
-                            <h4>Problem</h4>
-                            <p>Trala had no Japanese-language experience &mdash; no translated UI, no localized educational content, no dubbing infrastructure. A potential Yamaha partnership made market entry strategically urgent. Everything needed to be built from zero.</p>
-                        </div>
-                        <div class="case-section">
-                            <h4>Process</h4>
-                            <p>Hired and onboarded a 4-person localization team. Designed the three-workstream structure: iOS static strings, educational text, and video dubbing &mdash; with separate timelines, QA checkpoints, and dependency mapping. Ran an engineering spike to assess AI dubbing feasibility. Also ran a full audit and cleanup of the iOS Localizable.strings file.</p>
-                        </div>
-                        <div class="case-section">
-                            <h4>Outcome</h4>
-                            <p>Three workstreams running in parallel, on track for MVP delivery (target: Sep&ndash;Oct 2026). The project also surfaced a bigger organizational question: what does scalable localization infrastructure look like?</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Case 5 -->
-            <div class="case-card">
-                <div class="case-header" role="button" aria-expanded="false" tabindex="0">
-                    <div class="case-header-left">
-                        <div class="case-number">05</div>
                         <h3 class="case-title">Content at Scale</h3>
-                        <p class="case-subtitle">Centralizing the system that keeps music learning fresh across 6+ languages</p>
+                        <p class="case-subtitle">The ops system behind consistent delivery across 6+ languages and growing</p>
                         <div class="case-tags">
                             <span class="case-tag case-tag--rose">Content Ops</span>
                             <span class="case-tag case-tag--sage">CMS</span>
                             <span class="case-tag case-tag--cream">Process Design</span>
+                            <span class="case-tag case-tag--lavender">Cross-functional Delivery</span>
                         </div>
                     </div>
                     <div class="case-toggle" aria-hidden="true">
@@ -1929,145 +1990,64 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
                 </div>
             </div>
 
-            <!-- Case 6 -->
-            <div class="case-card">
-                <div class="case-header" role="button" aria-expanded="false" tabindex="0">
-                    <div class="case-header-left">
-                        <div class="case-number">06</div>
-                        <h3 class="case-title">Building the Backbone</h3>
-                        <p class="case-subtitle">The financial model and strategic framework behind Skoove&rsquo;s licensing operation</p>
-                        <div class="case-tags">
-                            <span class="case-tag case-tag--cream">Financial Modeling</span>
-                            <span class="case-tag case-tag--sage">Product Strategy</span>
-                            <span class="case-tag case-tag--lavender">Process Design</span>
-                        </div>
-                    </div>
-                    <div class="case-toggle" aria-hidden="true">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    </div>
-                </div>
-                <div class="case-body">
-                    <div class="case-content">
-                        <div class="case-section">
-                            <h4>Problem</h4>
-                            <p>Skoove&rsquo;s licensing operation had two connected gaps. Strategically, deals had grown organically with no overarching framework. Operationally, the financial model required product and content knowledge that the Finance team didn&rsquo;t have.</p>
-                        </div>
-                        <div class="case-section">
-                            <h4>Process</h4>
-                            <p>Co-authored the Licensing Strategy 2026 with the CPO, leveraging the ICE agreement&rsquo;s usage-threshold structure to scale repertoire without proportional cost growth. Took over the financial model from Finance through a structured handover. Built a QA framework with cost-to-revenue ratio monitoring (normal 11&ndash;12%, alarm at 20%), customer number validation, and formula audits across 6+ tabs.</p>
-                        </div>
-                        <div class="case-section">
-                            <h4>Outcome</h4>
-                            <p>A licensing operation running on a clear strategic framework and self-sustaining financial model. Licensing cost ratio: 14.7% (down from 18%) in January 2026. Revenue grew from &euro;236K to &euro;315K (Dec &rsquo;25 &rarr; Jan &rsquo;26). ICE catalogue expansion path defined and scoped for 2026.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
         </div>
     </div>
 </div>
 
-<!-- ===== PANEL: SKILLS ===== -->
-<div class="panel" id="panel-skills" role="dialog" aria-label="Skills" aria-modal="true">
+
+<!-- ===== PANEL: AI PROJECTS ===== -->
+<div class="panel" id="panel-ai-hub" role="dialog" aria-label="AI Projects Hub" aria-modal="true">
     <div class="panel-header">
         <div class="panel-header-left">
-            <span class="panel-number">04 &mdash; Skills &amp; Tools</span>
-            <h2 class="panel-title">🛠️ What I work with.</h2>
+            <span class="panel-number">04 &mdash; AI Projects</span>
+            <h2 class="panel-title">🤖 Building my PM toolkit for the agentic era.</h2>
         </div>
         <button class="panel-close" aria-label="Close panel">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </button>
     </div>
     <div class="panel-body">
-        <div class="skills-grid">
-            <div class="skill-group">
-                <div class="skill-group-header">
-                    <div class="skill-group-accent"></div>
-                    <h3 class="skill-group-title">Product Management</h3>
+        <div class="ai-hub-grid">
+            <!-- Card 1: Interactive PM Guidebook (live) -->
+            <a href="#" class="hub-card hub-card--featured">
+                <span class="hub-card-emoji">📖</span>
+                <h3 class="hub-card-title">Interactive PM Frameworks Guidebook</h3>
+                <p class="hub-card-desc">A hands-on guide to product frameworks &mdash; RICE, MoSCoW, Kano, Jobs-to-be-Done, and more &mdash; built as an interactive web experience. For PMs who learn by doing.</p>
+                <div class="hub-card-meta">
+                    <span class="hub-card-badge hub-card-badge--live">Live</span>
                 </div>
-                <div class="skill-tags">
-                    <span class="skill-tag">Jira</span>
-                    <span class="skill-tag">Mixpanel</span>
-                    <span class="skill-tag">Sprint Planning</span>
-                    <span class="skill-tag">Backlog Management</span>
-                    <span class="skill-tag">Roadmapping</span>
-                    <span class="skill-tag">Miro</span>
-                    <span class="skill-tag">User Research (moderated &amp; unmoderated)</span>
-                    <span class="skill-tag">Usability Testing (Maze)</span>
-                    <span class="skill-tag">App Store Connect</span>
-                    <span class="skill-tag">RevenueCat</span>
-                    <span class="skill-tag">Intercom</span>
-                    <span class="skill-tag">Agile / Scrum</span>
-                </div>
-            </div>
+            </a>
 
-            <div class="skill-group">
-                <div class="skill-group-header">
-                    <div class="skill-group-accent"></div>
-                    <h3 class="skill-group-title">Licensing &amp; Legal</h3>
+            <!-- Card 2: Backlog Health Agent -->
+            <a href="#" class="hub-card">
+                <span class="hub-card-emoji">🔄</span>
+                <h3 class="hub-card-title">Backlog Health Agent</h3>
+                <p class="hub-card-desc">A Jira-connected agent that audits ticket quality weekly &mdash; flags stale stories, missing acceptance criteria, and unestimated items &mdash; then posts a Slack digest. Because backlog debt is invisible until it isn&rsquo;t.</p>
+                <div class="hub-card-meta">
+                    <span class="hub-card-badge hub-card-badge--soon">Coming Soon</span>
                 </div>
-                <div class="skill-tags">
-                    <span class="skill-tag">Contract Negotiation</span>
-                    <span class="skill-tag">DDEX Reporting</span>
-                    <span class="skill-tag">Financial Modeling</span>
-                    <span class="skill-tag">Copyright Compliance</span>
-                    <span class="skill-tag">Publisher Relations</span>
-                    <span class="skill-tag">UMPI / SACEM</span>
-                    <span class="skill-tag">BMI / GMR / ASCAP</span>
-                    <span class="skill-tag">ICE / JASRAC / SOCAN</span>
-                    <span class="skill-tag">BMAT Recoupment Tracking</span>
-                </div>
-            </div>
+            </a>
 
-            <div class="skill-group">
-                <div class="skill-group-header">
-                    <div class="skill-group-accent"></div>
-                    <h3 class="skill-group-title">Data &amp; Analysis</h3>
+            <!-- Card 3: App Review Insights Pipeline -->
+            <a href="#" class="hub-card">
+                <span class="hub-card-emoji">📱</span>
+                <h3 class="hub-card-title">App Review Insights Pipeline</h3>
+                <p class="hub-card-desc">Automated pipeline pulling App Store &amp; Play Store reviews, classifying by theme and sentiment, and surfacing churn signals and feature requests &mdash; closing the loop between user voice and backlog priorities.</p>
+                <div class="hub-card-meta">
+                    <span class="hub-card-badge hub-card-badge--soon">Coming Soon</span>
                 </div>
-                <div class="skill-tags">
-                    <span class="skill-tag">Mixpanel Analytics</span>
-                    <span class="skill-tag">Funnel Analysis</span>
-                    <span class="skill-tag">A/B Testing</span>
-                    <span class="skill-tag">Cohort Analysis</span>
-                    <span class="skill-tag">Google Sheets (Advanced)</span>
-                    <span class="skill-tag">Financial Reporting</span>
-                    <span class="skill-tag">Usage Monitoring</span>
-                    <span class="skill-tag">KPI Tracking</span>
-                    <span class="skill-tag">Cost-Revenue Modeling</span>
-                </div>
-            </div>
+            </a>
 
-            <div class="skill-group">
-                <div class="skill-group-header">
-                    <div class="skill-group-accent"></div>
-                    <h3 class="skill-group-title">Languages &amp; Localization</h3>
+            <!-- Card 4: Release Notes Generator -->
+            <a href="#" class="hub-card">
+                <span class="hub-card-emoji">📝</span>
+                <h3 class="hub-card-title">Release Notes Generator</h3>
+                <p class="hub-card-desc">Connects to Jira &amp; GitHub, pulls resolved tickets and merged PRs, and drafts user-facing release notes ready for review. Saves 30&ndash;60 minutes per release cycle.</p>
+                <div class="hub-card-meta">
+                    <span class="hub-card-badge hub-card-badge--soon">Coming Soon</span>
                 </div>
-                <div class="skill-tags">
-                    <span class="skill-tag">iOS Localization</span>
-                    <span class="skill-tag">Translation Workflows</span>
-                    <span class="skill-tag">Multilingual QA</span>
-                    <span class="skill-tag">Video Dubbing Mgmt</span>
-                    <span class="skill-tag">Spanish (Native)</span>
-                    <span class="skill-tag">English (Professional)</span>
-                    <span class="skill-tag">German (Working)</span>
-                </div>
-            </div>
-
-            <div class="skill-group">
-                <div class="skill-group-header">
-                    <div class="skill-group-accent"></div>
-                    <h3 class="skill-group-title">AI &amp; Emerging Tools</h3>
-                </div>
-                <div class="skill-tags">
-                    <span class="skill-tag">Claude</span>
-                    <span class="skill-tag">ChatGPT</span>
-                    <span class="skill-tag">HeyGen</span>
-                    <span class="skill-tag">Midjourney</span>
-                    <span class="skill-tag">Prompt Engineering</span>
-                    <span class="skill-tag">AI-assisted Localization</span>
-                </div>
-            </div>
+            </a>
         </div>
     </div>
 </div>
@@ -2078,7 +2058,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
         <path class="fwave-1" d="M0 22V9C200 3 380 1 580 4s360 7 520 6 260-5 340-4V22H0z"/>
         <path class="fwave-2" d="M0 22V15C180 10 340 8 520 11s320 5 480 4 260-3 440-2V22H0z"/>
     </svg>
-    <p class="footer-cta"><a href="#" class="footer-cta-link">Free Interactive Guidebook for PM Frameworks</a></p>
+    <p class="footer-cta"><span class="footer-cta-text">Built with curiosity &amp; <a href="https://claude.ai" target="_blank" rel="noopener" class="footer-cta-link">Claude</a></span></p>
 </footer>
 
 <!-- ===== SCRIPTS ===== -->
