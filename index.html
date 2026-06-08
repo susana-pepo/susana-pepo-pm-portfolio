@@ -1523,8 +1523,8 @@ a.hub-card:hover .hub-card-icon {
 /* ========================================= */
 .ai-hub-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
 }
 
 .hub-card {
@@ -1630,6 +1630,145 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
     background: var(--bg-secondary);
     color: var(--text-tertiary);
     border: 1px solid var(--border-light);
+}
+
+/* ---- Expandable "what I learned" cards ---- */
+.hub-card--expandable {
+    padding: 0;
+    gap: 0;
+    overflow: hidden;
+}
+
+.hub-card-head {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 1rem;
+    padding: 1.4rem 1.5rem;
+    cursor: pointer;
+}
+
+.hub-card-head-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    min-width: 0;
+}
+
+.hub-card--expandable .hub-card-icon { margin-top: 0.1rem; }
+
+.hub-card-toggle {
+    width: 32px;
+    height: 32px;
+    margin-top: 0.1rem;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--text-tertiary);
+    transition: transform 0.4s var(--ease-spring), background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.hub-card--expandable:hover { border-color: var(--accent-lavender-border); }
+.hub-card--expandable:hover .hub-card-toggle {
+    border-color: var(--accent-lavender-border);
+    color: var(--accent-lavender);
+}
+
+.hub-card--expandable.open {
+    border-color: var(--accent-lavender-border);
+    box-shadow:
+        inset 0 1px 0 var(--core-highlight),
+        var(--shadow-pop),
+        0 0 0 1px var(--accent-lavender-border);
+}
+
+.hub-card--expandable.open .hub-card-toggle {
+    background: var(--accent-lavender-dim);
+    border-color: var(--accent-lavender);
+    color: var(--accent-lavender);
+    transform: rotate(45deg);
+}
+
+.hub-card-reveal {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.55s var(--ease-out);
+}
+
+.hub-card--expandable.open .hub-card-reveal { max-height: 1000px; }
+
+.hub-card-reveal-inner {
+    padding: 1.25rem 1.5rem 1.6rem;
+    border-top: 1px solid var(--border-light);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.4s ease 0.08s, transform 0.45s var(--ease-out) 0.08s;
+}
+
+.hub-card--expandable.open .hub-card-reveal-inner {
+    opacity: 1;
+    transform: none;
+}
+
+.learn-lead {
+    font-size: 0.9rem;
+    line-height: 1.68;
+    color: var(--text-secondary);
+    margin-bottom: 1.2rem;
+    max-width: 62ch;
+}
+
+.learn-lead strong { color: var(--text-primary); font-weight: 600; }
+
+.learn-label {
+    font-family: var(--font-body);
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-lavender);
+    margin-bottom: 0.8rem;
+}
+
+.learn-list {
+    list-style: none;
+    display: grid;
+    gap: 0.7rem;
+}
+
+.learn-list li {
+    position: relative;
+    padding-left: 1.45rem;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.learn-list li::before {
+    content: '';
+    position: absolute;
+    left: 0.2rem;
+    top: 0.5em;
+    width: 7px;
+    height: 7px;
+    border-radius: 2px;
+    background: var(--accent-lavender);
+    transform: rotate(45deg);
+    opacity: 0.75;
+}
+
+.learn-list strong { color: var(--text-primary); font-weight: 600; }
+
+/* Featured live card — horizontal banner with an open affordance */
+.hub-card--live {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1.1rem;
+    padding: 1.5rem;
 }
 
 /* ========================================= */
@@ -1786,7 +1925,10 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
     /* Disable hover expand on touch devices */
     .btn-icon-label { display: none; }
 
-    .ai-hub-grid { grid-template-columns: 1fr 1fr; }
+    .ai-hub-grid { grid-template-columns: 1fr; }
+    .hub-card-head { padding: 1.15rem 1.2rem; gap: 0.8rem; }
+    .hub-card-reveal-inner { padding: 1.15rem 1.2rem 1.35rem; }
+    .hub-card--live { padding: 1.2rem; gap: 0.9rem; }
 
     .site-footer { padding: 0.15rem 1.5rem; }
     .site-footer .footer-cta-link { font-size: 0.72rem; font-weight: 500; }
@@ -2526,52 +2668,109 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
         </button>
     </div>
     <div class="panel-body">
-        <p class="ai-hub-intro">How I actually use AI in product work — not demos. The guidebook below is live and clickable; the others are write-ups in progress.</p>
+        <p class="ai-hub-intro">How I actually use AI in product work — not demos. Open any card to read what I took away from it. The frameworks guidebook at the end is live and clickable.</p>
         <div class="ai-hub-grid">
-            <!-- Card 1: AI Dubbing (in production) -->
-            <div class="hub-card hub-card--note">
-                <span class="hub-card-icon"><svg class="icon"><use href="#i-film"/></svg></span>
-                <h3 class="hub-card-title">Dub a video course at a fraction of the production time</h3>
-                <p class="hub-card-desc">How I use AI dubbing to localize Trala's video lessons for new markets without a full studio cycle.</p>
-                <div class="hub-card-meta">
-                    <span class="hub-card-tag">Localization</span>
-                    <span class="hub-card-badge hub-card-badge--active">In production</span>
-                </div>
-            </div>
 
-            <!-- Card 2: PRD to prototype (in use) -->
-            <div class="hub-card hub-card--note">
-                <span class="hub-card-icon"><svg class="icon"><use href="#i-zap"/></svg></span>
-                <h3 class="hub-card-title">From PRD to clickable prototype in an afternoon</h3>
-                <p class="hub-card-desc">Turning discovery notes into a working, shareable prototype with Claude and Google Stitch, no front-end help needed.</p>
-                <div class="hub-card-meta">
-                    <span class="hub-card-tag">Discovery &amp; Prototyping</span>
-                    <span class="hub-card-badge hub-card-badge--active">In use</span>
+            <!-- Learning 1: AI dubbing -->
+            <article class="hub-card hub-card--expandable">
+                <div class="hub-card-head" role="button" tabindex="0" aria-expanded="false">
+                    <span class="hub-card-icon"><svg class="icon"><use href="#i-film"/></svg></span>
+                    <div class="hub-card-head-text">
+                        <h3 class="hub-card-title">Dub a video course at a fraction of the production time</h3>
+                        <p class="hub-card-desc">Using AI dubbing to localize Trala's video lessons for new markets without a full studio cycle.</p>
+                        <div class="hub-card-meta">
+                            <span class="hub-card-tag">Localization</span>
+                            <span class="hub-card-badge hub-card-badge--active">In production</span>
+                        </div>
+                    </div>
+                    <span class="hub-card-toggle" aria-hidden="true">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </span>
                 </div>
-            </div>
+                <div class="hub-card-reveal">
+                    <div class="hub-card-reveal-inner">
+                        <p class="learn-lead">Trala's lessons are filmed once, in English. To open a new market I used AI dubbing to voice those same videos in the local language — turning what used to be a studio booking into a same-week task.</p>
+                        <h4 class="learn-label">What I took away</h4>
+                        <ul class="learn-list">
+                            <li><strong>The last 20% is still human.</strong> AI nails the bulk of the voiceover, but musical terms, names and timing against the on-screen hands need an editing pass before it ships.</li>
+                            <li><strong>Localization is a product call, not a translation task.</strong> I pick markets from retention data first, then dub — not the other way round.</li>
+                            <li><strong>Cheap enough to test.</strong> Cost per localized minute drops far enough that you can validate demand in a market before committing to a whole course.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
 
-            <!-- Card 3: PM Frameworks Guidebook (live) -->
-            <a href="https://susana-pepo.github.io/PM-Frameworks-Guidebook/" target="_blank" rel="noopener" class="hub-card hub-card--featured">
+            <!-- Learning 2: PRD to prototype -->
+            <article class="hub-card hub-card--expandable">
+                <div class="hub-card-head" role="button" tabindex="0" aria-expanded="false">
+                    <span class="hub-card-icon"><svg class="icon"><use href="#i-zap"/></svg></span>
+                    <div class="hub-card-head-text">
+                        <h3 class="hub-card-title">From PRD to clickable prototype in an afternoon</h3>
+                        <p class="hub-card-desc">Turning discovery notes into a working, shareable prototype with Claude and Google Stitch — no front-end help needed.</p>
+                        <div class="hub-card-meta">
+                            <span class="hub-card-tag">Discovery &amp; Prototyping</span>
+                            <span class="hub-card-badge hub-card-badge--active">In use</span>
+                        </div>
+                    </div>
+                    <span class="hub-card-toggle" aria-hidden="true">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </span>
+                </div>
+                <div class="hub-card-reveal">
+                    <div class="hub-card-reveal-inner">
+                        <p class="learn-lead">Instead of writing a spec and waiting for a sprint to see it, I hand my discovery notes to Claude and Stitch and walk into the next meeting with something stakeholders can actually click.</p>
+                        <h4 class="learn-label">What I took away</h4>
+                        <ul class="learn-list">
+                            <li><strong>A prototype ends arguments a doc can't.</strong> People react to something tangible far faster than to a paragraph describing it.</li>
+                            <li><strong>Write the PRD like a brief to the model.</strong> Clear constraints in, usable output out — and the discipline makes the spec sharper for humans too.</li>
+                            <li><strong>Prototyping moved into discovery.</strong> I pressure-test the flow before a sprint is scoped, so engineering starts from something already validated.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Learning 3: Backlog audit agent -->
+            <article class="hub-card hub-card--expandable">
+                <div class="hub-card-head" role="button" tabindex="0" aria-expanded="false">
+                    <span class="hub-card-icon"><svg class="icon"><use href="#i-refresh"/></svg></span>
+                    <div class="hub-card-head-text">
+                        <h3 class="hub-card-title">A backlog that audits itself</h3>
+                        <p class="hub-card-desc">A Jira-connected agent that flags stale stories and missing acceptance criteria, then posts a weekly digest.</p>
+                        <div class="hub-card-meta">
+                            <span class="hub-card-tag">Delivery</span>
+                            <span class="hub-card-badge hub-card-badge--progress">In progress</span>
+                        </div>
+                    </div>
+                    <span class="hub-card-toggle" aria-hidden="true">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </span>
+                </div>
+                <div class="hub-card-reveal">
+                    <div class="hub-card-reveal-inner">
+                        <p class="learn-lead">Backlog debt stays invisible until it hurts a sprint. I'm building a Jira-connected agent that reviews ticket quality and turns that debt into a number the team actually sees each week.</p>
+                        <h4 class="learn-label">What I took away</h4>
+                        <ul class="learn-list">
+                            <li><strong>Make the invisible weekly.</strong> A recurring digest converts a vague "the backlog is messy" into a metric you can act on.</li>
+                            <li><strong>Defining "good" is the real work.</strong> The model is the easy part; writing down what a quality ticket means, precisely enough to check, is the hard one.</li>
+                            <li><strong>Automate the audit, keep the judgment.</strong> The agent flags and proposes — I decide what's noise and what ships.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Live: PM Frameworks Guidebook -->
+            <a href="https://susana-pepo.github.io/PM-Frameworks-Guidebook/" target="_blank" rel="noopener" class="hub-card hub-card--featured hub-card--live">
                 <span class="hub-card-icon"><svg class="icon"><use href="#i-book"/></svg></span>
-                <h3 class="hub-card-title">The interactive PM frameworks guidebook</h3>
-                <p class="hub-card-desc">A hands-on guide to RICE, MoSCoW, Kano, Jobs-to-be-Done and more, built as a web experience for PMs who learn by doing.</p>
-                <div class="hub-card-meta">
-                    <span class="hub-card-tag">Frameworks</span>
-                    <span class="hub-card-badge hub-card-badge--live">Live</span>
-                    <span class="hub-card-open">Open<svg class="icon"><use href="#i-arrow-ur"/></svg></span>
+                <div class="hub-card-head-text">
+                    <h3 class="hub-card-title">The interactive PM frameworks guidebook</h3>
+                    <p class="hub-card-desc">A hands-on guide to RICE, MoSCoW, Kano, Jobs-to-be-Done and more — built as a web experience for PMs who learn by doing.</p>
+                    <div class="hub-card-meta">
+                        <span class="hub-card-tag">Frameworks</span>
+                        <span class="hub-card-badge hub-card-badge--live">Live</span>
+                    </div>
                 </div>
+                <span class="hub-card-open">Open<svg class="icon"><use href="#i-arrow-ur"/></svg></span>
             </a>
-
-            <!-- Card 4: Backlog audit agent (in progress) -->
-            <div class="hub-card hub-card--note">
-                <span class="hub-card-icon"><svg class="icon"><use href="#i-refresh"/></svg></span>
-                <h3 class="hub-card-title">A backlog that audits itself</h3>
-                <p class="hub-card-desc">A Jira-connected agent that reviews ticket quality, flags stale stories and missing acceptance criteria, and posts a weekly digest, because backlog debt stays invisible until it hurts.</p>
-                <div class="hub-card-meta">
-                    <span class="hub-card-tag">Delivery</span>
-                    <span class="hub-card-badge hub-card-badge--progress">In progress</span>
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -2584,7 +2783,6 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
     </svg>
     <div class="footer-inner">
         <p class="footer-cta"><a href="https://susana-pepo.github.io/PM-Frameworks-Guidebook/" target="_blank" rel="noopener" class="footer-cta-link"><svg class="icon footer-icon"><use href="#i-book"/></svg>Free Interactive Guidebook for PM Frameworks</a></p>
-        <p class="footer-meta">Susana Pérez &middot; <a href="mailto:susipp93@gmail.com">susipp93@gmail.com</a> &middot; &copy; 2026</p>
     </div>
 </footer>
 
@@ -2741,6 +2939,30 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
 
         header.addEventListener('click', toggleCard);
         header.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleCard();
+            }
+        });
+    });
+
+    /* =========================================
+     * 3b. AI LEARNINGS ACCORDION
+     * Same toggle pattern as the case studies —
+     * expand a topic to reveal what I learned.
+     * ========================================= */
+
+    document.querySelectorAll('.hub-card--expandable').forEach((card) => {
+        const head = card.querySelector('.hub-card-head');
+        if (!head) return;
+
+        const toggleCard = () => {
+            const isOpen = card.classList.toggle('open');
+            head.setAttribute('aria-expanded', isOpen);
+        };
+
+        head.addEventListener('click', toggleCard);
+        head.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
                 toggleCard();
