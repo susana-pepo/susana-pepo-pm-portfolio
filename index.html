@@ -25,9 +25,8 @@
     <meta name="twitter:description" content="3+ years owning B2C subscription apps in EdTech &amp; Music Tech — discovery, conversion experiments, and the licensing deals behind the product.">
     <meta name="twitter:image" content="https://susana-pepo.github.io/susana-pepo-pm-portfolio/og-image.png">
 
-    <!-- Browser chrome colour, per theme -->
-    <meta name="theme-color" content="#F7F8FA" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#0B1120" media="(prefers-color-scheme: dark)">
+    <!-- Browser chrome colour (kept in sync with the active theme via JS; dark by default) -->
+    <meta name="theme-color" content="#0B1120">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23F7F8FA'/><text x='50' y='68' font-size='50' font-family='system-ui,sans-serif' font-weight='600' fill='%230E7490' text-anchor='middle'>SP</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +38,7 @@
 /* Inline theme initialiser - runs before first paint to prevent flash */
 (() => {
     const stored = localStorage.getItem('theme');
-    const theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const theme = stored || 'dark';
     document.documentElement.setAttribute('data-theme', theme);
 })();
 </script>
@@ -2601,13 +2600,9 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
      * ========================================= */
 
     const themeToggle = document.querySelector('.theme-toggle');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-    /** Returns the active theme, respecting user override then OS preference. */
-    const getEffectiveTheme = () => {
-        const stored = localStorage.getItem('theme');
-        return stored || (prefersDark.matches ? 'dark' : 'light');
-    };
+    /** Returns the active theme: the visitor's saved choice, otherwise dark by default. */
+    const getEffectiveTheme = () => localStorage.getItem('theme') || 'dark';
 
     /** Rebuilds the inline SVG favicon to match the active theme. */
     const updateFavicon = (isDark) => {
@@ -2622,6 +2617,8 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
     const applyTheme = (theme) => {
         document.documentElement.setAttribute('data-theme', theme);
         updateFavicon(theme === 'dark');
+        const tc = document.querySelector('meta[name="theme-color"]');
+        if (tc) tc.setAttribute('content', theme === 'dark' ? '#0B1120' : '#F7F8FA');
     };
 
     // Sync favicon on initial load
@@ -2636,13 +2633,6 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
             localStorage.setItem('theme', next);
         });
     }
-
-    // React to OS-level preference changes (only when no manual override)
-    prefersDark.addEventListener('change', (e) => {
-        if (!localStorage.getItem('theme')) {
-            applyTheme(e.matches ? 'dark' : 'light');
-        }
-    });
 
     /* =========================================
      * 2. PANEL OVERLAY SYSTEM
