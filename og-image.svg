@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0B1120"/>
+  <!-- Subtle brand atmosphere -->
+  <radialGradient id="glow" cx="85%" cy="0%" r="70%">
+    <stop offset="0%" stop-color="#0E7490" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#0E7490" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Layered wave motif, top edge -->
+  <path d="M0,0 H1200 V72 C1000,112 800,42 600,78 C400,112 200,56 0,92 Z" fill="#0E7490" opacity="0.9"/>
+  <path d="M0,0 H1200 V52 C980,96 760,32 560,62 C360,92 180,42 0,72 Z" fill="#2D98B5" opacity="0.9"/>
+  <path d="M0,0 H1200 V34 C1000,72 820,22 600,46 C380,72 200,30 0,54 Z" fill="#67B8D6" opacity="0.85"/>
+
+  <!-- Eyebrow pill -->
+  <rect x="80" y="158" width="430" height="42" rx="21" fill="#0E7490" fill-opacity="0.14" stroke="#22D3EE" stroke-opacity="0.4"/>
+  <text x="106" y="185" fill="#22D3EE" font-size="20" font-weight="600" letter-spacing="3">PRODUCT OWNER · PRODUCT MANAGER</text>
+
+  <!-- Name -->
+  <text x="76" y="312" fill="#F1F5F9" font-size="98" font-weight="700" letter-spacing="-3">Susana Pérez</text>
+
+  <!-- Tagline -->
+  <text x="80" y="372" fill="#94A3B8" font-size="34" font-weight="400">I own the <tspan fill="#22D3EE" font-weight="600">product</tspan> and the <tspan fill="#22D3EE" font-weight="600">deal</tspan> behind it.</text>
+
+  <!-- Metrics -->
+  <g>
+    <text x="80"  y="486" fill="#22D3EE" font-size="46" font-weight="700" letter-spacing="-1">+28.7%</text>
+    <text x="80"  y="516" fill="#64748B" font-size="20">revenue / paywall visitor</text>
+
+    <text x="470" y="486" fill="#22D3EE" font-size="46" font-weight="700" letter-spacing="-1">+160%</text>
+    <text x="470" y="516" fill="#64748B" font-size="20">catalogue growth</text>
+
+    <text x="820" y="486" fill="#22D3EE" font-size="46" font-weight="700" letter-spacing="-1">7+</text>
+    <text x="820" y="516" fill="#64748B" font-size="20">languages live</text>
+  </g>
+
+  <!-- Divider -->
+  <line x1="80" y1="556" x2="1120" y2="556" stroke="#1E293B" stroke-width="1"/>
+
+  <!-- Footer line -->
+  <text x="80" y="592" fill="#64748B" font-size="22">Berlin · EdTech &amp; Music Tech · B2C Subscription SaaS</text>
+  <text x="1120" y="592" fill="#22D3EE" font-size="22" font-weight="500" text-anchor="end">susana-pepo.github.io</text>
+</svg>

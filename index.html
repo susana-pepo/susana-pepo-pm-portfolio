@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Susana Pérez · Product Owner &amp; Product Manager</title>
     <meta name="description" content="Product Owner and Product Manager with 3+ years shipping B2C subscription apps across web, iOS and Android. Discovery-led roadmaps, conversion experiments, and the commercial negotiation behind the product. Berlin, EdTech.">
+    <meta name="author" content="Susana Pérez">
+    <link rel="canonical" href="https://susana-pepo.github.io/susana-pepo-pm-portfolio/">
+
+    <!-- Open Graph (LinkedIn, Slack, Facebook) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Susana Pérez">
+    <meta property="og:title" content="Susana Pérez · Product Owner &amp; Product Manager">
+    <meta property="og:description" content="3+ years owning B2C subscription apps in EdTech &amp; Music Tech — discovery, conversion experiments, and the licensing deals behind the product. Berlin.">
+    <meta property="og:url" content="https://susana-pepo.github.io/susana-pepo-pm-portfolio/">
+    <meta property="og:image" content="https://susana-pepo.github.io/susana-pepo-pm-portfolio/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Susana Pérez — Product Owner &amp; Product Manager. I own the product and the deal behind it.">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Susana Pérez · Product Owner &amp; Product Manager">
+    <meta name="twitter:description" content="3+ years owning B2C subscription apps in EdTech &amp; Music Tech — discovery, conversion experiments, and the licensing deals behind the product.">
+    <meta name="twitter:image" content="https://susana-pepo.github.io/susana-pepo-pm-portfolio/og-image.png">
+
+    <!-- Browser chrome colour, per theme -->
+    <meta name="theme-color" content="#F7F8FA" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0B1120" media="(prefers-color-scheme: dark)">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23F7F8FA'/><text x='50' y='68' font-size='50' font-family='system-ui,sans-serif' font-weight='600' fill='%230E7490' text-anchor='middle'>SP</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +60,7 @@
 
     --text-primary: #111827;
     --text-secondary: #4B5563;
-    --text-tertiary: #9CA3AF;
+    --text-tertiary: #64748B;
     --text-on-teal: rgba(255, 255, 255, 0.7);
     --text-on-teal-strong: rgba(255, 255, 255, 0.9);
     --text-on-teal-full: #FFFFFF;
@@ -125,7 +148,7 @@
 
     --text-primary: #F1F5F9;
     --text-secondary: #94A3B8;
-    --text-tertiary: #64748B;
+    --text-tertiary: #7C8AA0;
     --text-on-teal: rgba(241, 245, 249, 0.7);
     --text-on-teal-strong: rgba(241, 245, 249, 0.9);
     --text-on-teal-full: #F1F5F9;
@@ -364,7 +387,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     transition: background 0.3s ease, color 0.3s ease;
 }
 .hub-card-icon .icon { width: 20px; height: 20px; }
-.hub-card:hover .hub-card-icon {
+a.hub-card:hover .hub-card-icon {
     background: var(--accent-lavender);
     color: var(--text-on-accent);
 }
@@ -528,6 +551,30 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     letter-spacing: 0.02em;
 }
 
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1rem;
+}
+
+.footer-meta {
+    font-size: 0.7rem;
+    color: var(--text-on-teal);
+    letter-spacing: 0.02em;
+}
+
+.footer-meta a {
+    color: var(--text-on-teal-strong);
+    border-bottom: 1px solid var(--border-on-teal);
+    transition: all 0.3s ease;
+}
+
+.footer-meta a:hover {
+    color: var(--text-on-teal-full);
+    border-color: var(--text-on-teal-full);
+}
+
 .site-footer .footer-cta-link {
     color: var(--footer-cta);
     font-weight: 700;
@@ -589,10 +636,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 /* Hero intro paragraph */
 .hero-intro {
     font-size: 1.05rem;
-    font-weight: 350;
+    font-weight: 400;
     color: var(--text-secondary);
     line-height: 1.75;
-    max-width: 500px;
+    max-width: 520px;
     margin-bottom: 2.25rem;
 }
 
@@ -925,8 +972,9 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 
 .panel-header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+    gap: 1.5rem;
     padding: 2rem 2.5rem 1.5rem;
     position: sticky;
     top: 0;
@@ -939,6 +987,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    flex: 1;
+    min-width: 0;
 }
 
 .panel-number {
@@ -1005,6 +1055,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     color: var(--text-secondary);
     margin-bottom: 1.25rem;
     font-size: 1.02rem;
+    max-width: 64ch;
 }
 
 .about-narrative p:first-of-type {
@@ -1272,6 +1323,13 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     background: var(--accent-lavender-tint);
 }
 
+.sidebar-note {
+    margin-top: 0.6rem;
+    font-size: 0.75rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+}
+
 /* ========================================= */
 /* PANEL: CASE STUDIES                       */
 /* ========================================= */
@@ -1416,10 +1474,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 .case-body {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s var(--ease-out);
+    transition: max-height 0.55s var(--ease-out);
 }
 
-.case-card.open .case-body { max-height: 800px; }
+/* Generous cap — content tops out near 600px, so this never clips */
+.case-card.open .case-body { max-height: 1200px; }
 
 .case-content {
     padding: 0 1.5rem 1.5rem;
@@ -1439,14 +1498,25 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     margin-bottom: 0.6rem;
 }
 
-.case-section:nth-child(1) h4 { color: var(--accent-rose); }
-.case-section:nth-child(2) h4 { color: var(--accent-lavender); }
-.case-section:nth-child(3) h4 { color: var(--accent-sage); }
+.case-section:nth-of-type(1) h4 { color: var(--accent-rose); }
+.case-section:nth-of-type(2) h4 { color: var(--accent-lavender); }
+.case-section:nth-of-type(3) h4 { color: var(--accent-sage); }
 
 .case-section p {
     font-size: 0.85rem;
     color: var(--text-secondary);
     line-height: 1.65;
+}
+
+/* Scope line atop each expanded case — clarifies ownership level */
+.case-scope {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-lavender);
 }
 
 /* ========================================= */
@@ -1474,7 +1544,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     color: inherit;
 }
 
-.hub-card:hover {
+a.hub-card:hover {
     border-color: var(--accent-lavender-border);
     transform: translateY(-4px);
     box-shadow:
@@ -1498,6 +1568,24 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     mask-composite: exclude;
     pointer-events: none;
 }
+
+/* In-progress notes are informational, not links — no nav affordance */
+.hub-card--note { cursor: default; }
+
+/* Explicit "open" affordance on the one live, clickable card */
+.hub-card-open {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-left: auto;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent-lavender);
+}
+.hub-card-open .icon { width: 13px; height: 13px; transition: transform 0.3s var(--ease-out); }
+a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
 
 .hub-card-title {
     font-family: var(--font-display);
@@ -1995,7 +2083,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     <!-- Left: Identity -->
     <div class="hero-left">
         <div class="hero-photo">
-            <img src="profile.svg" alt="Susana Pérez">
+            <img src="headshot.jpg" alt="Susana Pérez" width="560" height="560" fetchpriority="high" decoding="async">
         </div>
         <h1 class="hero-name"><span class="reveal-inner">Susana Pérez</span></h1>
 
@@ -2032,13 +2120,13 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
             <li class="nav-menu-item">
                 <a class="nav-menu-link" data-panel="work" href="#" role="button">
                     <span class="nav-menu-number">03</span>
-                    <span class="nav-menu-label">Case Projects</span>
+                    <span class="nav-menu-label">Selected Work</span>
                 </a>
             </li>
             <li class="nav-menu-item">
                 <a class="nav-menu-link" data-panel="ai-hub" href="#" role="button">
                     <span class="nav-menu-number">04</span>
-                    <span class="nav-menu-label">AI Knowledge</span>
+                    <span class="nav-menu-label">AI in Practice</span>
                 </a>
             </li>
         </ul>
@@ -2136,8 +2224,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
                         <span class="glance-label">languages live</span>
                     </div>
                     <div class="glance-item">
-                        <span class="glance-value">+28.7%</span>
-                        <span class="glance-label">projected revenue per paywall visitor</span>
+                        <span class="glance-value">260+</span>
+                        <span class="glance-label">songs shipped per release</span>
                     </div>
                 </div>
 
@@ -2223,8 +2311,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
                     <div class="sidebar-tools">
                         <span class="sidebar-tool">Claude</span>
                         <span class="sidebar-tool">Google Stitch</span>
-                        <span class="sidebar-tool">Prompt engineering for PRDs, discovery, content review, and prototyping</span>
                     </div>
+                    <p class="sidebar-note">Prompt engineering for PRDs, discovery, content review, and prototyping.</p>
                 </div>
 
                 <div class="sidebar-section">
@@ -2243,7 +2331,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 </div>
 
 <!-- ===== PANEL: WORK ===== -->
-<div class="panel" id="panel-work" role="dialog" aria-label="Work" aria-modal="true">
+<div class="panel" id="panel-work" role="dialog" aria-label="Selected Work" aria-modal="true">
     <div class="panel-header">
         <div class="panel-header-left">
             <span class="panel-number">03 &middot; Selected Work</span>
@@ -2280,6 +2368,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
                 </div>
                 <div class="case-body">
                     <div class="case-content">
+                        <p class="case-scope">Product Owner &middot; Skoove &middot; with design, engineering &amp; QA</p>
                         <div class="case-section">
                             <h4>Problem</h4>
                             <p>Skoove had a large song catalogue, but discovery ran entirely through curated collections. That worked for new users and frustrated returning learners who knew exactly what they wanted to play.</p>
@@ -2320,6 +2409,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
                 </div>
                 <div class="case-body">
                     <div class="case-content">
+                        <p class="case-scope">Product Owner &middot; Trala &amp; Skoove &middot; subscription experiments</p>
                         <div class="case-section">
                             <h4>Problem</h4>
                             <p>The paywall and the first-run experience were doing less than they could. New users arrived with very different goals, and everyone saw the same thing.</p>
@@ -2360,6 +2450,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
                 </div>
                 <div class="case-body">
                     <div class="case-content">
+                        <p class="case-scope">Lead negotiator &middot; Skoove &amp; Trala &middot; publishers &amp; rights organizations</p>
                         <div class="case-section">
                             <h4>Problem</h4>
                             <p>Every popular song is wrapped in a web of publishers, performance rights organizations, and territory rules. Putting that music inside a learning app, at a cost that works, is a negotiation before it is a feature.</p>
@@ -2401,6 +2492,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
                 </div>
                 <div class="case-body">
                     <div class="case-content">
+                        <p class="case-scope">Content Manager &rarr; Product Owner &middot; Skoove &amp; Trala &middot; cross-functional</p>
                         <div class="case-section">
                             <h4>Problem</h4>
                             <p>Running content for an app at this size means shipping constantly, new songs, seasonal collections, and localized versions, without letting quality slip. The workflows were manual and fragmented.</p>
@@ -2424,10 +2516,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
 
 
 <!-- ===== PANEL: AI PROJECTS ===== -->
-<div class="panel" id="panel-ai-hub" role="dialog" aria-label="AI Knowledge" aria-modal="true">
+<div class="panel" id="panel-ai-hub" role="dialog" aria-label="AI in Practice" aria-modal="true">
     <div class="panel-header">
         <div class="panel-header-left">
-            <span class="panel-number">04 &middot; AI Knowledge</span>
+            <span class="panel-number">04 &middot; AI in Practice</span>
             <h2 class="panel-title"><svg class="icon title-icon"><use href="#i-sparkles"/></svg>How I work with AI, and what I have learned doing it.</h2>
         </div>
         <button class="panel-close" aria-label="Close panel">
@@ -2435,10 +2527,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
         </button>
     </div>
     <div class="panel-body">
-        <p class="ai-hub-intro">Short, practical notes from putting AI into real product work, not demos.</p>
+        <p class="ai-hub-intro">How I actually use AI in product work — not demos. The guidebook below is live and clickable; the others are write-ups in progress.</p>
         <div class="ai-hub-grid">
             <!-- Card 1: AI Dubbing (in production) -->
-            <a href="#" class="hub-card">
+            <div class="hub-card hub-card--note">
                 <span class="hub-card-icon"><svg class="icon"><use href="#i-film"/></svg></span>
                 <h3 class="hub-card-title">Dub a video course at a fraction of the production time</h3>
                 <p class="hub-card-desc">How I use AI dubbing to localize Trala's video lessons for new markets without a full studio cycle.</p>
@@ -2446,10 +2538,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
                     <span class="hub-card-tag">Localization</span>
                     <span class="hub-card-badge hub-card-badge--active">In production</span>
                 </div>
-            </a>
+            </div>
 
             <!-- Card 2: PRD to prototype (in use) -->
-            <a href="#" class="hub-card">
+            <div class="hub-card hub-card--note">
                 <span class="hub-card-icon"><svg class="icon"><use href="#i-zap"/></svg></span>
                 <h3 class="hub-card-title">From PRD to clickable prototype in an afternoon</h3>
                 <p class="hub-card-desc">Turning discovery notes into a working, shareable prototype with Claude and Google Stitch, no front-end help needed.</p>
@@ -2457,7 +2549,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
                     <span class="hub-card-tag">Discovery &amp; Prototyping</span>
                     <span class="hub-card-badge hub-card-badge--active">In use</span>
                 </div>
-            </a>
+            </div>
 
             <!-- Card 3: PM Frameworks Guidebook (live) -->
             <a href="https://susana-pepo.github.io/PM-Frameworks-Guidebook/" target="_blank" rel="noopener" class="hub-card hub-card--featured">
@@ -2467,11 +2559,12 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
                 <div class="hub-card-meta">
                     <span class="hub-card-tag">Frameworks</span>
                     <span class="hub-card-badge hub-card-badge--live">Live</span>
+                    <span class="hub-card-open">Open<svg class="icon"><use href="#i-arrow-ur"/></svg></span>
                 </div>
             </a>
 
             <!-- Card 4: Backlog audit agent (in progress) -->
-            <a href="#" class="hub-card">
+            <div class="hub-card hub-card--note">
                 <span class="hub-card-icon"><svg class="icon"><use href="#i-refresh"/></svg></span>
                 <h3 class="hub-card-title">A backlog that audits itself</h3>
                 <p class="hub-card-desc">A Jira-connected agent that reviews ticket quality, flags stale stories and missing acceptance criteria, and posts a weekly digest, because backlog debt stays invisible until it hurts.</p>
@@ -2479,7 +2572,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
                     <span class="hub-card-tag">Delivery</span>
                     <span class="hub-card-badge hub-card-badge--progress">In progress</span>
                 </div>
-            </a>
+            </div>
         </div>
     </div>
 </div>
@@ -2490,7 +2583,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
         <path class="fwave-1" d="M0 22V9C200 3 380 1 580 4s360 7 520 6 260-5 340-4V22H0z"/>
         <path class="fwave-2" d="M0 22V15C180 10 340 8 520 11s320 5 480 4 260-3 440-2V22H0z"/>
     </svg>
-    <p class="footer-cta"><a href="https://susana-pepo.github.io/PM-Frameworks-Guidebook/" target="_blank" rel="noopener" class="footer-cta-link"><svg class="icon footer-icon"><use href="#i-book"/></svg>Free Interactive Guidebook for PM Frameworks</a></p>
+    <div class="footer-inner">
+        <p class="footer-cta"><a href="https://susana-pepo.github.io/PM-Frameworks-Guidebook/" target="_blank" rel="noopener" class="footer-cta-link"><svg class="icon footer-icon"><use href="#i-book"/></svg>Free Interactive Guidebook for PM Frameworks</a></p>
+        <p class="footer-meta">Susana Pérez &middot; <a href="mailto:susipp93@gmail.com">susipp93@gmail.com</a> &middot; &copy; 2026</p>
+    </div>
 </footer>
 
 <!-- ===== SCRIPTS ===== -->
@@ -2620,6 +2716,24 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
     backdrop.addEventListener('click', closePanel);
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && activePanel) closePanel();
+    });
+
+    // Focus trap — keep Tab within the active dialog
+    document.addEventListener('keydown', (e) => {
+        if (e.key !== 'Tab' || !activePanel) return;
+        const focusables = [...activePanel.querySelectorAll(
+            'a[href], button:not([disabled]), [role="button"], [tabindex]:not([tabindex="-1"])'
+        )].filter((el) => el.offsetParent !== null);
+        if (!focusables.length) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+        }
     });
 
     /* =========================================

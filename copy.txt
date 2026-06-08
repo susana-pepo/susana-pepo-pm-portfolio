@@ -1,14 +1,17 @@
 PORTFOLIO COPY — Susana Pérez
 ==============================
-Edit this file and share it back. I'll update the site to match.
+This file mirrors the live site (index.html). Edit it and share it back —
+I'll update the site to match. Last synced: 2026-06-08.
 
 
 =====================================
 PAGE META
 =====================================
 
-Page title: Susana Pérez — Product Manager
-Meta description: Product Manager & Product Owner specializing in EdTech and Music Tech. 3+ years leading cross-functional teams, shipping products to 1M+ users.
+Page title: Susana Pérez · Product Owner & Product Manager
+Meta description: Product Owner and Product Manager with 3+ years shipping B2C subscription apps across web, iOS and Android. Discovery-led roadmaps, conversion experiments, and the commercial negotiation behind the product. Berlin, EdTech.
+Canonical / live URL: https://susana-pepo.github.io/susana-pepo-pm-portfolio/
+Share image (link previews): og-image.png (1200×630, generated from og-image.svg)
 
 
 =====================================
@@ -17,196 +20,194 @@ HERO (Home screen)
 
 Name: Susana Pérez
 
-Title line: Product Manager · Product Owner
+Title line: I own the product and the deal behind it.
 
-Intro paragraph: Product Manager with 3+ years driving cross-functional delivery in EdTech & Music Tech — shipping products to 1M+ users, negotiating licensing deals, and bridging business, creative & technical domains.
+Intro paragraph: Three years building subscription apps that people keep paying for. I run discovery, write the backlog, and ship the experiments, then sit across the table from music publishers to negotiate the rights that make the product possible. Right now I am Product Owner at Learnfield, running two squads across the Trala violin app and the Skoove piano content team, on a platform that operates in 7+ languages.
 
-Meta line: Berlin, Germany | EdTech & Music Tech | Open to PM roles
+Meta line: Product Owner & Product Manager · B2C Subscription SaaS · EdTech · Web, iOS & Android · Berlin
 
-Button 1: Get in touch
-Button 2: LinkedIn
+Buttons: Download CV (Susana_Perez_CV.pdf) · Email (susipp93@gmail.com) · LinkedIn (linkedin.com/in/susana-pepo/)
+
+Selected outcomes (right column):
+- +28.7% — revenue / paywall visitor
+- +160% — catalogue growth
+- 14.7% — licensing cost, from 18%
+- 70% — faster content delivery
 
 
 =====================================
 01 — ABOUT
 =====================================
 
-Panel title: A user-centered approach to product management.
+Panel title: I build for the person who almost left.
 
-Paragraph 1: I started in education and special needs, where I learned how people actually learn — not from frameworks, but from watching real users navigate challenges in ways you'd never predict. That foundation shapes everything about how I approach product.
+Paragraph 1: Most products lose people quietly. Someone signs up, hits a moment that does not fit them, and never comes back. I spend my time finding those moments and removing them, through discovery, experiments, and a roadmap that is honest about what actually moves activation, conversion, and retention.
 
-Paragraph 2: Today I bring that understanding to product development at Learnfield GmbH, where I manage product, content, and licensing across two music learning apps — Skoove (piano, 1M+ users) and Trala (violin). I hold three distinct roles simultaneously: Product Owner, Education Content Manager, and License Manager.
+Paragraph 2: At Learnfield I am Product Owner across two squads: the Trala violin app and the Skoove piano content team. The role sits where product, data, and commercial meet. In one week I might refine epics with engineering, read out a paywall A/B test in Mixpanel, and negotiate licensing terms with a music publisher. I was trained in negotiation directly by our CEO, and I am the direct interlocutor with publishers and rights organizations on the terms that decide what the product can offer.
 
-Paragraph 3: My work sits at the intersection of business, creative, and technical domains. In any given week, I might negotiate a multi-year licensing deal with a major publisher, ship an iOS feature that removes onboarding friction, and coordinate a Japanese localization across three parallel workstreams. I like that range. It's where I do my best thinking.
+Paragraph 3: What I like most is the range. I translate ambiguous commercial requirements into something a team can build, then I follow it all the way through to whether it worked.
 
 --- Sidebar ---
 
 Languages:
-- Spanish — Native
-- English — Professional
-- Italian — Fluent
-- German — Working
+- Spanish — Native, C2
+- English — Fluent, C1/C2, working language
+- German — B2+, daily at work
 
-Location: Berlin, Germany (Originally from Medellín, Colombia)
+Location: Berlin, Germany. European citizen, open to relocation. Colombian, German and Portuguese roots.
 
-Education: Master's Degree — Education & Health Sciences
-
-Open to: Product Manager · Product Owner — Berlin · Valencia · Remote
+Things I Love: Music you cannot sit still to · long walks with no plan · a backlog that is finally clean · cooking for friends · products that teach without feeling like school · slow morning coffee
 
 
 =====================================
 02 — EXPERIENCE
 =====================================
 
-Panel title: Learnfield GmbH — Berlin
+Panel title: Three years owning product, and the commercial work behind it.
 
-Intro line: Three roles, two products, one mission: make music accessible to everyone.
-
-
---- Tab 1: Product Owner — Trala ---
-
-Role: Product Owner
-Product: Trala — Violin Learning App (iOS)
-Team: 2 devs, 1 freelance iOS, 1 PM/content, 1 designer
-Reports to: CPO
-
-Achievement 1: No Sign-Up Initiative — Removed mandatory account creation to reduce onboarding friction. Shipped as iOS 7.5.1, directly addressing App Store sentiment issues.
-
-Achievement 2: 2026 Product & Content Strategy — Owns the full roadmap, competitive positioning, and content pipeline for Trala going forward.
-
-Achievement 3: Japanese Localization — Managing a 4-person team across 3 parallel workstreams: iOS static strings, educational text, and video dubbing. Full market entry from scratch.
-
-Achievement 4: Sprint & Delivery — Leads sprint planning, daily standups, and bi-weekly CPO sessions. Owns the TRAL Jira board end-to-end.
+At a glance:
+- 3+ years in B2C subscription SaaS (EdTech)
+- 2 product squads owned in parallel
+- 7+ languages live
+- 260+ songs shipped per release
 
 
---- Tab 2: Content Manager — Skoove ---
+--- Role 1: Product Owner · Trala & Skoove squads (2024 – Present) ---
 
-Role: Education Content Manager
-Product: Skoove — Piano Learning App (1M+ users)
-Team: Content lead, content creator, dev, collections
-Cross-team coordination
+Learnfield GmbH · Berlin, Germany
 
-Achievement 1: Song Segmentation & Curation — Slices songs into lesson-ready parts from catalogues including Universal, Warner Chappell, Hal Leonard. Content strategy drives engagement across the learning journey.
+Narrative: I own two parallel squads across web and app: the Trala violin app and the Skoove piano content team, on a subscription platform running in 7+ languages.
 
-Achievement 2: Sprint Overview 2023–2026 — Created and maintains the company-wide sprint planning spreadsheet. The single source of truth for cross-team coordination.
+- Led the negotiation that unlocked the Disney Music Group catalogue, giving us the largest Disney piano collection in our competitive landscape.
+- Lifted projected revenue per paywall visitor by 28.7% through subscription A/B tests on RevenueCat and Mixpanel, owning each test from hypothesis and metric design to ship, read-out, and the next iteration.
+- Reworked the onboarding funnel with location-based personalization and questionnaire variants on genre and learning goal, contributing to 14% year-on-year revenue growth.
+- Act as the direct interlocutor with publishers, licensors, and commercial partners on licensing terms, royalty mechanics, rights clearance, contract negotiation, and disputes. Trained in negotiation by the CEO and CPO.
+- Translate ambiguous commercial requirements into structured epics, user stories, and acceptance criteria, with backend and frontend tasks anchored to success metrics.
+- Coordinated the full rework of our internal content delivery tooling, cutting end-to-end process time by 70%.
 
-Achievement 3: Collections Strategy — Owns seasonal themed content (Cherry Blossom, Holi, etc.) requiring cross-team coordination of assets, QA, release timing, and 5+ language proofreaders.
-
-Achievement 4: Usage Monitoring Pipeline — Designed the monthly Mixpanel → CSV → analysis pipeline for copyrighted content usage reporting to leadership.
+Focus: Product Discovery · Subscription A/B Testing · Licensing & Negotiation · Backlog Ownership · Cross-platform
 
 
---- Tab 3: License Manager ---
+--- Role 2: Education Content Manager · Skoove (2022 – 2024) ---
 
-Role: License Manager
-Product: Skoove & Trala — Music Licensing
-8+ publishers & collecting societies
-Multi-market coverage
+Narrative: I owned the content release cycle end to end and built the operational backbone of the company's licensing function.
 
-Achievement 1: UMPI/SACEM Deal — Negotiated €380K advance across a multi-year agreement. Structured installment payments, managed free trials amendment, and recoupment tracking via BMAT.
+- Ran the full release cycle: ideation, scoping, licensing clearance, localization, marketing handoff, and post-launch Mixpanel review, on quarterly cadences shipping up to 260+ songs at a time.
+- Drove catalogue expansion for globally available apps, including dedicated pushes into the Japanese and Korean markets, with localized repertoire validated by local experts and routed through cleared publishers.
+- Built the licensing function from the ground up: publisher partner pages, a publisher-by-publisher content-tactics matrix, and rights-ownership workflows now used by Engineering, Content, and Marketing.
+- Ran monthly engagement reviews and user surveys to prioritize the catalogue, surfacing high-impact repertoire and low-adoption placements for the next cycle.
 
-Achievement 2: GMR & Performance Rights — Closed performance rights license covering the US market. Secured separate Roland coverage for white-label partnerships.
+Focus: Content Ops · Licensing Foundations · Localization · Catalogue Strategy
 
-Achievement 3: Financial Modeling — Co-owns the licensing financial planning spreadsheet — costs, cash advances, market share variables, usage targets. Built QA framework: cost-to-revenue ratio checks (normal 11–12%, alarm at 20%).
 
-Achievement 4: Reporting Automation — Collaborated with engineering to scope a 3-sprint plan for automating UMPI/SACEM + ICE/JASRAC/SOCAN reporting via Mixpanel API → AWS pipeline.
+--- Sidebar ---
+
+Core Skills:
+- Product vision & strategy for subscription apps
+- Discovery to delivery, full cycle
+- Backlog ownership across multiple teams
+- Commercial & legal negotiation translated into product requirements
+- KPI and OKR definition (activation, conversion, engagement, LTV, retention)
+- Scrum, Kanban, and hybrid setups
+- AI-augmented PM workflows
+
+Tools: Jira, Confluence, Figma, Miro, Lovable, Mixpanel, Google Analytics, App Store Connect, RevenueCat
+
+AI: Claude, Google Stitch. Prompt engineering for PRDs, discovery, content review, and prototyping.
+
+Education & Certifications:
+- MA, Therapy & Education Sciences, SRH Heidelberg University (2020)
+- Professional Scrum Product Owner I
+- IBM Product Manager Certificate
 
 
 =====================================
-03 — WORK (Case Studies)
+03 — SELECTED WORK (Case studies)
 =====================================
 
-Panel title: How I think, how I ship.
+Panel title: Four projects that shaped how I work.
 
 
 --- Case 1 ---
-Title: UMPI Licensing Negotiation
-Subtitle: Bridging music and product through a €380K deal
-Tags: Negotiation, Financial Modeling, Stakeholder Mgmt
+Title: Song Discovery
+Subtitle: From a buried catalogue to the number one way users find songs.
+Scope: Product Owner · Skoove · with design, engineering & QA
+Headline metric: #1 discovery method
+Tags: Product Discovery, A/B Testing, User Research, Funnel Optimization
 
-Problem: Complex multi-publisher licensing for a music learning app with 1M+ users. Needed to structure a sustainable deal covering free trials, recoupment, and multi-market reporting obligations.
+Problem: Skoove had a large song catalogue, but discovery ran entirely through curated collections. That worked for new users and frustrated returning learners who knew exactly what they wanted to play.
 
-Process: Market share analysis, financial modeling of advance structures, stakeholder alignment across legal, finance, and executive teams. Designed 4-installment payment schedule and recoupment tracking via BMAT.
+What I did: Contributed across discovery, scoping, and post-launch analysis for both the Song Search MVP and the Favorites feature. Coordinated QA across platforms and tracked results in Mixpanel. For Favorites I designed unmoderated usability research in Maze, led KPI tracking, and wrote the post-experiment report.
 
-Outcome: €380K multi-year deal closed. Automated reporting pipeline scoped (3-sprint plan). Cost ratio monitoring built — Jan 2026: licensing costs improved from 18% to 14.7% of revenue.
+Outcome: Search became the number one discovery method in the Songs tab, ahead of suggested songs. Favorites hit its primary KPI: 30% of premium users who visited Songs saved at least one. A search-paywall A/B test fed a strategic decision on free-trial access.
 
 
 --- Case 2 ---
-Title: Trala Japanese Localization
-Subtitle: From zero to market across three parallel workstreams
-Tags: International PM, Localization, Vendor Mgmt
+Title: Paywall & Onboarding Experiments
+Subtitle: Turning first impressions into paying users.
+Scope: Product Owner · Trala & Skoove · subscription experiments
+Headline metric: +28.7% revenue / visitor
+Tags: Subscription A/B Testing, Onboarding, Conversion, Experiment Design
 
-Problem: Launch a violin learning app in the Japanese market from scratch — no existing translations, no dubbing infrastructure, no localization pipeline for the product.
+Problem: The paywall and the first-run experience were doing less than they could. New users arrived with very different goals, and everyone saw the same thing.
 
-Process: Hired and managed a 4-person localization team (2 translators, 1 dubbing specialist, 1 PM). Designed three parallel workstreams: iOS static strings, educational text, and video dubbing. Built QA framework and cost tracking.
+What I did: Ran subscription A/B tests on RevenueCat and Mixpanel, owning each from hypothesis and metric design through to read-out and follow-up. Personalized onboarding with location-based content and questionnaire variants on genre and learning goal, so the product adapted to why each person came.
 
-Outcome: Three workstreams running simultaneously, on track for delivery targets. Full iOS Localizable.strings cleanup including scripts for unused key detection. Coordinated across Berlin, Japan, and UK stakeholders.
+Outcome: Projected revenue per paywall visitor rose 28.7%. The onboarding changes contributed to 14% year-on-year revenue growth.
 
 
 --- Case 3 ---
-Title: Reducing Onboarding Friction
-Subtitle: The No Sign-Up feature that improved App Store sentiment
-Tags: User Research, Agile Delivery, Cross-functional
+Title: The Commercial Behind the Catalogue
+Subtitle: The licensing and negotiation work that lets people learn the songs they actually listen to.
+Scope: Lead negotiator · Skoove & Trala · publishers & rights organizations
+Headline metric: 14.7% cost ratio, from 18%
+Tags: Commercial Negotiation, Licensing, Rights Strategy, Stakeholder Management
 
-Problem: Mandatory sign-up was creating friction for new users and hurting App Store ratings. User feedback consistently pointed to onboarding as the first barrier to engagement.
+Problem: Every popular song is wrapped in a web of publishers, performance rights organizations, and territory rules. Putting that music inside a learning app, at a cost that works, is a negotiation before it is a feature.
 
-Process: Analyzed user feedback and App Store reviews. Scoped the feature removal alongside a paywall fix. Coordinated 2 developers, QA, design, and CPO alignment within sprint cycles.
+What I did: Led the negotiation that unlocked the Disney Music Group catalogue, our largest Disney piano collection against the competition. Worked publisher by publisher on multi-year terms, royalty mechanics, rights clearance, and dispute resolution, as the direct interlocutor for the company. Trained in negotiation by the CEO and CPO.
 
-Outcome: Shipped iOS 7.5.1 with mandatory sign-up removed and paywall optimized. Reduced the first barrier for new users, directly targeting the onboarding friction & App Store sentiment epic.
+Outcome: A contemporary, high-demand catalogue users want, with the licensing cost ratio improved from 18% to 14.7% of revenue.
 
 
 --- Case 4 ---
-Title: License Planning Financial Model
-Subtitle: Bringing product domain knowledge to financial planning
-Tags: Financial Acumen, Process Design, Cross-domain
+Title: Content Operations at Scale
+Subtitle: Growing the catalogue 160% while keeping quality and licensing coverage intact.
+Scope: Content Manager → Product Owner · Skoove & Trala · cross-functional
+Headline metric: +160% catalogue growth
+Tags: Content Ops, Process Design, Localization, Cross-functional Delivery
 
-Problem: Finance team couldn't maintain the licensing financial model alone — it required product and content domain knowledge they didn't have. Cost projections were becoming unreliable.
+Problem: Running content for an app at this size means shipping constantly, new songs, seasonal collections, and localized versions, without letting quality slip. The workflows were manual and fragmented.
 
-Process: Took over through a structured handover series with Finance (Nov 2025). Built a QA framework with cost-to-revenue ratio checks, customer number validation, and formula audits across 6+ spreadsheet tabs.
+What I did: Worked on three levels at once. Rebuilt the internal content tooling to reduce engineer dependency. Ran bulk localization across 7+ languages with coordinated QA, including market pushes into Japan and Korea. Built the licensing foundation, partner pages, a content-tactics matrix, and rights-ownership workflows, now used across Engineering, Content, and Marketing.
 
-Outcome: Self-sustaining financial model with automated checks. Monthly reporting to leadership. Revenue grew from €236K to €315K (Dec '25 → Jan '26). Licensing cost share improved: 18% → 14.7%.
-
-
---- Case 5 ---
-Title: Content Strategy at Scale
-Subtitle: Seasonal campaigns and data-driven curation with copyright constraints
-Tags: Content Strategy, Data-driven, Multi-stakeholder
-
-Problem: Keeping content fresh and engaging across a music learning app with complex copyright constraints. Every content decision has licensing implications that affect cost-to-revenue ratios.
-
-Process: Built usage data analysis pipeline (Mixpanel → CSV). Curated from major publisher catalogues. Designed seasonal planning calendar and multi-language QA process with 5+ proofreaders per release.
-
-Outcome: Regular content drops (Cherry Blossom, Women's Day, Holi collections). Measurable engagement impact. Copyrighted usage tracked monthly against KPI thresholds. Multiple content batches shipped per quarter.
+Outcome: The catalogue grew 160% with licensing coverage and quality held intact. End-to-end process time down 70%. Quarterly releases shipping up to 260+ songs at a time, on schedule, with content decisions tied to real usage data.
 
 
 =====================================
-04 — SKILLS & TOOLS
+04 — AI IN PRACTICE
 =====================================
 
-Panel title: What I work with.
+Panel title: How I work with AI, and what I have learned doing it.
 
-Product Management: Jira, Mixpanel, Sprint Planning, Backlog Management, Roadmapping, Miro, User Research, App Store Connect, RevenueCat, Intercom, Agile / Scrum
+Intro: How I actually use AI in product work — not demos. The guidebook below is live and clickable; the others are write-ups in progress.
 
-Licensing & Legal: Contract Negotiation, DDEX Reporting, Financial Modeling, Copyright Compliance, Publisher Relations, UMPI / SACEM, BMI / GMR / ASCAP, ICE / JASRAC / SOCAN
+Card 1 — Dub a video course at a fraction of the production time [Localization · In production]
+How I use AI dubbing to localize Trala's video lessons for new markets without a full studio cycle.
 
-Data & Analysis: Mixpanel Analytics, Funnel Analysis, Cohort Analysis, Google Sheets (Advanced), Financial Reporting, Usage Monitoring, KPI Tracking, Cost-Revenue Modeling
+Card 2 — From PRD to clickable prototype in an afternoon [Discovery & Prototyping · In use]
+Turning discovery notes into a working, shareable prototype with Claude and Google Stitch, no front-end help needed.
 
-Languages & Localization: iOS Localization, Translation Workflows, Multilingual QA, Video Dubbing Mgmt, Spanish (Native), English (Professional), Italian (Fluent), German (Working)
+Card 3 — The interactive PM frameworks guidebook [Frameworks · LIVE → susana-pepo.github.io/PM-Frameworks-Guidebook/]
+A hands-on guide to RICE, MoSCoW, Kano, Jobs-to-be-Done and more, built as a web experience for PMs who learn by doing.
+
+Card 4 — A backlog that audits itself [Delivery · In progress]
+A Jira-connected agent that reviews ticket quality, flags stale stories and missing acceptance criteria, and posts a weekly digest, because backlog debt stays invisible until it hurts.
 
 
 =====================================
-05 — CONTACT
+FOOTER
 =====================================
 
-Panel title: Let's connect.
-
-Heading: Let's build something worth learning.
-
-Subtitle: I'm looking for my next challenge in EdTech, Music Tech, or Creative Tech. If you're building products that help people learn, I'd love to talk.
-
-Email: susipp93@gmail.com
-LinkedIn: linkedin.com/in/susana-pepo/
-Location: Berlin, Germany
-
-Availability line: Open to PM roles · Berlin, Valencia, or Remote
-
-Footer: Vibe coded by Susana with Claude · 2026
+CTA: Free Interactive Guidebook for PM Frameworks → susana-pepo.github.io/PM-Frameworks-Guidebook/
+Meta: Susana Pérez · susipp93@gmail.com · © 2026
