@@ -12,7 +12,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Susana Pérez">
     <meta property="og:title" content="Susana Pérez | Learning Experience Designer">
-    <meta property="og:description" content="4 years designing, testing and scaling self-paced digital learning experiences, primarily for US learners. Instructional design, learner research, learning analytics and hands-on AI prototyping. Berlin.">
+    <meta property="og:description" content="4 years designing, testing and scaling self-paced digital learning experiences, primarily for US learners. Instructional design, learner research, learning analytics and hands-on AI prototyping. Between Berlin and Madrid.">
     <meta property="og:url" content="https://susana-pepo.github.io/susana-pepo-pm-portfolio/">
     <meta property="og:image" content="https://susana-pepo.github.io/susana-pepo-pm-portfolio/og-image.png">
     <meta property="og:image:width" content="1200">
@@ -2194,6 +2194,551 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
     color: var(--accent-lavender);
 }
 
+/* ========================================= */
+/* LXD EVOLUTION: HIERARCHY + CASE VISUALS   */
+/* Same tokens, same surfaces, more story.   */
+/* ========================================= */
+
+.sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ---- Hero stagger: eyebrow shifted the child order, keep the cascade in sequence ---- */
+.hero-left > :nth-child(6) { animation-delay: 0.56s; }
+.hero-left > .hero-ctas { animation-delay: 0.64s; }
+
+/* ---- Hero metrics: one lead outcome, before/after numerals ---- */
+.hero-metric-value .from {
+    font-size: 0.68em;
+    font-weight: 500;
+    color: var(--text-tertiary);
+}
+.hero-metric-value .arrow,
+.evidence-value .arrow,
+.case-metric-value .arrow {
+    display: inline-block;
+    margin: 0 0.14em;
+    font-size: 0.62em;
+    font-weight: 400;
+    color: var(--text-tertiary);
+    vertical-align: 0.12em;
+}
+.hero-metric--lead .hero-metric-value {
+    font-size: 2.05rem;
+    color: var(--accent-lavender);
+}
+.hero-metric--lead::before {
+    opacity: 1;
+    width: 3px;
+}
+.case-metric-value .from,
+.evidence-value .from {
+    font-size: 0.68em;
+    font-weight: 500;
+    color: var(--text-tertiary);
+}
+
+/* ---- Experience: progression strip above the timeline ---- */
+.exp-arc {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.9rem;
+    margin-bottom: 2rem;
+}
+.exp-arc-step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.22rem;
+    padding: 1rem 1.1rem 1rem;
+    border-radius: 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--tray-ring);
+    box-shadow: inset 0 1px 0 var(--core-toplight);
+    transition: border-color 0.3s ease, transform 0.45s var(--ease-spring);
+}
+.exp-arc-step::before {
+    content: '';
+    position: absolute;
+    left: 1.1rem; right: 1.1rem; top: 0;
+    height: 2px;
+    border-radius: 0 0 2px 2px;
+    background: var(--border);
+}
+.exp-arc-step.is-current::before { background: var(--accent-lavender); }
+.exp-arc-step.is-current { border-color: var(--accent-lavender-border); }
+.exp-arc-step:hover { border-color: var(--accent-lavender-border); transform: translateY(-2px); }
+.exp-arc-step + .exp-arc-step::after {
+    content: '\2192';
+    position: absolute;
+    left: -0.45rem;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.85rem;
+    line-height: 1;
+    color: var(--text-tertiary);
+}
+.exp-arc-year {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+}
+.exp-arc-stage {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--text-primary);
+}
+.exp-arc-step.is-current .exp-arc-stage { color: var(--accent-lavender); }
+.exp-arc-role {
+    font-size: 0.74rem;
+    color: var(--text-secondary);
+}
+.role-stage {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-lavender);
+    margin-bottom: 0.3rem;
+}
+
+/* ---- Cases: a recessed visual tray above the narrative ---- */
+.case-card.open .case-body { max-height: 2800px; }
+
+.case-visual {
+    grid-column: 1 / -1;
+    display: grid;
+    gap: 1.35rem;
+    padding: 1.35rem 1.45rem;
+    border-radius: 14px;
+    background: var(--bg-primary);
+    border: 1px solid var(--tray-ring);
+    box-shadow: inset 0 1px 0 var(--core-toplight);
+}
+.case-visual-note {
+    font-size: 0.68rem !important;
+    color: var(--text-tertiary) !important;
+    font-style: italic;
+}
+
+/* Evidence numbers */
+.evidence {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+.evidence--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.evidence-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-left: 0.8rem;
+    border-left: 2px solid var(--accent-lavender-border);
+}
+.evidence-value {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--accent-lavender);
+}
+.evidence-label {
+    font-size: 0.64rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    line-height: 1.3;
+}
+
+/* Before / after progression */
+.ba {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+.ba-label {
+    display: block;
+    font-size: 0.64rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 0.7rem;
+}
+.ba-col--after .ba-label { color: var(--accent-lavender); }
+.ba-steps {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.ba-steps li {
+    position: relative;
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 0.38rem 0.85rem;
+    border-radius: 999px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    box-shadow: inset 0 1px 0 var(--core-toplight);
+}
+.ba-steps li + li { margin-top: 1.25rem; }
+.ba-steps li + li::before {
+    content: '\2193';
+    position: absolute;
+    left: 0.9rem;
+    top: -1.15rem;
+    font-size: 0.72rem;
+    line-height: 1;
+    color: var(--text-tertiary);
+}
+.ba-col--after .ba-steps li {
+    border-color: var(--accent-lavender-border);
+    background: var(--accent-lavender-tint);
+}
+.ba-col--after .ba-steps li + li::before { color: var(--accent-lavender); }
+.ba-steps li.is-drop {
+    border-style: dashed;
+    background: transparent;
+    color: var(--text-tertiary);
+}
+.ba-steps li.is-goal {
+    background: var(--accent-lavender);
+    border-color: var(--accent-lavender);
+    color: var(--text-on-accent);
+    font-weight: 600;
+}
+
+/* Learner research: the one-in-three moment */
+.case-visual--research {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 2.25rem;
+}
+.big-stat { display: flex; flex-direction: column; }
+.big-stat-value {
+    font-family: var(--font-display);
+    font-size: 4.25rem;
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+    color: var(--accent-lavender);
+}
+.big-stat-slash {
+    font-weight: 300;
+    color: var(--text-tertiary);
+    margin: 0 0.02em;
+}
+.big-stat-dots {
+    display: flex;
+    gap: 0.35rem;
+    margin: 0.75rem 0 0.65rem;
+}
+.big-stat-dots span {
+    width: 36px;
+    height: 7px;
+    border-radius: 4px;
+    background: var(--border);
+}
+.big-stat-dots span.is-on { background: var(--accent-lavender); }
+.big-stat-text {
+    font-size: 0.82rem !important;
+    color: var(--text-secondary) !important;
+    max-width: 24ch;
+    line-height: 1.45 !important;
+}
+.case-question,
+.case-principle {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2.3vw, 1.7rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--text-primary);
+    padding-left: 1.1rem;
+    border-left: 3px solid var(--accent-lavender);
+    margin: 0;
+}
+.case-principle { font-size: clamp(1.05rem, 1.8vw, 1.3rem); }
+.case-question-label {
+    display: block;
+    margin-bottom: 0.45rem;
+    font-family: var(--font-body);
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+}
+
+/* Personalization: branching journey */
+.branch-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.branch-svg {
+    display: block;
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+}
+.branch-lines { stroke: var(--text-tertiary); color: var(--text-tertiary); opacity: 0.8; }
+.branch-node rect {
+    fill: var(--bg-card);
+    stroke: var(--border);
+    stroke-width: 1;
+}
+.branch-node text {
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 600;
+    fill: var(--text-primary);
+}
+.branch-node--root rect { fill: var(--accent-lavender); stroke: var(--accent-lavender); }
+.branch-node--root text { fill: var(--text-on-accent); }
+.branch-node--input rect { stroke: var(--accent-lavender-border); fill: var(--accent-lavender-tint); }
+.branch-node--out text { fill: var(--text-secondary); font-weight: 500; }
+
+/* Content scale: the operational learning system */
+.pipeline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.4rem;
+    counter-reset: pipe;
+}
+.pipe-step {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-size: 0.76rem;
+    font-weight: 600;
+    padding: 0.42rem 0.9rem;
+    border-radius: 999px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    box-shadow: inset 0 1px 0 var(--core-toplight);
+}
+.pipe-step::before {
+    counter-increment: pipe;
+    content: counter(pipe, decimal-leading-zero);
+    font-size: 0.58rem;
+    letter-spacing: 0.06em;
+    color: var(--accent-lavender);
+}
+.pipe-step.is-loop {
+    border-color: var(--accent-lavender-border);
+    background: var(--accent-lavender-tint);
+    color: var(--accent-lavender);
+}
+.pipe-arrow {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+}
+
+/* ---- AI in Learning: one featured live tool, then experiments ---- */
+.hub-feature {
+    position: relative;
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 1.75rem;
+    align-items: center;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+    border-radius: var(--radius-card);
+    background: var(--bg-card);
+    border: 1px solid var(--tray-ring);
+    box-shadow:
+        inset 0 1px 0 var(--core-toplight),
+        var(--shadow-float);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.5s var(--ease-spring), box-shadow 0.5s var(--ease-out), border-color 0.4s ease;
+}
+.hub-feature::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, var(--accent-lavender), transparent 55%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+.hub-feature:hover {
+    border-color: var(--accent-lavender-border);
+    transform: translateY(-4px);
+    box-shadow:
+        inset 0 1px 0 var(--core-highlight),
+        var(--shadow-pop);
+}
+.hub-feature-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    min-width: 0;
+}
+.hub-feature-eyebrow {
+    display: inline-flex;
+    align-self: flex-start;
+    align-items: center;
+    padding: 0.28rem 0.72rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-lavender);
+    background: var(--accent-lavender-dim);
+    border: 1px solid var(--accent-lavender-border);
+}
+.hub-feature-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 2.4vw, 1.75rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.12;
+    color: var(--text-primary);
+}
+.hub-feature-quote {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.45;
+    color: var(--text-primary);
+}
+.hub-feature-desc {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 40ch;
+}
+.hub-feature-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.35rem;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-lavender);
+}
+.hub-feature-cta .icon { width: 14px; height: 14px; transition: transform 0.3s var(--ease-out); }
+.hub-feature:hover .hub-feature-cta .icon { transform: translate(2px, -2px); }
+
+/* Browser-frame preview of the live tool (real screenshot, light UI by design) */
+.hub-feature-frame {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #FFFFFF;
+    border: 1px solid var(--tray-ring);
+    box-shadow: var(--shadow-float);
+    transition: transform 0.55s var(--ease-spring), box-shadow 0.5s var(--ease-out);
+}
+.hub-feature:hover .hub-feature-frame {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: var(--shadow-pop);
+}
+.browser-chrome {
+    display: flex;
+    align-items: center;
+    gap: 0.32rem;
+    padding: 0.5rem 0.7rem;
+    background: #EEF1F5;
+    border-bottom: 1px solid rgba(13, 40, 60, 0.08);
+}
+.browser-chrome > span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #C9D1DB;
+}
+.browser-chrome > .browser-url {
+    flex: 1;
+    width: auto;
+    height: auto;
+    margin-left: 0.5rem;
+    padding: 0.14rem 0.55rem;
+    border-radius: 6px;
+    background: #FFFFFF;
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    letter-spacing: 0.01em;
+    color: #64748B;
+}
+.hub-feature-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.hub-section-label {
+    margin: 0 0 0.8rem;
+    font-size: 0.64rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+}
+.ai-hub-grid--secondary {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    margin-bottom: 1rem;
+}
+
+/* Panel entrance for the new blocks (same rise as the rest) */
+@media (prefers-reduced-motion: no-preference) {
+    .panel .hub-feature { opacity: 0; }
+    .panel.active .hub-feature { animation: panelRise 0.55s var(--ease-out) 0.12s both; }
+    .panel.active .exp-arc { animation: panelRise 0.55s var(--ease-out) 0.06s both; }
+    .panel.active .hub-section-label { animation: panelFade 0.5s var(--ease-out) 0.3s both; }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+    .exp-arc { grid-template-columns: 1fr; gap: 1.1rem; margin-bottom: 1.75rem; }
+    .exp-arc-step + .exp-arc-step::after {
+        content: '\2193';
+        left: 1.5rem;
+        top: -0.55rem;
+        transform: translate(0, -50%);
+    }
+    .hub-feature { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.25rem; }
+    .ai-hub-grid--secondary { grid-template-columns: 1fr; }
+    .case-visual--research { grid-template-columns: 1fr; gap: 1.35rem; }
+    .evidence--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+    .hero-metric--lead .hero-metric-value { font-size: 1.85rem; }
+    .case-visual { padding: 1.1rem 1rem; gap: 1.1rem; }
+    .evidence { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.6rem; }
+    .evidence--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem 0.6rem; }
+    .evidence-value { font-size: 1.25rem; }
+    .branch-svg { min-width: 540px; }
+    .timeline-glance { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem 0.75rem; }
+    .evidence-label { font-size: 0.58rem; }
+    .ba { gap: 0.9rem; }
+    .ba-steps li { font-size: 0.72rem; padding: 0.32rem 0.7rem; }
+    .big-stat-value { font-size: 3.4rem; }
+    .case-metric-label { display: none; }
+    .case-metric-value { font-size: 1.25rem; }
+}
+
 </style>
 </head>
 
@@ -2303,7 +2848,7 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
 
         <p class="hero-intro">I have spent the last four years designing, testing and scaling digital learning experiences, primarily for US learners. I started by creating educational content myself and gradually moved into content strategy and Product Ownership. The scope got bigger, but the question stayed surprisingly similar: where is the learner getting stuck, what would actually help here, and how do we know if the change worked? Today I combine instructional design, learner research, behavioral data and hands-on AI prototyping to improve both the learning experience and the way content gets made.</p>
 
-        <p class="hero-meta">Learning Experience Design <span class="meta-sep">&middot;</span> Instructional Design <span class="meta-sep">&middot;</span> Digital Learning <span class="meta-sep">&middot;</span> AI Prototyping <span class="meta-sep">&middot;</span> Berlin</p>
+        <p class="hero-meta">Learning Experience Design <span class="meta-sep">&middot;</span> Instructional Design <span class="meta-sep">&middot;</span> Digital Learning <span class="meta-sep">&middot;</span> AI Prototyping <span class="meta-sep">&middot;</span> Between Berlin and Madrid</p>
 
         <div class="hero-ctas">
             <a href="#" data-panel="work" role="button" class="btn btn-primary btn-work">See my work</a>
@@ -2348,9 +2893,9 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
         <div class="hero-metrics" aria-label="Selected outcomes">
             <p class="hero-metrics-label">Selected outcomes</p>
             <div class="hero-metrics-grid">
-                <div class="hero-metric"><span class="hero-metric-value">2.1&times;</span><span class="hero-metric-label">learning completion</span></div>
+                <div class="hero-metric hero-metric--lead"><span class="hero-metric-value"><span class="from">10%</span><span class="arrow" aria-hidden="true">&rarr;</span><span class="sr-only">to </span>21%</span><span class="hero-metric-label">learning completion</span></div>
                 <div class="hero-metric"><span class="hero-metric-value">+14pp</span><span class="hero-metric-label">top satisfaction</span></div>
-                <div class="hero-metric"><span class="hero-metric-value">260+</span><span class="hero-metric-label">learning modules in one release</span></div>
+                <div class="hero-metric"><span class="hero-metric-value"><span class="from">55%</span><span class="arrow" aria-hidden="true">&rarr;</span><span class="sr-only">to </span>67%</span><span class="hero-metric-label">Day 1 retention</span></div>
                 <div class="hero-metric"><span class="hero-metric-value">70%</span><span class="hero-metric-label">faster content delivery</span></div>
             </div>
         </div>
@@ -2396,7 +2941,7 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
 
                 <div class="about-detail-block">
                     <h4>Location</h4>
-                    <p>Berlin, Germany<br><span class="text-muted">European citizen, open to relocation<br>Colombian, German and Portuguese roots</span></p>
+                    <p>Between Berlin and Madrid<br><span class="text-muted">European citizen, open to relocation<br>Colombian, German and Portuguese roots</span></p>
                 </div>
 
                 <div class="about-detail-block">
@@ -2421,6 +2966,23 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
         </button>
     </div>
     <div class="panel-body">
+        <ol class="exp-arc" aria-label="Career progression">
+            <li class="exp-arc-step">
+                <span class="exp-arc-year">2022</span>
+                <span class="exp-arc-stage">Making the learning</span>
+                <span class="exp-arc-role">Educational Content Creator</span>
+            </li>
+            <li class="exp-arc-step">
+                <span class="exp-arc-year">2022 &ndash; 23</span>
+                <span class="exp-arc-stage">Scaling the content system</span>
+                <span class="exp-arc-role">Education Content Manager</span>
+            </li>
+            <li class="exp-arc-step is-current">
+                <span class="exp-arc-year">2023 &ndash; now</span>
+                <span class="exp-arc-stage">Owning the learning experience</span>
+                <span class="exp-arc-role">Product Owner</span>
+            </li>
+        </ol>
         <div class="exp-layout">
 
             <!-- Left: Timeline -->
@@ -2453,6 +3015,7 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
 
                     <!-- Role 1: Product Owner -->
                     <div class="timeline-role">
+                        <p class="role-stage">Stage 03 &middot; Owning the learning experience</p>
                         <h3 class="role-title">Product Owner &middot; Learning Experience &amp; Content</h3>
                         <p class="role-date">August 2023 - Present</p>
                         <p class="role-narrative">I own learning experience and content strategy across two digital learning products, combining learner research, behavioral data and learning outcomes to decide what needs to change, then carrying those decisions through to delivery and measurement.</p>
@@ -2475,6 +3038,7 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
 
                     <!-- Role 2: Education Content Manager & License Manager -->
                     <div class="timeline-role">
+                        <p class="role-stage">Stage 02 &middot; Scaling the content system</p>
                         <h3 class="role-title">Education Content Manager &amp; License Manager</h3>
                         <p class="role-date">October 2022 - July 2023</p>
                         <p class="role-narrative">I owned the development and release of digital learning content from learning need and scope through production, localization, quality assurance, launch and post-release evaluation.</p>
@@ -2493,6 +3057,7 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
 
                     <!-- Role 3: Educational Content Creator -->
                     <div class="timeline-role">
+                        <p class="role-stage">Stage 01 &middot; Making the learning</p>
                         <h3 class="role-title">Educational Content Creator</h3>
                         <p class="role-date">April 2022 - October 2022</p>
                         <p class="role-narrative">I designed and scripted complete self-paced courses and interactive digital learning experiences for different ability levels.</p>
@@ -2588,7 +3153,7 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
                         </div>
                     </div>
                     <div class="case-metric" aria-hidden="true">
-                        <span class="case-metric-value">2.1&times;</span>
+                        <span class="case-metric-value"><span class="from">10%</span><span class="arrow" aria-hidden="true">&rarr;</span><span class="sr-only">to </span>21%</span>
                         <span class="case-metric-label">completion</span>
                     </div>
                     <div class="case-toggle" aria-hidden="true">
@@ -2598,6 +3163,34 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
                 <div class="case-body">
                     <div class="case-content">
                         <p class="case-scope">Product Owner &middot; Learning experience &amp; content</p>
+                        <div class="case-visual case-visual--format">
+                            <div class="ba">
+                                <div class="ba-col ba-col--before">
+                                    <span class="ba-label">Before</span>
+                                    <ol class="ba-steps">
+                                        <li>Complex task</li>
+                                        <li>Large jump</li>
+                                        <li class="is-drop">Drop-off</li>
+                                    </ol>
+                                </div>
+                                <div class="ba-col ba-col--after">
+                                    <span class="ba-label">After</span>
+                                    <ol class="ba-steps">
+                                        <li>Guided step</li>
+                                        <li>Practice</li>
+                                        <li>Guided step</li>
+                                        <li>Integration</li>
+                                        <li class="is-goal">Full task</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="evidence">
+                                <div class="evidence-item"><span class="evidence-value"><span class="from">10%</span><span class="arrow" aria-hidden="true">&rarr;</span><span class="sr-only">to </span>21%</span><span class="evidence-label">Completion</span></div>
+                                <div class="evidence-item"><span class="evidence-value">+14pp</span><span class="evidence-label">Top satisfaction</span></div>
+                                <div class="evidence-item"><span class="evidence-value"><span class="from">55%</span><span class="arrow" aria-hidden="true">&rarr;</span><span class="sr-only">to </span>67%</span><span class="evidence-label">Day 1 retention</span></div>
+                            </div>
+                            <p class="case-visual-note">Conceptual structure of the format change, not the production interface.</p>
+                        </div>
                         <div class="case-section">
                             <h4>The problem</h4>
                             <p>A core learning experience was losing too many learners before completion. The obvious response could have been to add more material. Instead, I questioned the structure itself.</p>
@@ -2639,6 +3232,17 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
                 <div class="case-body">
                     <div class="case-content">
                         <p class="case-scope">Product Owner &middot; Learner research &amp; engagement roadmap</p>
+                        <div class="case-visual case-visual--research">
+                            <div class="big-stat">
+                                <span class="big-stat-value">1<span class="big-stat-slash">/</span>3</span>
+                                <div class="big-stat-dots" aria-hidden="true"><span class="is-on"></span><span></span><span></span></div>
+                                <p class="big-stat-text">of learners supplemented the experience with external video</p>
+                            </div>
+                            <blockquote class="case-question">
+                                <span class="case-question-label">The research question</span>
+                                What were they leaving to find?
+                            </blockquote>
+                        </div>
                         <div class="case-section">
                             <h4>The problem</h4>
                             <p>Behavioral data could show us where learners disengaged, but it could not always tell us what they felt was missing.</p>
@@ -2684,6 +3288,40 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
                 <div class="case-body">
                     <div class="case-content">
                         <p class="case-scope">Education Content Manager &middot; Onboarding &amp; personalization</p>
+                        <div class="case-visual case-visual--branch">
+                            <div class="branch-scroll">
+                            <svg class="branch-svg" viewBox="0 0 640 200" role="img" aria-label="A new learner answers three onboarding questions: learning goal, content preference and location. Each answer leads to a different first experience.">
+                                <defs>
+                                    <marker id="branch-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+                                        <path d="M2 2 8 5 2 8" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </marker>
+                                </defs>
+                                <g class="branch-lines" fill="none" stroke-width="1.5" marker-end="url(#branch-arrow)">
+                                    <path d="M118 100 C 172 100, 176 30, 226 30"/>
+                                    <path d="M118 100 L 226 100"/>
+                                    <path d="M118 100 C 172 100, 176 170, 226 170"/>
+                                    <path d="M382 30 L 456 30"/>
+                                    <path d="M382 100 L 456 100"/>
+                                    <path d="M382 170 L 456 170"/>
+                                </g>
+                                <g class="branch-node branch-node--root">
+                                    <rect x="2" y="78" width="116" height="44" rx="22"/>
+                                    <text x="60" y="104" text-anchor="middle">New learner</text>
+                                </g>
+                                <g class="branch-node branch-node--input">
+                                    <rect x="230" y="10" width="152" height="40" rx="20"/><text x="306" y="34" text-anchor="middle">Learning goal</text>
+                                    <rect x="230" y="80" width="152" height="40" rx="20"/><text x="306" y="104" text-anchor="middle">Content preference</text>
+                                    <rect x="230" y="150" width="152" height="40" rx="20"/><text x="306" y="174" text-anchor="middle">Location</text>
+                                </g>
+                                <g class="branch-node branch-node--out">
+                                    <rect x="460" y="10" width="178" height="40" rx="20"/><text x="549" y="34" text-anchor="middle">Goal-led first lesson</text>
+                                    <rect x="460" y="80" width="178" height="40" rx="20"/><text x="549" y="104" text-anchor="middle">Preferred content first</text>
+                                    <rect x="460" y="150" width="178" height="40" rx="20"/><text x="549" y="174" text-anchor="middle">Locally relevant content</text>
+                                </g>
+                            </svg>
+                            </div>
+                            <p class="case-principle"><span class="case-question-label">The principle</span>Every question should earn its place.</p>
+                        </div>
                         <div class="case-section">
                             <h4>The problem</h4>
                             <p>Learners arrived with different goals, preferences and contexts, while the early experience treated too many of them the same way.</p>
@@ -2725,6 +3363,23 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
                 <div class="case-body">
                     <div class="case-content">
                         <p class="case-scope">Content Manager &rarr; Product Owner &middot; Content, localization &amp; engineering</p>
+                        <div class="case-visual case-visual--pipeline">
+                            <div class="pipeline" role="list" aria-label="Learning content production system">
+                                <span class="pipe-step" role="listitem">Scope</span><span class="pipe-arrow" aria-hidden="true">&rarr;</span>
+                                <span class="pipe-step" role="listitem">Production</span><span class="pipe-arrow" aria-hidden="true">&rarr;</span>
+                                <span class="pipe-step" role="listitem">Localization</span><span class="pipe-arrow" aria-hidden="true">&rarr;</span>
+                                <span class="pipe-step" role="listitem">QA</span><span class="pipe-arrow" aria-hidden="true">&rarr;</span>
+                                <span class="pipe-step" role="listitem">Release</span><span class="pipe-arrow" aria-hidden="true">&rarr;</span>
+                                <span class="pipe-step" role="listitem">Learn</span><span class="pipe-arrow" aria-hidden="true">&rarr;</span>
+                                <span class="pipe-step is-loop" role="listitem">Iterate <span aria-hidden="true">&#8635;</span></span>
+                            </div>
+                            <div class="evidence evidence--4">
+                                <div class="evidence-item"><span class="evidence-value">260+</span><span class="evidence-label">Modules, one release</span></div>
+                                <div class="evidence-item"><span class="evidence-value">160%</span><span class="evidence-label">Library growth</span></div>
+                                <div class="evidence-item"><span class="evidence-value">61</span><span class="evidence-label">Item regional release</span></div>
+                                <div class="evidence-item"><span class="evidence-value">70%</span><span class="evidence-label">Faster delivery</span></div>
+                            </div>
+                        </div>
                         <div class="case-section">
                             <h4>The problem</h4>
                             <p>Large multilingual learning releases involve much more than creating the lesson itself. Production, localization, quality assurance, contributors and release readiness all have to move together.</p>
@@ -2759,22 +3414,22 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
     </div>
     <div class="panel-body">
         <p class="ai-hub-intro">AI is part of my working process, but I am less interested in generating content for the sake of generating content. I use it to move from an idea to something I can see, click, test or produce, often before asking engineering or design for significant time. I am especially interested in learning formats that previously would have been too slow or expensive to create at scale.</p>
-        <div class="ai-hub-grid">
+        <a href="https://www.skoove.com/en/tools/piano-chords" target="_blank" rel="noopener" class="hub-feature">
+            <div class="hub-feature-text">
+                <span class="hub-feature-eyebrow">Interactive learning &middot; Live</span>
+                <h3 class="hub-feature-title">Interactive chord builder</h3>
+                <p class="hub-feature-quote">From explaining a concept to letting the learner explore it.</p>
+                <p class="hub-feature-desc">A concept-heavy topic turned into something learners can inspect, test and move between explanation and practice, instead of only reading about it.</p>
+                <span class="hub-feature-cta">Try the live tool<svg class="icon"><use href="#i-arrow-ur"/></svg></span>
+            </div>
+            <div class="hub-feature-frame" aria-hidden="true">
+                <div class="browser-chrome"><span></span><span></span><span></span><span class="browser-url">skoove.com/en/tools/piano-chords</span></div>
+                <img src="chord-builder-preview.jpg" alt="" width="1140" height="450" loading="lazy" decoding="async">
+            </div>
+        </a>
 
-            <!-- 01: Interactive chord builder (live) -->
-            <a href="https://www.skoove.com/en/tools/piano-chords" target="_blank" rel="noopener" class="hub-card hub-card--live">
-                <span class="hub-card-icon"><svg class="icon"><use href="#i-keys"/></svg></span>
-                <div class="hub-card-head-text">
-                    <h3 class="hub-card-title">Interactive chord builder</h3>
-                    <p class="hub-card-desc">An example of the kind of learning format I find exciting: turning a concept-heavy topic into something learners can explore directly instead of only reading an explanation.</p>
-                    <p class="hub-card-desc">Interactive tools give learners immediate ways to inspect relationships, test ideas and move between explanation and practice.</p>
-                    <div class="hub-card-meta">
-                        <span class="hub-card-tag">Interactive learning</span>
-                        <span class="hub-card-badge hub-card-badge--live">Live</span>
-                    </div>
-                </div>
-                <span class="hub-card-open">View live tool<svg class="icon"><use href="#i-arrow-ur"/></svg></span>
-            </a>
+        <p class="hub-section-label">More experiments</p>
+        <div class="ai-hub-grid ai-hub-grid--secondary">
 
             <!-- 02: Short educational video at scale (note) -->
             <article class="hub-card hub-card--note">
@@ -2819,6 +3474,9 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
                 </div>
             </article>
 
+        </div>
+
+        <div class="ai-hub-grid">
             <!-- Live: PM Frameworks Guidebook -->
             <a href="https://susana-pepo.github.io/PM-Frameworks-Guidebook/" target="_blank" rel="noopener" class="hub-card hub-card--featured hub-card--live">
                 <span class="hub-card-icon"><svg class="icon"><use href="#i-book"/></svg></span>

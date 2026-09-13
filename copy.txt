@@ -25,17 +25,17 @@ Title line: I design learning around where people actually get stuck.
 
 Intro paragraph: I have spent the last four years designing, testing and scaling digital learning experiences, primarily for US learners. I started by creating educational content myself and gradually moved into content strategy and Product Ownership. The scope got bigger, but the question stayed surprisingly similar: where is the learner getting stuck, what would actually help here, and how do we know if the change worked? Today I combine instructional design, learner research, behavioral data and hands-on AI prototyping to improve both the learning experience and the way content gets made.
 
-Meta line: Learning Experience Design · Instructional Design · Digital Learning · AI Prototyping · Berlin
+Meta line: Learning Experience Design · Instructional Design · Digital Learning · AI Prototyping · Between Berlin and Madrid
 
 Buttons: See my work (opens Selected Work) · Download CV (Susana_Perez_CV_Learning-Experience-Designer.pdf) · Email (susipp93@gmail.com) · LinkedIn (linkedin.com/in/susana-pepo-pm)
 
 Nav: 01 About · 02 Experience · 03 Selected Work · 04 AI in Learning
 
 Selected outcomes:
-  2.1×   learning completion
-  +14pp  top satisfaction
-  260+   learning modules in one release
-  70%    faster content delivery
+  10% → 21%  learning completion (lead metric)
+  +14pp      top satisfaction
+  55% → 67%  Day 1 retention
+  70%        faster content delivery
 
 
 =====================================
@@ -54,7 +54,7 @@ AI has also become a very practical part of how I work. I use it to prototype in
 
 Sidebar:
   Languages: Spanish (Native) · English (C1+, working language) · German (B2+, daily at work)
-  Location: Berlin, Germany. European citizen, open to relocation. Colombian, German and Portuguese roots.
+  Location: Between Berlin and Madrid. European citizen, open to relocation. Colombian, German and Portuguese roots.
   Things I like: Learning that doesn't feel like homework · products that explain difficult things simply · small experiments that answer big questions · tools that let people learn by doing
 
 
@@ -64,6 +64,7 @@ Sidebar:
 
 Title: From creating learning content to owning the experience end to end.
 
+Progression strip: 2022 Making the learning (Educational Content Creator) → 2022–23 Scaling the content system (Education Content Manager) → 2023–now Owning the learning experience (Product Owner)
 At a glance: 4 years in digital learning and EdTech · US primary learner audience · 2 digital learning products · 7+ languages live · 260+ learning modules in one release
 
 Learnfield GmbH · Berlin, Germany
@@ -105,7 +106,7 @@ Title: A few learning problems I've worked on.
 
 --- 01 Redesigning the learning format ---
 Subtitle: From 10% completion to 21% by changing how the skill was taught.
-Metric: 2.1× completion
+Metric: 10% → 21% completion
 Tags: Learning Experience Design · Instructional Design · Learning Analytics · Experimentation
 Scope: Product Owner · Learning experience & content
 The problem: A core learning experience was losing too many learners before completion. The obvious response could have been to add more material. Instead, I questioned the structure itself.
@@ -149,10 +150,13 @@ Title: I use AI to get learning ideas into people's hands faster.
 
 Intro: AI is part of my working process, but I am less interested in generating content for the sake of generating content. I use it to move from an idea to something I can see, click, test or produce, often before asking engineering or design for significant time. I am especially interested in learning formats that previously would have been too slow or expensive to create at scale.
 
---- 01 Interactive chord builder (Interactive learning · Live) ---
-An example of the kind of learning format I find exciting: turning a concept-heavy topic into something learners can explore directly instead of only reading an explanation.
-Interactive tools give learners immediate ways to inspect relationships, test ideas and move between explanation and practice.
-Link: View live tool → https://www.skoove.com/en/tools/piano-chords
+--- FEATURED: Interactive chord builder (Interactive learning · Live) ---
+Quote: From explaining a concept to letting the learner explore it.
+A concept-heavy topic turned into something learners can inspect, test and move between explanation and practice, instead of only reading about it.
+Preview: real screenshot of the live tool in a browser frame (chord-builder-preview.jpg)
+CTA: Try the live tool → https://www.skoove.com/en/tools/piano-chords
+
+Section label: More experiments
 
 --- 02 Short educational video at scale (Content production · Experimentation) ---
 I am exploring repeatable AI-assisted workflows for short, focused educational videos that can be produced in much larger volumes without becoming generic or disposable.
