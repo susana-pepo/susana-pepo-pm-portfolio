@@ -1,15 +1,15 @@
 PORTFOLIO COPY — Susana Pérez
 ==============================
 This file mirrors the live site (index.html). Edit it and share it back —
-I'll update the site to match. Last synced: 2026-06-08.
+I'll update the site to match. Last synced: 2026-09-13 (Learning Experience Designer version).
 
 
 =====================================
 PAGE META
 =====================================
 
-Page title: Susana Pérez · Product Owner & Product Manager
-Meta description: Product Owner and Product Manager with 3+ years shipping B2C subscription apps across web, iOS and Android. Discovery-led roadmaps, conversion experiments, and the commercial negotiation behind the product. Berlin, EdTech.
+Page title: Susana Pérez | Learning Experience Designer
+Meta description: Learning Experience Designer with 4 years designing, testing and scaling self-paced digital learning experiences, primarily for US learners. Instructional design, learner research, learning analytics, localization and AI-enabled prototyping.
 Canonical / live URL: https://susana-pepo.github.io/susana-pepo-pm-portfolio/
 Share image (link previews): og-image.png (1200×630, generated from og-image.svg)
 
@@ -18,196 +18,161 @@ Share image (link previews): og-image.png (1200×630, generated from og-image.sv
 HERO (Home screen)
 =====================================
 
+Eyebrow: LEARNING EXPERIENCE DESIGNER
 Name: Susana Pérez
 
-Title line: I own the product and the deal behind it.
+Title line: I design learning around where people actually get stuck.
 
-Intro paragraph: Three years building subscription apps that people keep paying for. I run discovery, write the backlog, and ship the experiments, then sit across the table from music publishers to negotiate the rights that make the product possible. Right now I am Product Owner at Learnfield, running two squads across the Trala violin app and the Skoove piano content team, on a platform that operates in 7+ languages.
+Intro paragraph: I have spent the last four years designing, testing and scaling digital learning experiences, primarily for US learners. I started by creating educational content myself and gradually moved into content strategy and Product Ownership. The scope got bigger, but the question stayed surprisingly similar: where is the learner getting stuck, what would actually help here, and how do we know if the change worked? Today I combine instructional design, learner research, behavioral data and hands-on AI prototyping to improve both the learning experience and the way content gets made.
 
-Meta line: Product Owner & Product Manager · B2C Subscription SaaS · EdTech · Web, iOS & Android · Berlin
+Meta line: Learning Experience Design · Instructional Design · Digital Learning · AI Prototyping · Berlin
 
-Buttons: Download CV (Susana_Perez_CV.pdf) · Email (susipp93@gmail.com) · LinkedIn (linkedin.com/in/susana-pepo/)
+Buttons: See my work (opens Selected Work) · Download CV (Susana_Perez_CV_Learning-Experience-Designer.pdf) · Email (susipp93@gmail.com) · LinkedIn (linkedin.com/in/susana-pepo-pm)
 
-Selected outcomes (right column):
-- +28.7% — revenue / paywall visitor
-- +160% — catalogue growth
-- 14.7% — licensing cost, from 18%
-- 70% — faster content delivery
+Nav: 01 About · 02 Experience · 03 Selected Work · 04 AI in Learning
 
-
-=====================================
-01 — ABOUT
-=====================================
-
-Panel title: I build for the person who almost left.
-
-Paragraph 1: Most products lose people quietly. Someone signs up, hits a moment that does not fit them, and never comes back. I spend my time finding those moments and removing them, through discovery, experiments, and a roadmap that is honest about what actually moves activation, conversion, and retention.
-
-Paragraph 2: At Learnfield I am Product Owner across two squads: the Trala violin app and the Skoove piano content team. The role sits where product, data, and commercial meet. In one week I might refine epics with engineering, read out a paywall A/B test in Mixpanel, and negotiate licensing terms with a music publisher. I was trained in negotiation directly by our CEO, and I am the direct interlocutor with publishers and rights organizations on the terms that decide what the product can offer.
-
-Paragraph 3: What I like most is the range. I translate ambiguous commercial requirements into something a team can build, then I follow it all the way through to whether it worked.
-
---- Sidebar ---
-
-Languages:
-- Spanish — Native, C2
-- English — Fluent, C1/C2, working language
-- German — B2+, daily at work
-
-Location: Berlin, Germany. European citizen, open to relocation. Colombian, German and Portuguese roots.
-
-Things I Love: Music you cannot sit still to · long walks with no plan · a backlog that is finally clean · cooking for friends · products that teach without feeling like school · slow morning coffee
+Selected outcomes:
+  2.1×   learning completion
+  +14pp  top satisfaction
+  260+   learning modules in one release
+  70%    faster content delivery
 
 
 =====================================
-02 — EXPERIENCE
+01 · ABOUT
 =====================================
 
-Panel title: Three years owning product, and the commercial work behind it.
+Title: The interesting part starts when the learner gets stuck.
 
-At a glance:
-- 3+ years in B2C subscription SaaS (EdTech)
-- 2 product squads owned in parallel
-- 7+ languages live
-- 260+ songs shipped per release
+I started my career in digital education designing self-paced courses, interactive lessons and video-based learning. As my role grew into content strategy and Product Ownership, I became responsible not only for what we taught, but for how learners encountered it, progressed through it and responded to it.
+
+Most of the audience I have designed for has been in the US. I use learner interviews, surveys, usability testing and behavioral data alongside learning outcomes to understand both where people struggle and why.
+
+One of my favorite projects came from questioning the structure of a core learning experience rather than simply adding more content. A more progressive format more than doubled completion and was later adopted for content production at scale.
+
+AI has also become a very practical part of how I work. I use it to prototype interactive experiences, animations, short educational video formats, landing pages and internal tools. What interests me is being able to take a learning idea much further on my own, test it quickly, and only then decide where significant engineering or production time is really needed.
+
+Sidebar:
+  Languages: Spanish (Native) · English (C1+, working language) · German (B2+, daily at work)
+  Location: Berlin, Germany. European citizen, open to relocation. Colombian, German and Portuguese roots.
+  Things I like: Learning that doesn't feel like homework · products that explain difficult things simply · small experiments that answer big questions · tools that let people learn by doing
 
 
---- Role 1: Product Owner · Trala & Skoove squads (2024 – Present) ---
+=====================================
+02 · EXPERIENCE
+=====================================
+
+Title: From creating learning content to owning the experience end to end.
+
+At a glance: 4 years in digital learning and EdTech · US primary learner audience · 2 digital learning products · 7+ languages live · 260+ learning modules in one release
 
 Learnfield GmbH · Berlin, Germany
 
-Narrative: I own two parallel squads across web and app: the Trala violin app and the Skoove piano content team, on a subscription platform running in 7+ languages.
+--- Product Owner · Learning Experience & Content (August 2023 - Present) ---
+I own learning experience and content strategy across two digital learning products, combining learner research, behavioral data and learning outcomes to decide what needs to change, then carrying those decisions through to delivery and measurement.
+- More than doubled completion from 10% to 21% by validating a progressive learning format that breaks complex skills into structured guided steps. Top satisfaction ratings rose by 14 percentage points and Day 1 retention went from 55% to 67%. The format was then commissioned at scale.
+- Prototype learning experiences and scalable content formats with Claude and AI/low-code tools, including interactive practice tools, learning prototypes, animations and short-form educational video concepts.
+- Adapt learning content and experiences for international and partner contexts, translating external requirements, learner needs and operational constraints into product and content decisions.
+- Combine learner interviews, surveys, usability testing and behavioral analytics to evaluate learning experiences and prioritize improvements.
+- One research cycle found that roughly one-third of learners supplemented the product with external video content, which directly informed the engagement roadmap.
+- Reduced end-to-end learning-content delivery time by 70% by redesigning production and release workflows with content and engineering teams.
+Tags: Learning Experience Design · Learner Research · Learning Analytics · AI Prototyping · Localization
 
-- Led the negotiation that unlocked the Disney Music Group catalogue, giving us the largest Disney piano collection in our competitive landscape.
-- Lifted projected revenue per paywall visitor by 28.7% through subscription A/B tests on RevenueCat and Mixpanel, owning each test from hypothesis and metric design to ship, read-out, and the next iteration.
-- Reworked the onboarding funnel with location-based personalization and questionnaire variants on genre and learning goal, contributing to 14% year-on-year revenue growth.
-- Act as the direct interlocutor with publishers, licensors, and commercial partners on licensing terms, royalty mechanics, rights clearance, contract negotiation, and disputes. Trained in negotiation by the CEO and CPO.
-- Translate ambiguous commercial requirements into structured epics, user stories, and acceptance criteria, with backend and frontend tasks anchored to success metrics.
-- Coordinated the full rework of our internal content delivery tooling, cutting end-to-end process time by 70%.
+--- Education Content Manager & License Manager (October 2022 - July 2023) ---
+I owned the development and release of digital learning content from learning need and scope through production, localization, quality assurance, launch and post-release evaluation.
+- Delivered 260+ learning modules in one quarterly release, expanding the learning-content library by 160%.
+- Designed onboarding and personalization experiences around learner goals, preferences and prior context, with success measures defined before launch.
+- Coordinated a separate 61-item Japan and Korea release based on locally validated learner needs.
+Tags: Content Operations · Localization · Onboarding · Quality Assurance
 
-Focus: Product Discovery · Subscription A/B Testing · Licensing & Negotiation · Backlog Ownership · Cross-platform
+--- Educational Content Creator (April 2022 - October 2022) ---
+I designed and scripted complete self-paced courses and interactive digital learning experiences for different ability levels.
+- Worked with educators, subject-matter experts and production specialists to refine instructional clarity, pacing, progression and usability across guided exercises and video-based learning.
+Tags: Instructional Design · Course Design · Video-based Learning
 
-
---- Role 2: Education Content Manager · Skoove (2022 – 2024) ---
-
-Narrative: I owned the content release cycle end to end and built the operational backbone of the company's licensing function.
-
-- Ran the full release cycle: ideation, scoping, licensing clearance, localization, marketing handoff, and post-launch Mixpanel review, on quarterly cadences shipping up to 260+ songs at a time.
-- Drove catalogue expansion for globally available apps, including dedicated pushes into the Japanese and Korean markets, with localized repertoire validated by local experts and routed through cleared publishers.
-- Built the licensing function from the ground up: publisher partner pages, a publisher-by-publisher content-tactics matrix, and rights-ownership workflows now used by Engineering, Content, and Marketing.
-- Ran monthly engagement reviews and user surveys to prioritize the catalogue, surfacing high-impact repertoire and low-adoption placements for the next cycle.
-
-Focus: Content Ops · Licensing Foundations · Localization · Catalogue Strategy
-
-
---- Sidebar ---
-
-Core Skills:
-- Product vision & strategy for subscription apps
-- Discovery to delivery, full cycle
-- Backlog ownership across multiple teams
-- Commercial & legal negotiation translated into product requirements
-- KPI and OKR definition (activation, conversion, engagement, LTV, retention)
-- Scrum, Kanban, and hybrid setups
-- AI-augmented PM workflows
-
-Tools: Jira, Confluence, Figma, Miro, Lovable, Mixpanel, Google Analytics, App Store Connect, RevenueCat
-
-AI: Claude, Google Stitch. Prompt engineering for PRDs, discovery, content review, and prototyping.
-
-Education & Certifications:
-- MA, Therapy & Education Sciences, SRH Heidelberg University (2020)
-- Professional Scrum Product Owner I
-- IBM Product Manager Certificate
+Sidebar:
+  Core skills: Instructional design and learning-path design · Learner research: interviews, surveys, usability testing · Learning analytics and experimentation · Prototyping learning experiences with AI and low-code tools · Content production, localization and QA workflows · Product Ownership: backlog, prioritization, delivery
+  Tools: Figma · Mixpanel · Jira · Confluence · Lovable
+  AI: Claude · ChatGPT · Google Stitch. Used hands-on to prototype interactive practice tools, animations, short educational video and internal tools.
+  Education & certifications: MA, Therapy & Educational Sciences, SRH Heidelberg University · Professional Scrum Product Owner I · IBM Product Manager Certificate
 
 
 =====================================
-03 — SELECTED WORK (Case studies)
+03 · SELECTED WORK
 =====================================
 
-Panel title: Four projects that shaped how I work.
+Title: A few learning problems I've worked on.
 
+--- 01 Redesigning the learning format ---
+Subtitle: From 10% completion to 21% by changing how the skill was taught.
+Metric: 2.1× completion
+Tags: Learning Experience Design · Instructional Design · Learning Analytics · Experimentation
+Scope: Product Owner · Learning experience & content
+The problem: A core learning experience was losing too many learners before completion. The obvious response could have been to add more material. Instead, I questioned the structure itself.
+What I did: I helped validate a more progressive format that broke a complex skill into smaller guided steps and gave learners more support as they moved toward the full task. We treated it as a learning-design hypothesis and looked at completion, satisfaction and early retention rather than relying on whether the new format simply felt better.
+What happened: Completion increased from 10% to 21%. Top satisfaction ratings increased by 14 percentage points. Day 1 retention rose from 55% to 67%. The format was then commissioned for content production at scale.
 
---- Case 1 ---
-Title: Song Discovery
-Subtitle: From a buried catalogue to the number one way users find songs.
-Scope: Product Owner · Skoove · with design, engineering & QA
-Headline metric: #1 discovery method
-Tags: Product Discovery, A/B Testing, User Research, Funnel Optimization
+--- 02 Finding the learning that happens outside the product ---
+Subtitle: Sometimes the workaround tells you more than the funnel does.
+Metric: 1/3 of learners used external video
+Tags: Learner Research · Behavioral Analytics · Discovery · Learning Strategy
+Scope: Product Owner · Learner research & engagement roadmap
+The problem: Behavioral data could show us where learners disengaged, but it could not always tell us what they felt was missing.
+What I did: I combined learner interviews, surveys, usability testing and behavioral analysis to understand how people were actually learning, including what they did once they left the product.
+What we found: Roughly one-third of learners were supplementing the product with external video content. That changed the question. Instead of only asking how we could keep them inside the product, we could ask what they were leaving to find.
+What happened: The research fed directly into the engagement roadmap and how we thought about future learning formats.
 
-Problem: Skoove had a large song catalogue, but discovery ran entirely through curated collections. That worked for new users and frustrated returning learners who knew exactly what they wanted to play.
+--- 03 Personalizing the first learning experience ---
+Subtitle: Different goals should not always lead to the same first lesson.
+Metric: 3 signals shape the first lesson
+Tags: Personalization · Onboarding · Learner Goals · Experimentation
+Scope: Education Content Manager · Onboarding & personalization
+The problem: Learners arrived with different goals, preferences and contexts, while the early experience treated too many of them the same way.
+What I did: I designed and tested onboarding approaches using learning goals, content preferences and location to adapt the experience. Success measures were defined before launch so each iteration could be evaluated rather than judged by intuition.
+What I learned: Personalization works best when every question earns its place. If an answer does not meaningfully change what the learner sees or does next, it is worth asking why we need the question at all.
 
-What I did: Contributed across discovery, scoping, and post-launch analysis for both the Song Search MVP and the Favorites feature. Coordinated QA across platforms and tracked results in Mixpanel. For Favorites I designed unmoderated usability research in Maze, led KPI tracking, and wrote the post-experiment report.
-
-Outcome: Search became the number one discovery method in the Songs tab, ahead of suggested songs. Favorites hit its primary KPI: 30% of premium users who visited Songs saved at least one. A search-paywall A/B test fed a strategic decision on free-trial access.
-
-
---- Case 2 ---
-Title: Paywall & Onboarding Experiments
-Subtitle: Turning first impressions into paying users.
-Scope: Product Owner · Trala & Skoove · subscription experiments
-Headline metric: +28.7% revenue / visitor
-Tags: Subscription A/B Testing, Onboarding, Conversion, Experiment Design
-
-Problem: The paywall and the first-run experience were doing less than they could. New users arrived with very different goals, and everyone saw the same thing.
-
-What I did: Ran subscription A/B tests on RevenueCat and Mixpanel, owning each from hypothesis and metric design through to read-out and follow-up. Personalized onboarding with location-based content and questionnaire variants on genre and learning goal, so the product adapted to why each person came.
-
-Outcome: Projected revenue per paywall visitor rose 28.7%. The onboarding changes contributed to 14% year-on-year revenue growth.
-
-
---- Case 3 ---
-Title: The Commercial Behind the Catalogue
-Subtitle: The licensing and negotiation work that lets people learn the songs they actually listen to.
-Scope: Lead negotiator · Skoove & Trala · publishers & rights organizations
-Headline metric: 14.7% cost ratio, from 18%
-Tags: Commercial Negotiation, Licensing, Rights Strategy, Stakeholder Management
-
-Problem: Every popular song is wrapped in a web of publishers, performance rights organizations, and territory rules. Putting that music inside a learning app, at a cost that works, is a negotiation before it is a feature.
-
-What I did: Led the negotiation that unlocked the Disney Music Group catalogue, our largest Disney piano collection against the competition. Worked publisher by publisher on multi-year terms, royalty mechanics, rights clearance, and dispute resolution, as the direct interlocutor for the company. Trained in negotiation by the CEO and CPO.
-
-Outcome: A contemporary, high-demand catalogue users want, with the licensing cost ratio improved from 18% to 14.7% of revenue.
-
-
---- Case 4 ---
-Title: Content Operations at Scale
-Subtitle: Growing the catalogue 160% while keeping quality and licensing coverage intact.
-Scope: Content Manager → Product Owner · Skoove & Trala · cross-functional
-Headline metric: +160% catalogue growth
-Tags: Content Ops, Process Design, Localization, Cross-functional Delivery
-
-Problem: Running content for an app at this size means shipping constantly, new songs, seasonal collections, and localized versions, without letting quality slip. The workflows were manual and fragmented.
-
-What I did: Worked on three levels at once. Rebuilt the internal content tooling to reduce engineer dependency. Ran bulk localization across 7+ languages with coordinated QA, including market pushes into Japan and Korea. Built the licensing foundation, partner pages, a content-tactics matrix, and rights-ownership workflows, now used across Engineering, Content, and Marketing.
-
-Outcome: The catalogue grew 160% with licensing coverage and quality held intact. End-to-end process time down 70%. Quarterly releases shipping up to 260+ songs at a time, on schedule, with content decisions tied to real usage data.
+--- 04 Scaling learning content without scaling chaos ---
+Subtitle: 260+ learning modules in one release, with the production system evolving around them.
+Metric: 260+ modules in one release
+Tags: Content Operations · Localization · Learning Systems · Scale
+Scope: Content Manager → Product Owner · Content, localization & engineering
+The problem: Large multilingual learning releases involve much more than creating the lesson itself. Production, localization, quality assurance, contributors and release readiness all have to move together.
+What I did: I owned releases end to end, coordinated international content and localization, and later worked with content and engineering to rebuild the production tooling behind them.
+What happened: One quarterly release delivered 260+ learning modules. The learning-content library grew by 160%. A separate 61-item Japan and Korea release was built around locally validated learner needs. The redesigned production workflow later reduced end-to-end content delivery time by 70%.
 
 
 =====================================
-04 — AI IN PRACTICE
+04 · AI IN LEARNING
 =====================================
 
-Panel title: How I work with AI, and what I have learned doing it.
+Title: I use AI to get learning ideas into people's hands faster.
 
-Intro: How I actually use AI in product work — not demos. The guidebook below is live and clickable; the others are write-ups in progress.
+Intro: AI is part of my working process, but I am less interested in generating content for the sake of generating content. I use it to move from an idea to something I can see, click, test or produce, often before asking engineering or design for significant time. I am especially interested in learning formats that previously would have been too slow or expensive to create at scale.
 
-Card 1 — Dub a video course at a fraction of the production time [Localization · In production]
-How I use AI dubbing to localize Trala's video lessons for new markets without a full studio cycle.
+--- 01 Interactive chord builder (Interactive learning · Live) ---
+An example of the kind of learning format I find exciting: turning a concept-heavy topic into something learners can explore directly instead of only reading an explanation.
+Interactive tools give learners immediate ways to inspect relationships, test ideas and move between explanation and practice.
+Link: View live tool → https://www.skoove.com/en/tools/piano-chords
 
-Card 2 — From PRD to clickable prototype in an afternoon [Discovery & Prototyping · In use]
-Turning discovery notes into a working, shareable prototype with Claude and Google Stitch, no front-end help needed.
+--- 02 Short educational video at scale (Content production · Experimentation) ---
+I am exploring repeatable AI-assisted workflows for short, focused educational videos that can be produced in much larger volumes without becoming generic or disposable.
+The interesting challenge is not generating more video. It is preserving the explanation, pacing and usefulness that make a short learning asset worth watching.
 
-Card 3 — The interactive PM frameworks guidebook [Frameworks · LIVE → susana-pepo.github.io/PM-Frameworks-Guidebook/]
-A hands-on guide to RICE, MoSCoW, Kano, Jobs-to-be-Done and more, built as a web experience for PMs who learn by doing.
+--- 03 AI dubbing for learning localization (Localization · In production) ---
+Evaluating AI dubbing for localized learning video, including quality, workflow and the human review required before publication.
+Expanded: Video lessons are filmed once, in English. AI dubbing lets the same lessons speak a new language in days rather than through a full studio cycle. For me this is a good example of where AI can remove production constraints while human judgment stays important for accuracy and learning quality.
+What I took away:
+- The last 20% is still human. AI handles the bulk of the voiceover, but subject terms, names and timing against what is happening on screen need an editing pass before anything ships.
+- Localization is a learning decision, not a translation task. Markets are chosen from learner data first, then dubbed, not the other way round.
+- Cheap enough to test. Cost per localized minute drops far enough to validate demand in a market before committing to a whole course.
 
-Card 4 — A backlog that audits itself [Delivery · In progress]
-A Jira-connected agent that reviews ticket quality, flags stale stories and missing acceptance criteria, and posts a weekly digest, because backlog debt stays invisible until it hurts.
+--- 04 The interactive PM frameworks guidebook (Frameworks · Live) ---
+A hands-on guide to RICE, MoSCoW, Kano, Jobs-to-be-Done and more — built as a web experience for PMs who learn by doing.
+Link: Open → https://susana-pepo.github.io/PM-Frameworks-Guidebook/
 
 
 =====================================
 FOOTER
 =====================================
 
-CTA: Free Interactive Guidebook for PM Frameworks → susana-pepo.github.io/PM-Frameworks-Guidebook/
-Meta: Susana Pérez · susipp93@gmail.com · © 2026
+Link: Free Interactive Guidebook for PM Frameworks → https://susana-pepo.github.io/PM-Frameworks-Guidebook/

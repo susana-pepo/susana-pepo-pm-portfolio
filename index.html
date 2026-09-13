@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Susana Pérez · Product Owner &amp; Product Manager</title>
-    <meta name="description" content="Product Owner and Product Manager with 3+ years shipping B2C subscription apps across web, iOS and Android. Discovery-led roadmaps, conversion experiments, and the commercial negotiation behind the product. Berlin, EdTech.">
+    <title>Susana Pérez | Learning Experience Designer</title>
+    <meta name="description" content="Learning Experience Designer with 4 years designing, testing and scaling self-paced digital learning experiences, primarily for US learners. Instructional design, learner research, learning analytics, localization and AI-enabled prototyping.">
     <meta name="author" content="Susana Pérez">
     <link rel="canonical" href="https://susana-pepo.github.io/susana-pepo-pm-portfolio/">
 
     <!-- Open Graph (LinkedIn, Slack, Facebook) -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Susana Pérez">
-    <meta property="og:title" content="Susana Pérez · Product Owner &amp; Product Manager">
-    <meta property="og:description" content="3+ years owning B2C subscription apps in EdTech &amp; Music Tech — discovery, conversion experiments, and the licensing deals behind the product. Berlin.">
+    <meta property="og:title" content="Susana Pérez | Learning Experience Designer">
+    <meta property="og:description" content="4 years designing, testing and scaling self-paced digital learning experiences, primarily for US learners. Instructional design, learner research, learning analytics and hands-on AI prototyping. Berlin.">
     <meta property="og:url" content="https://susana-pepo.github.io/susana-pepo-pm-portfolio/">
     <meta property="og:image" content="https://susana-pepo.github.io/susana-pepo-pm-portfolio/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Susana Pérez — Product Owner &amp; Product Manager. I own the product and the deal behind it.">
+    <meta property="og:image:alt" content="Susana Pérez, Learning Experience Designer. I design learning around where people actually get stuck.">
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Susana Pérez · Product Owner &amp; Product Manager">
-    <meta name="twitter:description" content="3+ years owning B2C subscription apps in EdTech &amp; Music Tech — discovery, conversion experiments, and the licensing deals behind the product.">
+    <meta name="twitter:title" content="Susana Pérez | Learning Experience Designer">
+    <meta name="twitter:description" content="4 years designing, testing and scaling self-paced digital learning experiences, primarily for US learners. Instructional design, learner research, learning analytics and hands-on AI prototyping.">
     <meta name="twitter:image" content="https://susana-pepo.github.io/susana-pepo-pm-portfolio/og-image.png">
 
     <!-- Browser chrome colour (kept in sync with the active theme via JS; dark by default) -->
@@ -1569,7 +1569,14 @@ a.hub-card:hover {
 }
 
 /* In-progress notes are informational, not links — no nav affordance */
-.hub-card--note { cursor: default; }
+.hub-card--note {
+    cursor: default;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1.1rem;
+    padding: 1.5rem;
+}
 
 /* Explicit "open" affordance on the one live, clickable card */
 .hub-card-open {
@@ -1928,7 +1935,7 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
     .ai-hub-grid { grid-template-columns: 1fr; }
     .hub-card-head { padding: 1.15rem 1.2rem; gap: 0.8rem; }
     .hub-card-reveal-inner { padding: 1.15rem 1.2rem 1.35rem; }
-    .hub-card--live { padding: 1.2rem; gap: 0.9rem; }
+    .hub-card--live, .hub-card--note { padding: 1.2rem; gap: 0.9rem; }
 
     .site-footer { padding: 0.15rem 1.5rem; }
     .site-footer .footer-cta-link { font-size: 0.72rem; font-weight: 500; }
@@ -2134,6 +2141,59 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
     opacity: 1;
     transform: translateY(-50%) translateX(0);
 }
+/* ========================================= */
+/* LXD REWRITE ADDITIONS                     */
+/* ========================================= */
+/* Hero eyebrow: same pill language as the metrics label */
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    padding: 0.28rem 0.72rem;
+    margin-bottom: 0.9rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-lavender);
+    background: var(--accent-lavender-dim);
+    border: 1px solid var(--accent-lavender-border);
+}
+
+/* Primary CTA now opens the work panel: arrow instead of download glyph */
+.btn-primary.btn-work::after {
+    -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7M8 7h9v9'/%3E%3C/svg%3E") no-repeat center;
+    mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7M8 7h9v9'/%3E%3C/svg%3E") no-repeat center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+/* Secondary CTA: outlined pill, keeps the download glyph reveal */
+.btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1.5px solid var(--border);
+    padding: 0.35rem 1.15rem;
+}
+
+.btn-secondary::after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    background: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4'/%3E%3Cpolyline points='7 10 12 15 17 10'/%3E%3Cline x1='12' y1='15' x2='12' y2='3'/%3E%3C/svg%3E") no-repeat center;
+    mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4'/%3E%3Cpolyline points='7 10 12 15 17 10'/%3E%3Cline x1='12' y1='15' x2='12' y2='3'/%3E%3C/svg%3E") no-repeat center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    flex-shrink: 0;
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent-lavender);
+    color: var(--accent-lavender);
+}
+
 </style>
 </head>
 
@@ -2189,6 +2249,16 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
         <rect x="2" y="4" width="20" height="16" rx="2"/>
         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
     </symbol>
+    <symbol id="i-keys" viewBox="0 0 24 24">
+        <rect x="2.5" y="4" width="19" height="16" rx="2"/>
+        <path d="M8.5 4v9.5M12 4v9.5M15.5 4v9.5"/>
+        <path d="M2.5 13.5h19"/>
+    </symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M3 12h18"/>
+        <path d="M12 3a13.5 13.5 0 0 1 0 18a13.5 13.5 0 0 1 0-18z"/>
+    </symbol>
     <symbol id="i-arrow-ur" viewBox="0 0 24 24">
         <path d="M7 17 17 7M8 7h9v9"/>
     </symbol>
@@ -2226,18 +2296,20 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
         <div class="hero-photo">
             <img src="headshot.jpg" alt="Susana Pérez" width="560" height="560" fetchpriority="high" decoding="async">
         </div>
+        <p class="hero-eyebrow">Learning Experience Designer</p>
         <h1 class="hero-name"><span class="reveal-inner">Susana Pérez</span></h1>
 
-        <p class="hero-title">I own the <span>product</span> and the <span>deal</span> behind it.</p>
+        <p class="hero-title">I design learning around where people actually get <span>stuck</span>.</p>
 
-        <p class="hero-intro">Three years building subscription apps that people keep paying for. I run discovery, write the backlog, and ship the experiments, then sit across the table from music publishers to negotiate the rights that make the product possible. Right now I am Product Owner at Learnfield, running two squads across the Trala violin app and the Skoove piano content team, on a platform that operates in 7+ languages.</p>
+        <p class="hero-intro">I have spent the last four years designing, testing and scaling digital learning experiences, primarily for US learners. I started by creating educational content myself and gradually moved into content strategy and Product Ownership. The scope got bigger, but the question stayed surprisingly similar: where is the learner getting stuck, what would actually help here, and how do we know if the change worked? Today I combine instructional design, learner research, behavioral data and hands-on AI prototyping to improve both the learning experience and the way content gets made.</p>
 
-        <p class="hero-meta">Product Owner &amp; Product Manager <span class="meta-sep">&middot;</span> B2C Subscription SaaS <span class="meta-sep">&middot;</span> EdTech <span class="meta-sep">&middot;</span> Web, iOS &amp; Android <span class="meta-sep">&middot;</span> Berlin</p>
+        <p class="hero-meta">Learning Experience Design <span class="meta-sep">&middot;</span> Instructional Design <span class="meta-sep">&middot;</span> Digital Learning <span class="meta-sep">&middot;</span> AI Prototyping <span class="meta-sep">&middot;</span> Berlin</p>
 
         <div class="hero-ctas">
-            <a href="Susana_Perez_CV.pdf" download class="btn btn-primary">Download CV</a>
+            <a href="#" data-panel="work" role="button" class="btn btn-primary btn-work">See my work</a>
+            <a href="Susana_Perez_CV_Learning-Experience-Designer.pdf" download class="btn btn-secondary">Download CV</a>
             <a href="mailto:susipp93@gmail.com" class="btn btn-icon btn-email" aria-label="Send Email"><span class="btn-icon-symbol"><svg class="icon"><use href="#i-mail"/></svg></span><span class="btn-icon-label">Let's get in contact!</span></a>
-            <a href="https://www.linkedin.com/in/susana-pepo/" target="_blank" rel="noopener" class="btn btn-icon btn-linkedin" aria-label="LinkedIn Profile"><span class="btn-icon-symbol"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span><span class="btn-icon-label">Let's connect on LinkedIn</span></a>
+            <a href="https://www.linkedin.com/in/susana-pepo-pm" target="_blank" rel="noopener" class="btn btn-icon btn-linkedin" aria-label="LinkedIn Profile"><span class="btn-icon-symbol"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span><span class="btn-icon-label">Let's connect on LinkedIn</span></a>
         </div>
 
     </div>
@@ -2267,7 +2339,7 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
             <li class="nav-menu-item">
                 <a class="nav-menu-link" data-panel="ai-hub" href="#" role="button">
                     <span class="nav-menu-number">04</span>
-                    <span class="nav-menu-label">AI in Practice</span>
+                    <span class="nav-menu-label">AI in Learning</span>
                 </a>
             </li>
         </ul>
@@ -2276,9 +2348,9 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
         <div class="hero-metrics" aria-label="Selected outcomes">
             <p class="hero-metrics-label">Selected outcomes</p>
             <div class="hero-metrics-grid">
-                <div class="hero-metric"><span class="hero-metric-value">+28.7%</span><span class="hero-metric-label">revenue / paywall visitor</span></div>
-                <div class="hero-metric"><span class="hero-metric-value">+160%</span><span class="hero-metric-label">catalogue growth</span></div>
-                <div class="hero-metric"><span class="hero-metric-value">14.7%</span><span class="hero-metric-label">licensing cost, from 18%</span></div>
+                <div class="hero-metric"><span class="hero-metric-value">2.1&times;</span><span class="hero-metric-label">learning completion</span></div>
+                <div class="hero-metric"><span class="hero-metric-value">+14pp</span><span class="hero-metric-label">top satisfaction</span></div>
+                <div class="hero-metric"><span class="hero-metric-value">260+</span><span class="hero-metric-label">learning modules in one release</span></div>
                 <div class="hero-metric"><span class="hero-metric-value">70%</span><span class="hero-metric-label">faster content delivery</span></div>
             </div>
         </div>
@@ -2294,7 +2366,7 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
     <div class="panel-header">
         <div class="panel-header-left">
             <span class="panel-number">01 &middot; About</span>
-            <h2 class="panel-title"><svg class="icon title-icon"><use href="#i-sprout"/></svg>I build for the person who almost left.</h2>
+            <h2 class="panel-title"><svg class="icon title-icon"><use href="#i-sprout"/></svg>The interesting part starts when the learner gets stuck.</h2>
         </div>
         <button class="panel-close" aria-label="Close panel">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -2303,19 +2375,21 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
     <div class="panel-body">
         <div class="about-grid">
             <div class="about-narrative">
-                <p>Most products lose people quietly. Someone signs up, hits a moment that does not fit them, and never comes back. I spend my time finding those moments and removing them, through discovery, experiments, and a roadmap that is honest about what actually moves activation, conversion, and retention.</p>
+                <p>I started my career in digital education designing self-paced courses, interactive lessons and video-based learning. As my role grew into content strategy and Product Ownership, I became responsible not only for what we taught, but for how learners encountered it, progressed through it and responded to it.</p>
 
-                <p>At <strong>Learnfield</strong> I am Product Owner across two squads: the <strong>Trala</strong> violin app and the <strong>Skoove</strong> piano content team. The role sits where product, data, and commercial meet. In one week I might refine epics with engineering, read out a paywall A/B test in Mixpanel, and negotiate licensing terms with a music publisher. I was trained in negotiation directly by our CEO, and I am the direct interlocutor with publishers and rights organizations on the terms that decide what the product can offer.</p>
+                <p>Most of the audience I have designed for has been in the <strong>US</strong>. I use learner interviews, surveys, usability testing and behavioral data alongside learning outcomes to understand both where people struggle and why.</p>
 
-                <p>What I like most is the range. I translate ambiguous commercial requirements into something a team can build, then I follow it all the way through to whether it worked.</p>
+                <p>One of my favorite projects came from questioning the structure of a core learning experience rather than simply adding more content. A more progressive format <strong>more than doubled completion</strong> and was later adopted for content production at scale.</p>
+
+                <p>AI has also become a very practical part of how I work. I use it to prototype interactive experiences, animations, short educational video formats, landing pages and internal tools. What interests me is being able to take a learning idea much further on my own, test it quickly, and only then decide where significant engineering or production time is really needed.</p>
             </div>
 
             <div class="about-sidebar">
                 <div class="about-detail-block">
                     <h4>Languages</h4>
                     <div class="language-tags">
-                        <span class="lang-tag">Spanish <span class="level">Native, C2</span></span>
-                        <span class="lang-tag">English <span class="level">Fluent, C1/C2, working language</span></span>
+                        <span class="lang-tag">Spanish <span class="level">Native</span></span>
+                        <span class="lang-tag">English <span class="level">C1+, working language</span></span>
                         <span class="lang-tag">German <span class="level">B2+, daily at work</span></span>
                     </div>
                 </div>
@@ -2326,8 +2400,8 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
                 </div>
 
                 <div class="about-detail-block">
-                    <h4>Things I Love</h4>
-                    <p class="things-i-love">Music you cannot sit still to · long walks with no plan · a backlog that is finally clean · cooking for friends · products that teach without feeling like school · slow morning coffee</p>
+                    <h4>Things I like</h4>
+                    <p class="things-i-love">Learning that doesn't feel like homework · products that explain difficult things simply · small experiments that answer big questions · tools that let people learn by doing</p>
                 </div>
 
             </div>
@@ -2340,7 +2414,7 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
     <div class="panel-header">
         <div class="panel-header-left">
             <span class="panel-number">02 &middot; Experience</span>
-            <h2 class="panel-title"><svg class="icon title-icon"><use href="#i-rocket"/></svg>Three years owning product, and the commercial work behind it.</h2>
+            <h2 class="panel-title"><svg class="icon title-icon"><use href="#i-rocket"/></svg>From creating learning content to owning the experience end to end.</h2>
         </div>
         <button class="panel-close" aria-label="Close panel">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -2353,12 +2427,16 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
             <div class="exp-timeline">
                 <div class="timeline-glance">
                     <div class="glance-item">
-                        <span class="glance-value">3+</span>
-                        <span class="glance-label">years in B2C subscription SaaS (EdTech)</span>
+                        <span class="glance-value">4</span>
+                        <span class="glance-label">years in digital learning and EdTech</span>
+                    </div>
+                    <div class="glance-item">
+                        <span class="glance-value">US</span>
+                        <span class="glance-label">primary learner audience</span>
                     </div>
                     <div class="glance-item">
                         <span class="glance-value">2</span>
-                        <span class="glance-label">product squads owned in parallel</span>
+                        <span class="glance-label">digital learning products</span>
                     </div>
                     <div class="glance-item">
                         <span class="glance-value">7+</span>
@@ -2366,51 +2444,65 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
                     </div>
                     <div class="glance-item">
                         <span class="glance-value">260+</span>
-                        <span class="glance-label">songs shipped per release</span>
+                        <span class="glance-label">learning modules in one release</span>
                     </div>
                 </div>
 
                 <div class="timeline-section timeline-section--work">
                     <p class="timeline-company">Learnfield GmbH &middot; Berlin, Germany</p>
 
-                    <!-- Role 1: Product Owner - Trala & Skoove squads -->
+                    <!-- Role 1: Product Owner -->
                     <div class="timeline-role">
-                        <h3 class="role-title">Product Owner &middot; Trala &amp; Skoove squads</h3>
-                        <p class="role-date">2024 - Present</p>
-                        <p class="role-narrative">I own two parallel squads across web and app: the Trala violin app and the Skoove piano content team, on a subscription platform running in 7+ languages.</p>
+                        <h3 class="role-title">Product Owner &middot; Learning Experience &amp; Content</h3>
+                        <p class="role-date">August 2023 - Present</p>
+                        <p class="role-narrative">I own learning experience and content strategy across two digital learning products, combining learner research, behavioral data and learning outcomes to decide what needs to change, then carrying those decisions through to delivery and measurement.</p>
                         <ul class="role-bullets">
-                            <li>Led the negotiation that unlocked the Disney Music Group catalogue, giving us the largest Disney piano collection in our competitive landscape.</li>
-                            <li>Lifted projected revenue per paywall visitor by 28.7% through subscription A/B tests on RevenueCat and Mixpanel, owning each test from hypothesis and metric design to ship, read-out, and the next iteration.</li>
-                            <li>Reworked the onboarding funnel with location-based personalization and questionnaire variants on genre and learning goal, contributing to 14% year-on-year revenue growth.</li>
-                            <li>Act as the direct interlocutor with publishers, licensors, and commercial partners on licensing terms, royalty mechanics, rights clearance, contract negotiation, and disputes. Trained in negotiation by the CEO and CPO.</li>
-                            <li>Translate ambiguous commercial requirements into structured epics, user stories, and acceptance criteria, with backend and frontend tasks anchored to success metrics.</li>
-                            <li>Coordinated the full rework of our internal content delivery tooling, cutting end-to-end process time by 70%.</li>
+                            <li>More than doubled completion from 10% to 21% by validating a progressive learning format that breaks complex skills into structured guided steps. Top satisfaction ratings rose by 14 percentage points and Day 1 retention went from 55% to 67%. The format was then commissioned at scale.</li>
+                            <li>Prototype learning experiences and scalable content formats with Claude and AI/low-code tools, including interactive practice tools, learning prototypes, animations and short-form educational video concepts.</li>
+                            <li>Adapt learning content and experiences for international and partner contexts, translating external requirements, learner needs and operational constraints into product and content decisions.</li>
+                            <li>Combine learner interviews, surveys, usability testing and behavioral analytics to evaluate learning experiences and prioritize improvements.</li>
+                            <li>One research cycle found that roughly one-third of learners supplemented the product with external video content, which directly informed the engagement roadmap.</li>
+                            <li>Reduced end-to-end learning-content delivery time by 70% by redesigning production and release workflows with content and engineering teams.</li>
                         </ul>
                         <div class="role-focus">
-                            <span class="role-focus-tag">Product Discovery</span>
-                            <span class="role-focus-tag">Subscription A/B Testing</span>
-                            <span class="role-focus-tag">Licensing &amp; Negotiation</span>
-                            <span class="role-focus-tag">Backlog Ownership</span>
-                            <span class="role-focus-tag">Cross-platform</span>
+                            <span class="role-focus-tag">Learning Experience Design</span>
+                            <span class="role-focus-tag">Learner Research</span>
+                            <span class="role-focus-tag">Learning Analytics</span>
+                            <span class="role-focus-tag">AI Prototyping</span>
+                            <span class="role-focus-tag">Localization</span>
                         </div>
                     </div>
 
-                    <!-- Role 2: Education Content Manager - Skoove -->
+                    <!-- Role 2: Education Content Manager & License Manager -->
                     <div class="timeline-role">
-                        <h3 class="role-title">Education Content Manager &middot; Skoove</h3>
-                        <p class="role-date">2022 - 2024</p>
-                        <p class="role-narrative">I owned the content release cycle end to end and built the operational backbone of the company's licensing function.</p>
+                        <h3 class="role-title">Education Content Manager &amp; License Manager</h3>
+                        <p class="role-date">October 2022 - July 2023</p>
+                        <p class="role-narrative">I owned the development and release of digital learning content from learning need and scope through production, localization, quality assurance, launch and post-release evaluation.</p>
                         <ul class="role-bullets">
-                            <li>Ran the full release cycle: ideation, scoping, licensing clearance, localization, marketing handoff, and post-launch Mixpanel review, on quarterly cadences shipping up to 260+ songs at a time.</li>
-                            <li>Drove catalogue expansion for globally available apps, including dedicated pushes into the Japanese and Korean markets, with localized repertoire validated by local experts and routed through cleared publishers.</li>
-                            <li>Built the licensing function from the ground up: publisher partner pages, a publisher-by-publisher content-tactics matrix, and rights-ownership workflows now used by Engineering, Content, and Marketing.</li>
-                            <li>Ran monthly engagement reviews and user surveys to prioritize the catalogue, surfacing high-impact repertoire and low-adoption placements for the next cycle.</li>
+                            <li>Delivered 260+ learning modules in one quarterly release, expanding the learning-content library by 160%.</li>
+                            <li>Designed onboarding and personalization experiences around learner goals, preferences and prior context, with success measures defined before launch.</li>
+                            <li>Coordinated a separate 61-item Japan and Korea release based on locally validated learner needs.</li>
                         </ul>
                         <div class="role-focus">
-                            <span class="role-focus-tag">Content Ops</span>
-                            <span class="role-focus-tag">Licensing Foundations</span>
+                            <span class="role-focus-tag">Content Operations</span>
                             <span class="role-focus-tag">Localization</span>
-                            <span class="role-focus-tag">Catalogue Strategy</span>
+                            <span class="role-focus-tag">Onboarding</span>
+                            <span class="role-focus-tag">Quality Assurance</span>
+                        </div>
+                    </div>
+
+                    <!-- Role 3: Educational Content Creator -->
+                    <div class="timeline-role">
+                        <h3 class="role-title">Educational Content Creator</h3>
+                        <p class="role-date">April 2022 - October 2022</p>
+                        <p class="role-narrative">I designed and scripted complete self-paced courses and interactive digital learning experiences for different ability levels.</p>
+                        <ul class="role-bullets">
+                            <li>Worked with educators, subject-matter experts and production specialists to refine instructional clarity, pacing, progression and usability across guided exercises and video-based learning.</li>
+                        </ul>
+                        <div class="role-focus">
+                            <span class="role-focus-tag">Instructional Design</span>
+                            <span class="role-focus-tag">Course Design</span>
+                            <span class="role-focus-tag">Video-based Learning</span>
                         </div>
                     </div>
                 </div>
@@ -2422,28 +2514,23 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
                 <div class="sidebar-section">
                     <h4>Core Skills</h4>
                     <ul class="sidebar-skill-list">
-                        <li>Product vision &amp; strategy for subscription apps</li>
-                        <li>Discovery to delivery, full cycle</li>
-                        <li>Backlog ownership across multiple teams</li>
-                        <li>Commercial &amp; legal negotiation translated into product requirements</li>
-                        <li>KPI and OKR definition (activation, conversion, engagement, LTV, retention)</li>
-                        <li>Scrum, Kanban, and hybrid setups</li>
-                        <li>AI-augmented PM workflows</li>
+                        <li>Instructional design and learning-path design</li>
+                        <li>Learner research: interviews, surveys, usability testing</li>
+                        <li>Learning analytics and experimentation</li>
+                        <li>Prototyping learning experiences with AI and low-code tools</li>
+                        <li>Content production, localization and QA workflows</li>
+                        <li>Product Ownership: backlog, prioritization, delivery</li>
                     </ul>
                 </div>
 
                 <div class="sidebar-section">
                     <h4>Tools</h4>
                     <div class="sidebar-tools">
+                        <span class="sidebar-tool">Figma</span>
+                        <span class="sidebar-tool">Mixpanel</span>
                         <span class="sidebar-tool">Jira</span>
                         <span class="sidebar-tool">Confluence</span>
-                        <span class="sidebar-tool">Figma</span>
-                        <span class="sidebar-tool">Miro</span>
                         <span class="sidebar-tool">Lovable</span>
-                        <span class="sidebar-tool">Mixpanel</span>
-                        <span class="sidebar-tool">Google Analytics</span>
-                        <span class="sidebar-tool">App Store Connect</span>
-                        <span class="sidebar-tool">RevenueCat</span>
                     </div>
                 </div>
 
@@ -2451,15 +2538,16 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
                     <h4>AI</h4>
                     <div class="sidebar-tools">
                         <span class="sidebar-tool">Claude</span>
+                        <span class="sidebar-tool">ChatGPT</span>
                         <span class="sidebar-tool">Google Stitch</span>
                     </div>
-                    <p class="sidebar-note">Prompt engineering for PRDs, discovery, content review, and prototyping.</p>
+                    <p class="sidebar-note">Used hands-on to prototype interactive practice tools, animations, short educational video and internal tools.</p>
                 </div>
 
                 <div class="sidebar-section">
                     <h4>Education &amp; Certifications</h4>
                     <div class="sidebar-tools">
-                        <span class="sidebar-tool">MA, Therapy &amp; Education Sciences, SRH Heidelberg University (2020)</span>
+                        <span class="sidebar-tool">MA, Therapy &amp; Educational Sciences, SRH Heidelberg University</span>
                         <span class="sidebar-tool">Professional Scrum Product Owner I</span>
                         <span class="sidebar-tool">IBM Product Manager Certificate</span>
                     </div>
@@ -2476,7 +2564,7 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
     <div class="panel-header">
         <div class="panel-header-left">
             <span class="panel-number">03 &middot; Selected Work</span>
-            <h2 class="panel-title"><svg class="icon title-icon"><use href="#i-bulb"/></svg>Four projects that shaped how I work.</h2>
+            <h2 class="panel-title"><svg class="icon title-icon"><use href="#i-bulb"/></svg>A few learning problems I've worked on.</h2>
         </div>
         <button class="panel-close" aria-label="Close panel">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -2485,23 +2573,23 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
     <div class="panel-body">
         <div class="cases-grid">
 
-            <!-- Case 1 -->
+            <!-- Case 1: Learning format redesign -->
             <div class="case-card">
                 <div class="case-header" role="button" aria-expanded="false" tabindex="0">
                     <div class="case-header-left">
                         <div class="case-number">01</div>
-                        <h3 class="case-title">Song Discovery</h3>
-                        <p class="case-subtitle">From a buried catalogue to the number one way users find songs.</p>
+                        <h3 class="case-title">Redesigning the learning format</h3>
+                        <p class="case-subtitle">From 10% completion to 21% by changing how the skill was taught.</p>
                         <div class="case-tags">
-                            <span class="case-tag case-tag--sage">Product Discovery</span>
-                            <span class="case-tag case-tag--lavender">A/B Testing</span>
-                            <span class="case-tag case-tag--cream">User Research</span>
-                            <span class="case-tag case-tag--rose">Funnel Optimization</span>
+                            <span class="case-tag case-tag--sage">Learning Experience Design</span>
+                            <span class="case-tag case-tag--lavender">Instructional Design</span>
+                            <span class="case-tag case-tag--cream">Learning Analytics</span>
+                            <span class="case-tag case-tag--rose">Experimentation</span>
                         </div>
                     </div>
                     <div class="case-metric" aria-hidden="true">
-                        <span class="case-metric-value">#1</span>
-                        <span class="case-metric-label">discovery method</span>
+                        <span class="case-metric-value">2.1&times;</span>
+                        <span class="case-metric-label">completion</span>
                     </div>
                     <div class="case-toggle" aria-hidden="true">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -2509,40 +2597,40 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
                 </div>
                 <div class="case-body">
                     <div class="case-content">
-                        <p class="case-scope">Product Owner &middot; Skoove &middot; with design, engineering &amp; QA</p>
+                        <p class="case-scope">Product Owner &middot; Learning experience &amp; content</p>
                         <div class="case-section">
-                            <h4>Problem</h4>
-                            <p>Skoove had a large song catalogue, but discovery ran entirely through curated collections. That worked for new users and frustrated returning learners who knew exactly what they wanted to play.</p>
+                            <h4>The problem</h4>
+                            <p>A core learning experience was losing too many learners before completion. The obvious response could have been to add more material. Instead, I questioned the structure itself.</p>
                         </div>
                         <div class="case-section">
                             <h4>What I did</h4>
-                            <p>Contributed across discovery, scoping, and post-launch analysis for both the Song Search MVP and the Favorites feature. Coordinated QA across platforms and tracked results in Mixpanel. For Favorites I designed unmoderated usability research in Maze, led KPI tracking, and wrote the post-experiment report.</p>
+                            <p>I helped validate a more progressive format that broke a complex skill into smaller guided steps and gave learners more support as they moved toward the full task. We treated it as a learning-design hypothesis and looked at completion, satisfaction and early retention rather than relying on whether the new format simply felt better.</p>
                         </div>
                         <div class="case-section">
-                            <h4>Outcome</h4>
-                            <p>Search became the number one discovery method in the Songs tab, ahead of suggested songs. Favorites hit its primary KPI: 30% of premium users who visited Songs saved at least one. A search-paywall A/B test fed a strategic decision on free-trial access.</p>
+                            <h4>What happened</h4>
+                            <p>Completion increased from <strong>10% to 21%</strong>. Top satisfaction ratings increased by <strong>14 percentage points</strong>. Day 1 retention rose from <strong>55% to 67%</strong>. The format was then commissioned for content production at scale.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Case 2 -->
+            <!-- Case 2: Learning outside the product -->
             <div class="case-card">
                 <div class="case-header" role="button" aria-expanded="false" tabindex="0">
                     <div class="case-header-left">
                         <div class="case-number">02</div>
-                        <h3 class="case-title">Paywall &amp; Onboarding Experiments</h3>
-                        <p class="case-subtitle">Turning first impressions into paying users.</p>
+                        <h3 class="case-title">Finding the learning that happens outside the product</h3>
+                        <p class="case-subtitle">Sometimes the workaround tells you more than the funnel does.</p>
                         <div class="case-tags">
-                            <span class="case-tag case-tag--sage">Subscription A/B Testing</span>
-                            <span class="case-tag case-tag--lavender">Onboarding</span>
-                            <span class="case-tag case-tag--cream">Conversion</span>
-                            <span class="case-tag case-tag--rose">Experiment Design</span>
+                            <span class="case-tag case-tag--sage">Learner Research</span>
+                            <span class="case-tag case-tag--lavender">Behavioral Analytics</span>
+                            <span class="case-tag case-tag--cream">Discovery</span>
+                            <span class="case-tag case-tag--rose">Learning Strategy</span>
                         </div>
                     </div>
                     <div class="case-metric" aria-hidden="true">
-                        <span class="case-metric-value">+28.7%</span>
-                        <span class="case-metric-label">revenue / visitor</span>
+                        <span class="case-metric-value">1/3</span>
+                        <span class="case-metric-label">of learners used external video</span>
                     </div>
                     <div class="case-toggle" aria-hidden="true">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -2550,40 +2638,44 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
                 </div>
                 <div class="case-body">
                     <div class="case-content">
-                        <p class="case-scope">Product Owner &middot; Trala &amp; Skoove &middot; subscription experiments</p>
+                        <p class="case-scope">Product Owner &middot; Learner research &amp; engagement roadmap</p>
                         <div class="case-section">
-                            <h4>Problem</h4>
-                            <p>The paywall and the first-run experience were doing less than they could. New users arrived with very different goals, and everyone saw the same thing.</p>
+                            <h4>The problem</h4>
+                            <p>Behavioral data could show us where learners disengaged, but it could not always tell us what they felt was missing.</p>
                         </div>
                         <div class="case-section">
                             <h4>What I did</h4>
-                            <p>Ran subscription A/B tests on RevenueCat and Mixpanel, owning each from hypothesis and metric design through to read-out and follow-up. Personalized onboarding with location-based content and questionnaire variants on genre and learning goal, so the product adapted to why each person came.</p>
+                            <p>I combined learner interviews, surveys, usability testing and behavioral analysis to understand how people were actually learning, including what they did once they left the product.</p>
                         </div>
                         <div class="case-section">
-                            <h4>Outcome</h4>
-                            <p>Projected revenue per paywall visitor rose 28.7%. The onboarding changes contributed to 14% year-on-year revenue growth.</p>
+                            <h4>What we found</h4>
+                            <p>Roughly <strong>one-third of learners were supplementing the product with external video content</strong>. That changed the question. Instead of only asking how we could keep them inside the product, we could ask what they were leaving to find.</p>
+                        </div>
+                        <div class="case-section">
+                            <h4>What happened</h4>
+                            <p>The research fed directly into the engagement roadmap and how we thought about future learning formats.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Case 3 -->
+            <!-- Case 3: Personalizing the first learning experience -->
             <div class="case-card">
                 <div class="case-header" role="button" aria-expanded="false" tabindex="0">
                     <div class="case-header-left">
                         <div class="case-number">03</div>
-                        <h3 class="case-title">The Commercial Behind the Catalogue</h3>
-                        <p class="case-subtitle">The licensing and negotiation work that lets people learn the songs they actually listen to.</p>
+                        <h3 class="case-title">Personalizing the first learning experience</h3>
+                        <p class="case-subtitle">Different goals should not always lead to the same first lesson.</p>
                         <div class="case-tags">
-                            <span class="case-tag case-tag--sage">Commercial Negotiation</span>
-                            <span class="case-tag case-tag--lavender">Licensing</span>
-                            <span class="case-tag case-tag--cream">Rights Strategy</span>
-                            <span class="case-tag case-tag--rose">Stakeholder Management</span>
+                            <span class="case-tag case-tag--sage">Personalization</span>
+                            <span class="case-tag case-tag--lavender">Onboarding</span>
+                            <span class="case-tag case-tag--cream">Learner Goals</span>
+                            <span class="case-tag case-tag--rose">Experimentation</span>
                         </div>
                     </div>
                     <div class="case-metric" aria-hidden="true">
-                        <span class="case-metric-value">14.7%</span>
-                        <span class="case-metric-label">cost ratio, from 18%</span>
+                        <span class="case-metric-value">3</span>
+                        <span class="case-metric-label">signals shape the first lesson</span>
                     </div>
                     <div class="case-toggle" aria-hidden="true">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -2591,41 +2683,40 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
                 </div>
                 <div class="case-body">
                     <div class="case-content">
-                        <p class="case-scope">Lead negotiator &middot; Skoove &amp; Trala &middot; publishers &amp; rights organizations</p>
+                        <p class="case-scope">Education Content Manager &middot; Onboarding &amp; personalization</p>
                         <div class="case-section">
-                            <h4>Problem</h4>
-                            <p>Every popular song is wrapped in a web of publishers, performance rights organizations, and territory rules. Putting that music inside a learning app, at a cost that works, is a negotiation before it is a feature.</p>
+                            <h4>The problem</h4>
+                            <p>Learners arrived with different goals, preferences and contexts, while the early experience treated too many of them the same way.</p>
                         </div>
                         <div class="case-section">
                             <h4>What I did</h4>
-                            <p>Led the negotiation that unlocked the Disney Music Group catalogue, our largest Disney piano collection against the competition. Worked publisher by publisher on multi-year terms, royalty mechanics, rights clearance, and dispute resolution, as the direct interlocutor for the company. Trained in negotiation by the CEO and CPO.</p>
+                            <p>I designed and tested onboarding approaches using learning goals, content preferences and location to adapt the experience. Success measures were defined before launch so each iteration could be evaluated rather than judged by intuition.</p>
                         </div>
                         <div class="case-section">
-                            <h4>Outcome</h4>
-                            <p>A contemporary, high-demand catalogue users want, with the licensing cost ratio improved from 18% to 14.7% of revenue.</p>
+                            <h4>What I learned</h4>
+                            <p>Personalization works best when every question earns its place. If an answer does not meaningfully change what the learner sees or does next, it is worth asking why we need the question at all.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-
-            <!-- Case 4 -->
+            <!-- Case 4: Scaling learning content -->
             <div class="case-card">
                 <div class="case-header" role="button" aria-expanded="false" tabindex="0">
                     <div class="case-header-left">
                         <div class="case-number">04</div>
-                        <h3 class="case-title">Content Operations at Scale</h3>
-                        <p class="case-subtitle">Growing the catalogue 160% while keeping quality and licensing coverage intact.</p>
+                        <h3 class="case-title">Scaling learning content without scaling chaos</h3>
+                        <p class="case-subtitle">260+ learning modules in one release, with the production system evolving around them.</p>
                         <div class="case-tags">
-                            <span class="case-tag case-tag--sage">Content Ops</span>
-                            <span class="case-tag case-tag--lavender">Process Design</span>
-                            <span class="case-tag case-tag--cream">Localization</span>
-                            <span class="case-tag case-tag--rose">Cross-functional Delivery</span>
+                            <span class="case-tag case-tag--sage">Content Operations</span>
+                            <span class="case-tag case-tag--lavender">Localization</span>
+                            <span class="case-tag case-tag--cream">Learning Systems</span>
+                            <span class="case-tag case-tag--rose">Scale</span>
                         </div>
                     </div>
                     <div class="case-metric" aria-hidden="true">
-                        <span class="case-metric-value">+160%</span>
-                        <span class="case-metric-label">catalogue growth</span>
+                        <span class="case-metric-value">260+</span>
+                        <span class="case-metric-label">modules in one release</span>
                     </div>
                     <div class="case-toggle" aria-hidden="true">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -2633,51 +2724,79 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
                 </div>
                 <div class="case-body">
                     <div class="case-content">
-                        <p class="case-scope">Content Manager &rarr; Product Owner &middot; Skoove &amp; Trala &middot; cross-functional</p>
+                        <p class="case-scope">Content Manager &rarr; Product Owner &middot; Content, localization &amp; engineering</p>
                         <div class="case-section">
-                            <h4>Problem</h4>
-                            <p>Running content for an app at this size means shipping constantly, new songs, seasonal collections, and localized versions, without letting quality slip. The workflows were manual and fragmented.</p>
+                            <h4>The problem</h4>
+                            <p>Large multilingual learning releases involve much more than creating the lesson itself. Production, localization, quality assurance, contributors and release readiness all have to move together.</p>
                         </div>
                         <div class="case-section">
                             <h4>What I did</h4>
-                            <p>Worked on three levels at once. Rebuilt the internal content tooling to reduce engineer dependency. Ran bulk localization across 7+ languages with coordinated QA, including market pushes into Japan and Korea. Built the licensing foundation, partner pages, a content-tactics matrix, and rights-ownership workflows, now used across Engineering, Content, and Marketing.</p>
+                            <p>I owned releases end to end, coordinated international content and localization, and later worked with content and engineering to rebuild the production tooling behind them.</p>
                         </div>
                         <div class="case-section">
-                            <h4>Outcome</h4>
-                            <p>The catalogue grew 160% with licensing coverage and quality held intact. End-to-end process time down 70%. Quarterly releases shipping up to 260+ songs at a time, on schedule, with content decisions tied to real usage data.</p>
+                            <h4>What happened</h4>
+                            <p>One quarterly release delivered <strong>260+ learning modules</strong>. The learning-content library grew by <strong>160%</strong>. A separate <strong>61-item Japan and Korea release</strong> was built around locally validated learner needs. The redesigned production workflow later reduced end-to-end content delivery time by <strong>70%</strong>.</p>
                         </div>
                     </div>
                 </div>
             </div>
-
 
         </div>
     </div>
 </div>
 
 
-<!-- ===== PANEL: AI PROJECTS ===== -->
-<div class="panel" id="panel-ai-hub" role="dialog" aria-label="AI in Practice" aria-modal="true">
+<!-- ===== PANEL: AI IN LEARNING ===== -->
+<div class="panel" id="panel-ai-hub" role="dialog" aria-label="AI in Learning" aria-modal="true">
     <div class="panel-header">
         <div class="panel-header-left">
-            <span class="panel-number">04 &middot; AI in Practice</span>
-            <h2 class="panel-title"><svg class="icon title-icon"><use href="#i-sparkles"/></svg>How I work with AI, and what I have learned doing it.</h2>
+            <span class="panel-number">04 &middot; AI in Learning</span>
+            <h2 class="panel-title"><svg class="icon title-icon"><use href="#i-sparkles"/></svg>I use AI to get learning ideas into people's hands faster.</h2>
         </div>
         <button class="panel-close" aria-label="Close panel">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </button>
     </div>
     <div class="panel-body">
-        <p class="ai-hub-intro">How I actually use AI in product work — not demos. Open any card to read what I took away from it. The frameworks guidebook at the end is live and clickable.</p>
+        <p class="ai-hub-intro">AI is part of my working process, but I am less interested in generating content for the sake of generating content. I use it to move from an idea to something I can see, click, test or produce, often before asking engineering or design for significant time. I am especially interested in learning formats that previously would have been too slow or expensive to create at scale.</p>
         <div class="ai-hub-grid">
 
-            <!-- Learning 1: AI dubbing -->
+            <!-- 01: Interactive chord builder (live) -->
+            <a href="https://www.skoove.com/en/tools/piano-chords" target="_blank" rel="noopener" class="hub-card hub-card--live">
+                <span class="hub-card-icon"><svg class="icon"><use href="#i-keys"/></svg></span>
+                <div class="hub-card-head-text">
+                    <h3 class="hub-card-title">Interactive chord builder</h3>
+                    <p class="hub-card-desc">An example of the kind of learning format I find exciting: turning a concept-heavy topic into something learners can explore directly instead of only reading an explanation.</p>
+                    <p class="hub-card-desc">Interactive tools give learners immediate ways to inspect relationships, test ideas and move between explanation and practice.</p>
+                    <div class="hub-card-meta">
+                        <span class="hub-card-tag">Interactive learning</span>
+                        <span class="hub-card-badge hub-card-badge--live">Live</span>
+                    </div>
+                </div>
+                <span class="hub-card-open">View live tool<svg class="icon"><use href="#i-arrow-ur"/></svg></span>
+            </a>
+
+            <!-- 02: Short educational video at scale (note) -->
+            <article class="hub-card hub-card--note">
+                <span class="hub-card-icon"><svg class="icon"><use href="#i-film"/></svg></span>
+                <div class="hub-card-head-text">
+                    <h3 class="hub-card-title">Short educational video at scale</h3>
+                    <p class="hub-card-desc">I am exploring repeatable AI-assisted workflows for short, focused educational videos that can be produced in much larger volumes without becoming generic or disposable.</p>
+                    <p class="hub-card-desc">The interesting challenge is not generating more video. It is preserving the explanation, pacing and usefulness that make a short learning asset worth watching.</p>
+                    <div class="hub-card-meta">
+                        <span class="hub-card-tag">Content production</span>
+                        <span class="hub-card-badge hub-card-badge--progress">Experimentation</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 03: AI dubbing for learning localization (expandable) -->
             <article class="hub-card hub-card--expandable">
                 <div class="hub-card-head" role="button" tabindex="0" aria-expanded="false">
-                    <span class="hub-card-icon"><svg class="icon"><use href="#i-film"/></svg></span>
+                    <span class="hub-card-icon"><svg class="icon"><use href="#i-globe"/></svg></span>
                     <div class="hub-card-head-text">
-                        <h3 class="hub-card-title">Dub a video course at a fraction of the production time</h3>
-                        <p class="hub-card-desc">Using AI dubbing to localize Trala's video lessons for new markets without a full studio cycle.</p>
+                        <h3 class="hub-card-title">AI dubbing for learning localization</h3>
+                        <p class="hub-card-desc">Evaluating AI dubbing for localized learning video, including quality, workflow and the human review required before publication.</p>
                         <div class="hub-card-meta">
                             <span class="hub-card-tag">Localization</span>
                             <span class="hub-card-badge hub-card-badge--active">In production</span>
@@ -2689,70 +2808,12 @@ a.hub-card:hover .hub-card-open .icon { transform: translate(1px, -1px); }
                 </div>
                 <div class="hub-card-reveal">
                     <div class="hub-card-reveal-inner">
-                        <p class="learn-lead">Trala's lessons are filmed once, in English. To open a new market I used AI dubbing to voice those same videos in the local language — turning what used to be a studio booking into a same-week task.</p>
+                        <p class="learn-lead">Video lessons are filmed once, in English. AI dubbing lets the same lessons speak a new language in days rather than through a full studio cycle. For me this is a good example of where AI can remove production constraints while human judgment stays important for accuracy and learning quality.</p>
                         <h4 class="learn-label">What I took away</h4>
                         <ul class="learn-list">
-                            <li><strong>The last 20% is still human.</strong> AI nails the bulk of the voiceover, but musical terms, names and timing against the on-screen hands need an editing pass before it ships.</li>
-                            <li><strong>Localization is a product call, not a translation task.</strong> I pick markets from retention data first, then dub — not the other way round.</li>
-                            <li><strong>Cheap enough to test.</strong> Cost per localized minute drops far enough that you can validate demand in a market before committing to a whole course.</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Learning 2: PRD to prototype -->
-            <article class="hub-card hub-card--expandable">
-                <div class="hub-card-head" role="button" tabindex="0" aria-expanded="false">
-                    <span class="hub-card-icon"><svg class="icon"><use href="#i-zap"/></svg></span>
-                    <div class="hub-card-head-text">
-                        <h3 class="hub-card-title">From PRD to clickable prototype in an afternoon</h3>
-                        <p class="hub-card-desc">Turning discovery notes into a working, shareable prototype with Claude and Google Stitch — no front-end help needed.</p>
-                        <div class="hub-card-meta">
-                            <span class="hub-card-tag">Discovery &amp; Prototyping</span>
-                            <span class="hub-card-badge hub-card-badge--active">In use</span>
-                        </div>
-                    </div>
-                    <span class="hub-card-toggle" aria-hidden="true">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    </span>
-                </div>
-                <div class="hub-card-reveal">
-                    <div class="hub-card-reveal-inner">
-                        <p class="learn-lead">Instead of writing a spec and waiting for a sprint to see it, I hand my discovery notes to Claude and Stitch and walk into the next meeting with something stakeholders can actually click.</p>
-                        <h4 class="learn-label">What I took away</h4>
-                        <ul class="learn-list">
-                            <li><strong>A prototype ends arguments a doc can't.</strong> People react to something tangible far faster than to a paragraph describing it.</li>
-                            <li><strong>Write the PRD like a brief to the model.</strong> Clear constraints in, usable output out — and the discipline makes the spec sharper for humans too.</li>
-                            <li><strong>Prototyping moved into discovery.</strong> I pressure-test the flow before a sprint is scoped, so engineering starts from something already validated.</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Learning 3: Backlog audit agent -->
-            <article class="hub-card hub-card--expandable">
-                <div class="hub-card-head" role="button" tabindex="0" aria-expanded="false">
-                    <span class="hub-card-icon"><svg class="icon"><use href="#i-refresh"/></svg></span>
-                    <div class="hub-card-head-text">
-                        <h3 class="hub-card-title">A backlog that audits itself</h3>
-                        <p class="hub-card-desc">A Jira-connected agent that flags stale stories and missing acceptance criteria, then posts a weekly digest.</p>
-                        <div class="hub-card-meta">
-                            <span class="hub-card-tag">Delivery</span>
-                            <span class="hub-card-badge hub-card-badge--progress">In progress</span>
-                        </div>
-                    </div>
-                    <span class="hub-card-toggle" aria-hidden="true">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    </span>
-                </div>
-                <div class="hub-card-reveal">
-                    <div class="hub-card-reveal-inner">
-                        <p class="learn-lead">Backlog debt stays invisible until it hurts a sprint. I'm building a Jira-connected agent that reviews ticket quality and turns that debt into a number the team actually sees each week.</p>
-                        <h4 class="learn-label">What I took away</h4>
-                        <ul class="learn-list">
-                            <li><strong>Make the invisible weekly.</strong> A recurring digest converts a vague "the backlog is messy" into a metric you can act on.</li>
-                            <li><strong>Defining "good" is the real work.</strong> The model is the easy part; writing down what a quality ticket means, precisely enough to check, is the hard one.</li>
-                            <li><strong>Automate the audit, keep the judgment.</strong> The agent flags and proposes — I decide what's noise and what ships.</li>
+                            <li><strong>The last 20% is still human.</strong> AI handles the bulk of the voiceover, but subject terms, names and timing against what is happening on screen need an editing pass before anything ships.</li>
+                            <li><strong>Localization is a learning decision, not a translation task.</strong> Markets are chosen from learner data first, then dubbed, not the other way round.</li>
+                            <li><strong>Cheap enough to test.</strong> Cost per localized minute drops far enough to validate demand in a market before committing to a whole course.</li>
                         </ul>
                     </div>
                 </div>
